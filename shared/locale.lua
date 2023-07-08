@@ -1,6 +1,6 @@
 Locales = {}
 
-function Locale(str, ...)
+function Translate(str, ...)
 	if not str then
 		print(("[^1ERROR^7] Resource ^5%s^7 You did not specify a parameter for the Locale function or the value is nil!"):format(GetInvokingResource() or GetCurrentResourceName()))
 		return 'Given translate function parameter is nil!'
@@ -20,9 +20,9 @@ function Locale(str, ...)
 	end
 end
 
-function LocaleCap(str, ...)
+function TranslateCap(str, ...)
 	return _(str, ...):gsub("^%l", string.upper)
 end
 
-_ = Locale
-_U = LocaleCap
+_ = Translate
+_U = TranslateCap
