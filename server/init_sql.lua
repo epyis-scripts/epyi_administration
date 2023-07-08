@@ -1,5 +1,5 @@
 -- Sql initialization
--- init the sql part of the script, automatically create tables if not exists and add defaults admins
+-- init the sql part of the script, automatically create tables if not exists and add default admin
 Citizen.CreateThread(function()
     MySQL.insert("CREATE TABLE IF NOT EXISTS admin_permission (`identifier` VARCHAR(99) PRIMARY KEY,`group` VARCHAR(99));", {}, function()
         if Config.InitialIdentifier ~= nil and Config.InitialIdentifier ~= "your-identifier-here" then
