@@ -25,9 +25,10 @@ client_scripts {
     "RageUI/menu/panels/*.lua",
     "RageUI/menu/windows/*.lua",
     "RageUI/menu/Function.lua",
-    
-    "client/keys.lua",
-    "client/menu.lua"
+
+    "client/menus_init.lua",
+    "client/menus/main.lua",
+    "client/keys.lua"
 }
 
 dependencies {
