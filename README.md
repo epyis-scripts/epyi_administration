@@ -10,4 +10,7 @@
 ```
 
 ## 📜 License
+    Copyright (C) 2023 Epyi's Scripts
+
+    This program Is free software: you can redistribute it And/Or modify it under the terms Of the MIT License.
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/epyis-scripts/epyi_administration/blob/main/LICENSE)
