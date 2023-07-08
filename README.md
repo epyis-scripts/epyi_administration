@@ -8,7 +8,14 @@
 ```diff
 - EPYI_ADMINISTRATION is under development and therefore cannot be used at this time. The official and stable versions are given as a release.
 ```
-
+## 💾 Dependencies
+- **es_extended** from <a href="https://github.com/esx-framework/esx_core">esx_core official repository</a>
+## 🔧 Installation guide
+1. Go download a **release of the script**
+2. Extract the downloaded zip
+3. Drag and drop the **epyi_administration** folder into your server
+4. Start the resource folder by using **ensure epyi_administration** in your server.cfg
+5. **OPTIONNAL →** Configure the script by editing the **config.lua** file
 ## 📜 License
     Copyright (C) 2023 Epyi's Scripts
 
