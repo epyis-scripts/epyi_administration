@@ -14,8 +14,10 @@ Config.MenuStyle = {
 
 Config.Keys                        = {Menu = "F10", NoClip = "F3"} -- [table] → The the menu keys
 
+Config.InitialIdentifier        = "" -- [string] → Define an identifier which will by default have the highest permission group
 Config.Groups = {
-    admin = {
+    [99] = {
+        Id = "admin",
         Prefix = "~r~Admin ~s~",
         Access = {
             ["personnal.godmod.use"] = true,
