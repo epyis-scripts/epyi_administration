@@ -4,7 +4,7 @@ Config.Locale                      = GetConvar('epyi_administration:locale', 'en
 Config.MenuStyle = {
     Margins                        = {left = 10, top = 10}, -- [table] → Set the menu margins
     BannerStyle = {
-        Color                      = {r = 255, g = 100, b = 100, a = 100}, -- [table] → Set the banner color if no custom banner image is set
+        Color                      = {r = 150, g = 50, b = 50, a = 100}, -- [table] → Set the banner color if no custom banner image is set
         UseGlareEffect             = true, -- [boolean] → Use the glare effect or not
         UseInstructionalButtons    = true, -- [boolean] → Use the instructionals buttons or not
         ImageUrl                   = nil, -- [nil/string] → Set a custom image url if you want (if set, it will disable the Color configuration)
