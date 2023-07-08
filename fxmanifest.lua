@@ -4,9 +4,15 @@ game "gta5"
 name "epyi_administration"
 description "A RageUI Administration for ESX Legacy 1.7.5 or newer"
 author "Epyi (https://discord.gg/VyRPheG6Es)"
-version "1.0.0"
+version "1.0"
 
-shared_script "@es_extended/imports.lua"
+shared_scripts {
+    "shared/locale.lua",
+    "locales/*.lua",
+
+    "@es_extended/imports.lua",
+    "config.lua"
+}
 
 client_scripts {
     "RageUI/RMenu.lua",
@@ -19,7 +25,8 @@ client_scripts {
     "RageUI/menu/panels/*.lua",
     "RageUI/menu/windows/*.lua",
     "RageUI/menu/Function.lua",
-    "client/*.lua"
+    
+    "client/menu.lua"
 }
 
 dependencies {
