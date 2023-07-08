@@ -13,3 +13,13 @@ Config.MenuStyle = {
 }
 
 Config.Keys                        = {Menu = "F10", NoClip = "F3"} -- [table] → The the menu keys
+
+Config.Groups = {
+    admin = {
+        Prefix = "~r~Admin ~s~",
+        Access = {
+            ["personnal.godmod.use"] = true,
+            ["players.godmod.use"] = true
+        }
+    }
+}
