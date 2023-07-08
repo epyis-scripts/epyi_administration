@@ -6,3 +6,6 @@
 ```diff
 - EPYI_ADMINISTRATION is under development and therefore cannot be used at this time. The official and stable versions are given as a release.
 ```
+
+## 📜 License
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/epyis-scripts/epyi_administration/blob/main/LICENSE)
