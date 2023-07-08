@@ -1,3 +1,5 @@
+![App Screenshot](https://media.discordapp.net/attachments/987630296801345544/1127114568284512306/banner3.png?width=1440&height=273)
+
 <h1 align='center'>Epyi's Scripts → Administration</a></h1>
 <p align='center'><a href='https://discord.gg/VyRPheG6Es'>Discord</a> - <a href='#'>Website</a></b></h5>
 
