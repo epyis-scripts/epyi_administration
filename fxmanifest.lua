@@ -32,9 +32,13 @@ client_scripts {
 }
 
 server_scripts {
+    "@oxmysql/lib/MySQL.lua",
+    "server/init_sql.lua",
+    "server/perms_init.lua",
     "server/permissions.lua"
 }
 
 dependencies {
-	"es_extended"
+	"es_extended",
+    "oxmysql"
 }
