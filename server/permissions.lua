@@ -21,9 +21,7 @@ ESX.RegisterServerCallback("epyi_administration:getPlayerGroup", function(cb, id
     MySQL.query('SELECT `group` FROM `admin_permission` WHERE `identifier` = ?', {
         identifier
     }, function(response)
-        if response then
-            cb(response.group)
-        end
+        cb(response.group)
     end)
 end)
 
