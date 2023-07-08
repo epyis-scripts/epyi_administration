@@ -8,6 +8,8 @@ Config.MenuStyle = {
         UseGlareEffect             = true, -- [boolean] → Use the glare effect or not
         UseInstructionalButtons    = true, -- [boolean] → Use the instructionals buttons or not
         ImageUrl                   = nil, -- [nil/string] → Set a custom image url if you want (if set, it will disable the Color configuration)
-        ImageSize                  = {Width = 512, Height = 128}, -- [table] → Set the image (ImageUrl) size un pixels
+        ImageSize                  = {Width = 512, Height = 128} -- [table] → Set the image (ImageUrl) size un pixels
     }
 }
+
+Config.Keys                        = {Menu = "F10", NoClip = "F3"} -- [table] → The the menu keys
