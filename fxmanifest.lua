@@ -31,6 +31,10 @@ client_scripts {
     "client/keys.lua"
 }
 
+server_scripts {
+    "server/permissions.lua"
+}
+
 dependencies {
 	"es_extended"
 }
