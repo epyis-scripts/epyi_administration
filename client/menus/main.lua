@@ -10,9 +10,6 @@ function main_showContentThisFrame(playerGroup)
         return
     end
     RageUI.Separator("")
-    RageUI.Separator(TranslateCap("main_menu_title1") .. Config.Groups[playerGroup].Prefix .. GetPlayerName(PlayerId()))
-    RageUI.Separator(TranslateCap("main_menu_title2") .. Config.Groups[playerGroup].Color .. Config.Groups[playerGroup].Label)
-    RageUI.Separator("")
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_personnal"), TranslateCap("main_menu_access_personnal_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_personnal.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_players"), TranslateCap("main_menu_access_players_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_players.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_vehicles"), TranslateCap("main_menu_access_vehicles_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_vehicles.access"], function(_, _, _)end)

@@ -14,11 +14,13 @@ end
 
 -- RageUI menu initialization
 -- init the rageui menu with the config parameters
-RMenu.Add("epyi_administration", "main", RageUI.CreateMenu(Translate("menu_title"), Translate("menu_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture))
+RMenu.Add("epyi_administration", "main", RageUI.CreateMenu(Translate("menu_title"), Translate("main_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture))
+RMenu.Add("epyi_administration", "main_personnal", RageUI.CreateSubMenu(RMenu:Get("epyi_administration", "main"), RageUI.CreateMenu(Translate("menu_title"), TranslateCap("main_personnal_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture)))
 RMenu:Get("epyi_administration", "main").Closed = function()
     isMenuOpened = false
 end
 RMenu:Get("epyi_administration", "main"):SetRectangleBanner(Config.MenuStyle.BannerStyle.Color.r, Config.MenuStyle.BannerStyle.Color.g, Config.MenuStyle.BannerStyle.Color.b, Config.MenuStyle.BannerStyle.Color.a)
+RMenu:Get("epyi_administration", "main_personnal"):SetRectangleBanner(Config.MenuStyle.BannerStyle.Color.r, Config.MenuStyle.BannerStyle.Color.g, Config.MenuStyle.BannerStyle.Color.b, Config.MenuStyle.BannerStyle.Color.a)
 
 ---openMenu → Function to open the administration main menu
 ---@return void
