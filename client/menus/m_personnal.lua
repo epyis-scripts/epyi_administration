@@ -2,5 +2,7 @@
 ---@return void
 function main_personnal_showContentThisFrame(playerGroup)
     RageUI.Separator(GetPlayerName(PlayerId()) .. " [" .. Config.Groups[playerGroup].Color .. Config.Groups[playerGroup].Label .. "~s~] - ID: ~r~" .. GetPlayerServerId(PlayerId()))
-    RageUI.Separator("")
+    RageUI.List(TranslateCap("main_personnal_health_management"), playersOptionsArray, playersOptionsArrayIndex, TranslateCap("main_personnal_health_management_desc"), {}, Config.Groups[playerGroup].Access["submenu_personnal.health_management"], function(_, _, _, Index)
+        playersOptionsArrayIndex = Index
+    end)
 end

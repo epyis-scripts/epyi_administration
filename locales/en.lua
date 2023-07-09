@@ -16,5 +16,11 @@ Locales["en"] = {
     ["main_menu_access_reports"] = "Management of ~r~reports",
     ["main_menu_access_reports_desc"] = "Access the management of player help reports",
     ["main_menu_access_server"] = "Management ot ~r~the server",
-    ["main_menu_access_server_desc"] = "Access advanced server management"
+    ["main_menu_access_server_desc"] = "Access advanced server management",
+    ["players_actions_heal"] = "Heal",
+    ["players_actions_feed"] = "Feed",
+    ["players_actions_hydrate"] = "Hydrate",
+    ["players_actions_shield"] = "Give shield",
+    ["main_personnal_health_management"] = "Managing your health",
+    ["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
 }
