@@ -1,10 +1,21 @@
 Locales["en"] = {
+    -- Banners
     ["menu_title"] = "Admin menu",
     ["main_subtitle"] = "This is the ~r~administration~s~ menu",
     ["main_personnal_subtitle"] = "Management of ~r~my character",
+
+    -- Keys
     ["keys_menu_description"] = "~r~Open the administration menu",
     ["keys_menu_noclip"] = "~r~Use the noclip",
+
+    -- Global
     ["cannot_open_menu"] = "You can't open the admin menu because you are not a staff member",
+    ["players_actions_heal"] = "Heal",
+    ["players_actions_feed"] = "Feed",
+    ["players_actions_hydrate"] = "Hydrate",
+    ["players_actions_shield"] = "Give shield",
+
+    -- Elements → Main menu
     ["main_menu_staffmode"] = "~r~Enable/Disable ~s~the staff mode",
     ["main_menu_staffmode_desc"] = "Activate or deactivate your staff mode, once activated you will have access to your staff features",
     ["main_menu_access_personnal"] = "Management of ~r~my character",
@@ -17,10 +28,8 @@ Locales["en"] = {
     ["main_menu_access_reports_desc"] = "Access the management of player help reports",
     ["main_menu_access_server"] = "Management ot ~r~the server",
     ["main_menu_access_server_desc"] = "Access advanced server management",
-    ["players_actions_heal"] = "Heal",
-    ["players_actions_feed"] = "Feed",
-    ["players_actions_hydrate"] = "Hydrate",
-    ["players_actions_shield"] = "Give shield",
+
+    -- Elements → Menu menu / personnal
     ["main_personnal_health_management"] = "Managing your health",
     ["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
 }
