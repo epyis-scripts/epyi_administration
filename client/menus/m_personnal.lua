@@ -6,6 +6,7 @@ local playerOptionsArray = {
 }
 local playerOptionsArrayIndex = 1
 local playerGodmodeCheckbox = false
+local playerInvisibilityCheckbox = false
 
 ---main_personnal_showContentThisFrame → Function to show the main/personnal menu content
 ---@return void
@@ -31,10 +32,16 @@ function main_personnal_showContentThisFrame(playerGroup)
         end
     end)
     RageUI.Checkbox(TranslateCap("main_personnal_godmode"), TranslateCap("main_personnal_godmode_desc"), playerGodmodeCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal.godmode"]}, function()end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal.godmode"] then
+            return
+        end
         playerGodmodeCheckbox = true
         SetEntityInvincible(PlayerPedId(), true)
         ESX.ShowNotification(TranslateCap("notif_godmode_enabled_self"))
     end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal.godmode"] then
+            return
+        end
         playerGodmodeCheckbox = false
         SetEntityInvincible(PlayerPedId(), false)
         ESX.ShowNotification(TranslateCap("notif_godmode_disabled_self"))
