@@ -1,5 +1,6 @@
 -- Variables initialization
 -- init some local variables
+isStaffModeEnabled = false
 isMenuOpened = false
 menuTexture = nil
 
