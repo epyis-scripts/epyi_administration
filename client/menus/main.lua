@@ -10,7 +10,8 @@ function main_showContentThisFrame(playerGroup)
         return
     end
     RageUI.Separator("")
-    RageUI.ButtonWithStyle(TranslateCap("main_menu_access_personnal"), TranslateCap("main_menu_access_personnal_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_personnal.access"], function(_, _, _)end)
+    RageUI.ButtonWithStyle(TranslateCap("main_menu_access_personnal"), TranslateCap("main_menu_access_personnal_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_personnal.access"], function(_, _, _)
+    end, RMenu:Get("epyi_administration", "main_personnal"))
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_players"), TranslateCap("main_menu_access_players_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_players.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_vehicles"), TranslateCap("main_menu_access_vehicles_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_vehicles.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_reports"), TranslateCap("main_menu_access_reports_desc"), {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_reports.access"], function(_, _, _)end)

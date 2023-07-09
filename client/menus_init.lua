@@ -15,7 +15,7 @@ end
 -- RageUI menu initialization
 -- init the rageui menu with the config parameters
 RMenu.Add("epyi_administration", "main", RageUI.CreateMenu(Translate("menu_title"), Translate("main_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture))
-RMenu.Add("epyi_administration", "main_personnal", RageUI.CreateSubMenu(RMenu:Get("epyi_administration", "main"), RageUI.CreateMenu(Translate("menu_title"), TranslateCap("main_personnal_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture)))
+RMenu.Add("epyi_administration", "main_personnal", RageUI.CreateSubMenu(RMenu:Get("epyi_administration", "main"), TranslateCap("menu_title"), TranslateCap("main_personnal_subtitle"), Config.MenuStyle.Margins.left, Config.MenuStyle.Margins.top, menuTexture, menuTexture))
 RMenu:Get("epyi_administration", "main").Closed = function()
     isMenuOpened = false
 end
@@ -37,6 +37,9 @@ function openMenu()
                 while isMenuOpened do
                     RageUI.IsVisible(RMenu:Get("epyi_administration", "main"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
                         main_showContentThisFrame(playerGroup)
+                    end)
+                    RageUI.IsVisible(RMenu:Get("epyi_administration", "main_personnal"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
+                        main_personnal_showContentThisFrame(playerGroup)
                     end)
                     Citizen.Wait(1)
                 end

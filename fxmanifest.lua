@@ -28,7 +28,8 @@ client_scripts {
 
     "client/menus_init.lua",
     "client/keys.lua",
-    "client/menus/main.lua"
+    "client/menus/main.lua",
+    "client/menus/personnal.lua"
 }
 
 server_scripts {
