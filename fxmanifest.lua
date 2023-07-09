@@ -41,5 +41,6 @@ server_scripts {
 
 dependencies {
 	"es_extended",
-    "oxmysql"
+    "oxmysql",
+    "esx_status"
 }
