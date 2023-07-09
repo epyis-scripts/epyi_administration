@@ -17,12 +17,16 @@ function main_personnal_showContentThisFrame(playerGroup)
             local ped = PlayerPedId()
             if playerOptionsArrayIndex == 1 then -- if selected item is "heal"
                 SetEntityHealth(ped, GetEntityMaxHealth(ped))
+                ESX.ShowNotification(TranslateCap("notif_health_management_heal_self"))
             elseif playerOptionsArrayIndex == 2 then -- if selected item is "feed"
                 TriggerEvent('esx_status:set', 'hunger', 1000000)
+                ESX.ShowNotification(TranslateCap("notif_health_management_heal_feed"))
             elseif playerOptionsArrayIndex == 3 then -- if selected item is "hydrate"
                 TriggerEvent('esx_status:set', 'thirst', 1000000)
+                ESX.ShowNotification(TranslateCap("notif_health_management_heal_hydrate"))
             elseif playerOptionsArrayIndex == 4 then -- if selected item is "give shield"
                 SetPedArmour(ped, 100)
+                ESX.ShowNotification(TranslateCap("notif_health_management_heal_shield"))
             end 
         end
     end)

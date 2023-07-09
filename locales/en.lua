@@ -36,6 +36,10 @@ Locales["en"] = {
     ["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
 
     -- Notifications
+    ["notif_health_management_heal_self"] = "You have been ~g~healed",
+    ["notif_health_management_heal_feed"] = "You have been ~g~feeded",
+    ["notif_health_management_heal_hydrate"] = "You have been ~g~hydrated",
+    ["notif_health_management_heal_shield"] = "You get some ~g~protection",
     ["notif_godmode_enabled_self"] = "Your god mode has been ~g~enabled",
     ["notif_godmode_disabled_self"] = "Your god mode has been ~r~disabled"
 }
