@@ -32,4 +32,10 @@ Locales["en"] = {
     -- Elements → Menu menu / personnal
     ["main_personnal_health_management"] = "Managing your health",
     ["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
+    ["main_personnal_godmode"] = "Enable/Disable your invincibility",
+    ["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
+
+    -- Notifications
+    ["notif_godmode_enabled_self"] = "Your god mode has been ~g~enabled",
+    ["notif_godmode_disabled_self"] = "Your god mode has been ~r~disabled"
 }

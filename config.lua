@@ -21,12 +21,13 @@ Config.Groups = {
         Label = "Admin",
         Color = "~r~",
         Access = {
-            ["submenu_personnal.access"]    = true,
-            ["submenu_players.access"]      = true,
-            ["submenu_vehicles.access"]     = true,
-            ["submenu_reports.access"]      = true,
-            ["submenu_server.access"]       = true,
-            ["submenu_personnal.health_management"] = true
+            ["submenu_personnal.access"]            = true,
+            ["submenu_players.access"]              = true,
+            ["submenu_vehicles.access"]             = true,
+            ["submenu_reports.access"]              = true,
+            ["submenu_server.access"]               = true,
+            ["submenu_personnal.health_management"] = true,
+            ["submenu_personnal.godmode"]           = true,
         }
     }
 }

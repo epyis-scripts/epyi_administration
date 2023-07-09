@@ -1,20 +1,38 @@
+local playerOptionsArray = {
+    Translate("players_actions_heal"),
+    Translate("players_actions_feed"),
+    Translate("players_actions_hydrate"),
+    Translate("players_actions_shield")
+}
+local playerOptionsArrayIndex = 1
+local playerGodmodeCheckbox = false
+
 ---main_personnal_showContentThisFrame → Function to show the main/personnal menu content
 ---@return void
 function main_personnal_showContentThisFrame(playerGroup)
     RageUI.Separator(GetPlayerName(PlayerId()) .. " [" .. Config.Groups[playerGroup].Color .. Config.Groups[playerGroup].Label .. "~s~] - ID: ~r~" .. GetPlayerServerId(PlayerId()))
-    RageUI.List(TranslateCap("main_personnal_health_management"), playersOptionsArray, playersOptionsArrayIndex, TranslateCap("main_personnal_health_management_desc"), {}, Config.Groups[playerGroup].Access["submenu_personnal.health_management"], function(_, _, Selected, Index)
-        playersOptionsArrayIndex = Index
+    RageUI.List(TranslateCap("main_personnal_health_management"), playerOptionsArray, playerOptionsArrayIndex, TranslateCap("main_personnal_health_management_desc"), {}, Config.Groups[playerGroup].Access["submenu_personnal.health_management"], function(_, _, Selected, Index)
+        playerOptionsArrayIndex = Index
         if Selected then
             local ped = PlayerPedId()
-            if playersOptionsArrayIndex == 1 then -- if selected item is "heal"
+            if playerOptionsArrayIndex == 1 then -- if selected item is "heal"
                 SetEntityHealth(ped, GetEntityMaxHealth(ped))
-            elseif playersOptionsArrayIndex == 2 then -- if selected item is "feed"
+            elseif playerOptionsArrayIndex == 2 then -- if selected item is "feed"
                 TriggerEvent('esx_status:set', 'hunger', 1000000)
-            elseif playersOptionsArrayIndex == 3 then -- if selected item is "hydrate"
+            elseif playerOptionsArrayIndex == 3 then -- if selected item is "hydrate"
                 TriggerEvent('esx_status:set', 'thirst', 1000000)
-            elseif playersOptionsArrayIndex == 4 then -- if selected item is "give shield"
+            elseif playerOptionsArrayIndex == 4 then -- if selected item is "give shield"
                 SetPedArmour(ped, 100)
             end 
         end
+    end)
+    RageUI.Checkbox(TranslateCap("main_personnal_godmode"), TranslateCap("main_personnal_godmode_desc"), playerGodmodeCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal.godmode"]}, function()end, function()
+        playerGodmodeCheckbox = true
+        SetEntityInvincible(PlayerPedId(), true)
+        ESX.ShowNotification(TranslateCap("notif_godmode_enabled_self"))
+    end, function()
+        playerGodmodeCheckbox = false
+        SetEntityInvincible(PlayerPedId(), false)
+        ESX.ShowNotification(TranslateCap("notif_godmode_disabled_self"))
     end)
 end

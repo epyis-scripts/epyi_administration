@@ -3,13 +3,6 @@
 isStaffModeEnabled = false
 isMenuOpened = false
 menuTexture = nil
-playersOptionsArray = {
-    Translate("players_actions_heal"),
-    Translate("players_actions_feed"),
-    Translate("players_actions_hydrate"),
-    Translate("players_actions_shield")
-}
-playersOptionsArrayIndex = 1
 
 -- Menu texture initialization
 -- create the menu texture with the config parameters
