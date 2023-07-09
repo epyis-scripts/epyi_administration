@@ -28,6 +28,7 @@ Config.Groups = {
             ["submenu_server.access"]               = true,
             ["submenu_personnal.health_management"] = true,
             ["submenu_personnal.godmode"]           = true,
+            ["submenu_personnal.invisibility"]      = true,
         }
     }
 }
