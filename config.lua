@@ -26,8 +26,7 @@ Config.Groups = {
             ["submenu_players.access"]      = true,
             ["submenu_vehicles.access"]     = true,
             ["submenu_reports.access"]      = true,
-            ["submenu_server.access"]       = true,
-            ["submenu_owner.access"]        = true,
+            ["submenu_server.access"]       = true
         }
     }
 }

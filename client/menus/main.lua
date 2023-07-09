@@ -10,5 +10,4 @@ function main_showContentThisFrame(playerGroup)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_vehicles"), nil, {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_vehicles.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_reports"), nil, {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_reports.access"], function(_, _, _)end)
     RageUI.ButtonWithStyle(TranslateCap("main_menu_access_server"), nil, {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_server.access"], function(_, _, _)end)
-    RageUI.ButtonWithStyle(TranslateCap("main_menu_access_owner"), nil, {RightLabel = "→"}, Config.Groups[playerGroup].Access["submenu_owner.access"], function(_, _, _)end)
 end

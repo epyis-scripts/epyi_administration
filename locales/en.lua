@@ -10,6 +10,5 @@ Locales["en"] = {
     ["main_menu_access_players"] = "Management of ~r~players",
     ["main_menu_access_vehicles"] = "Management of ~r~vehicles",
     ["main_menu_access_reports"] = "Management of ~r~reports",
-    ["main_menu_access_server"] = "Management ot ~r~the server",
-    ["main_menu_access_owner"] = "~r~Owner's menu"
+    ["main_menu_access_server"] = "Management ot ~r~the server"
 }
