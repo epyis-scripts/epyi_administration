@@ -27,8 +27,8 @@ client_scripts {
     "RageUI/menu/Function.lua",
 
     "client/menus_init.lua",
-    "client/menus/main.lua",
-    "client/keys.lua"
+    "client/keys.lua",
+    "client/menus/main.lua"
 }
 
 server_scripts {
