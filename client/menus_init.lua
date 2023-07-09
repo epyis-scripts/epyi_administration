@@ -33,7 +33,7 @@ function openMenu()
                 RageUI.Visible(RMenu:Get("epyi_administration", "main"), true)
                 while isMenuOpened do
                     RageUI.IsVisible(RMenu:Get("epyi_administration", "main"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
-                        main_showContentThisFrame()
+                        main_showContentThisFrame(playerGroup)
                     end)
                     Citizen.Wait(1)
                 end

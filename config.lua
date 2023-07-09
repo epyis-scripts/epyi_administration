@@ -20,8 +20,12 @@ Config.Groups = {
         Priority = 99,
         Prefix = "~r~Admin ~s~",
         Access = {
-            ["personnal.godmod.use"]    = true,
-            ["players.godmod.use"]      = true
+            ["submenu_personnal.access"]    = true,
+            ["submenu_players.access"]      = true,
+            ["submenu_vehicles.access"]     = true,
+            ["submenu_reports.access"]      = true,
+            ["submenu_server.access"]       = true,
+            ["submenu_owner.access"]        = true,
         }
     }
 }
