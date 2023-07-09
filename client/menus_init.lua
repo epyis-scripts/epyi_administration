@@ -33,12 +33,7 @@ function openMenu()
                 RageUI.Visible(RMenu:Get("epyi_administration", "main"), true)
                 while isMenuOpened do
                     RageUI.IsVisible(RMenu:Get("epyi_administration", "main"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
-                        RageUI.ButtonWithStyle("Gestion de mon personnage", nil, {}, true, function(_, _, _)end)
-                        RageUI.ButtonWithStyle("Gestion des joueurs", nil, {}, true, function(_, _, _)end)
-                        RageUI.ButtonWithStyle("Gestion des véhicules", nil, {}, true, function(_, _, _)end)
-                        RageUI.ButtonWithStyle("Gestion des reports", nil, {}, true, function(_, _, _)end)
-                        RageUI.ButtonWithStyle("Gestion du serveur", nil, {}, true, function(_, _, _)end)
-                        RageUI.ButtonWithStyle("~r~Gestion fondateur", nil, {}, true, function(_, _, _)end)
+                        main_showContentThisFrame()
                     end)
                     Citizen.Wait(1)
                 end
