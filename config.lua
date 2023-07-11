@@ -16,7 +16,7 @@ Config.Keys = { Menu = "F10", NoClip = "F3" } -- [table] → The the menu keys
 
 Config.InitialIdentifier = "your-identifier-here" -- [string] → Define an identifier which will by default have the highest permission group
 Config.Groups = {
-	admin = {
+	admin = { -- If you change the admin group identifier, I recommand you to go to ESX Framework configuration and change the admin group too
 		Priority = 99,
 		Label = "Admin",
 		Color = "~r~",
