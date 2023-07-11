@@ -16,19 +16,3 @@ Citizen.CreateThread(function()
 		setGroupPermissions(k)
 	end
 end)
-
-RegisterCommand("check", function(source)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local idenfier = xPlayer.identifier
-    print(idenfier)
-    ExecuteCommand(('remove_principal identifier.%s group.admin'):format(idenfier))
-    ExecuteCommand("remove_ace group.admin epyi_administration.mainmenu_open allow")
-    ExecuteCommand("remove_ace group.admin epyi_administration.mainmenu_open deny")
-    ExecuteCommand("add_ace group.admin epyi_administration.mainmenu_open allow")
-    ExecuteCommand(('add_principal identifier.%s group.admin'):format(idenfier))
-    if IsPlayerAceAllowed(source, "epyi_administration.mainmenu_open") then
-		print("allowed")
-	else
-        print("not allowed")
-    end
-end, false)
