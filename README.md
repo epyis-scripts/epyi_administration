@@ -15,7 +15,7 @@
 2. Extract the downloaded zip
 3. Drag and drop the **epyi_administration** folder into your server
 4. Add this to your server.cfg :
-## 📜 License
+### Configuration to add in the server.cfg
     add_ace resource.epyi_administration command.add_ace allow
     add_ace resource.epyi_administration command.add_principal allow
     add_ace resource.epyi_administration command.remove_principal allow
