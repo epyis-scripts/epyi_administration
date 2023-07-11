@@ -9,7 +9,7 @@ end)
 ---hasPermission → check if player has permission
 ---@return boolean
 ESX.RegisterServerCallback("epyi_administration:hasPermission", function(source, cb, permission)
-	if IsPlayerAceAllowed(source, "admin_menu." .. permission) then
+	if IsPlayerAceAllowed(source, "epyi_administration." .. permission) then
 		cb(true)
 		return
 	end

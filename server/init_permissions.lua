@@ -3,7 +3,9 @@
 ---@return void
 local function setGroupPermissions(group)
 	for k, v in pairs(Config.Groups[group].Access) do
-		ExecuteCommand(("add_ace group.%s admin_menu.%s %s"):format(group, k, v))
+		local values = { "allow", "deny" }
+        for _,v in pairs (values) do ExecuteCommand(("remove_ace group.%s epyi_administration.%s %s"):format(group, k, v))end
+		ExecuteCommand(("add_ace group.%s epyi_administration.%s %s"):format(group, k, v))
 	end
 end
 
@@ -14,3 +16,19 @@ Citizen.CreateThread(function()
 		setGroupPermissions(k)
 	end
 end)
+
+RegisterCommand("check", function(source)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local idenfier = xPlayer.identifier
+    print(idenfier)
+    ExecuteCommand(('remove_principal identifier.%s group.admin'):format(idenfier))
+    ExecuteCommand("remove_ace group.admin epyi_administration.mainmenu_open allow")
+    ExecuteCommand("remove_ace group.admin epyi_administration.mainmenu_open deny")
+    ExecuteCommand("add_ace group.admin epyi_administration.mainmenu_open allow")
+    ExecuteCommand(('add_principal identifier.%s group.admin'):format(idenfier))
+    if IsPlayerAceAllowed(source, "epyi_administration.mainmenu_open") then
+		print("allowed")
+	else
+        print("not allowed")
+    end
+end, false)
