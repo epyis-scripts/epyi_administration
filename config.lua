@@ -14,21 +14,21 @@ Config.MenuStyle = {
 
 Config.Keys = { Menu = "F10", NoClip = "F3" } -- [table] → The the menu keys
 
-Config.InitialIdentifier = "your-identifier-here" -- [string] → Define an identifier which will by default have the highest permission group
 Config.Groups = {
 	admin = { -- If you change the admin group identifier, I recommand you to go to ESX Framework configuration and change the admin group too
 		Priority = 99,
 		Label = "Admin",
 		Color = "~r~",
 		Access = {
-			["submenu_personnal.access"] = true,
-			["submenu_players.access"] = true,
-			["submenu_vehicles.access"] = true,
-			["submenu_reports.access"] = true,
-			["submenu_server.access"] = true,
-			["submenu_personnal.health_management"] = true,
-			["submenu_personnal.godmode"] = true,
-			["submenu_personnal.invisibility"] = true,
+			["mainmenu_open"] = "allow",
+			["submenu_personnal_access"] = "allow",
+			["submenu_players_access"] = "allow",
+			["submenu_vehicles_access"] = "allow",
+			["submenu_reports_access"] = "allow",
+			["submenu_server_access"] = "allow",
+			["submenu_personnal_health_management"] = "allow",
+			["submenu_personnal_godmode"] = "allow",
+			["submenu_personnal_invisibility"] = "allow",
 		},
 	},
 }

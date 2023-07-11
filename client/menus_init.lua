@@ -29,23 +29,26 @@ function openMenu()
         RageUI.CloseAll()
         isMenuOpened = false
     else
-        ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
-            local playerGroup = group
-            if Config.Groups[group] ~= nil then
-                isMenuOpened = true
-                RageUI.Visible(RMenu:Get("epyi_administration", "main"), true)
-                while isMenuOpened do
-                    RageUI.IsVisible(RMenu:Get("epyi_administration", "main"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
-                        main_showContentThisFrame(playerGroup)
-                    end)
-                    RageUI.IsVisible(RMenu:Get("epyi_administration", "main_personnal"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
-                        main_personnal_showContentThisFrame(playerGroup)
-                    end)
-                    Citizen.Wait(1)
-                end
-            else
+        ESX.TriggerServerCallback("epyi_administration:hasPermission", function(result)
+            if not result then
                 ESX.ShowNotification(TranslateCap("cannot_open_menu"))
+                return
             end
-        end, GetPlayerServerId(PlayerId()))
+            local playerGroup = nil
+            ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
+                playerGroup = group
+            end, GetPlayerServerId(PlayerId()))
+            isMenuOpened = true
+            RageUI.Visible(RMenu:Get("epyi_administration", "main"), true)
+            while isMenuOpened do
+                RageUI.IsVisible(RMenu:Get("epyi_administration", "main"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
+                    main_showContentThisFrame(playerGroup)
+                end)
+                RageUI.IsVisible(RMenu:Get("epyi_administration", "main_personnal"), true, Config.MenuStyle.BannerStyle.UseGlareEffect, Config.MenuStyle.BannerStyle.UseInstructionalButtons, function()
+                    main_personnal_showContentThisFrame(playerGroup)
+                end)
+                Citizen.Wait(1)
+            end
+        end, "mainmenu_open")
     end
 end
