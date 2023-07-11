@@ -17,6 +17,7 @@
 4. Add this to your server.cfg :
 ### Configuration to add in the server.cfg
     add_ace resource.epyi_administration command.add_ace allow
+    add_ace resource.epyi_administration command.remove_ace allow
     add_ace resource.epyi_administration command.add_principal allow
     add_ace resource.epyi_administration command.remove_principal allow
 
