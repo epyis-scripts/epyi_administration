@@ -32,6 +32,7 @@ function main_personnal_showContentThisFrame(playerGroup)
 				if playerOptionsArrayIndex == 1 then -- if selected item is "heal"
 					if not IsEntityDead(ped) then
 						SetEntityHealth(ped, GetEntityMaxHealth(ped))
+                        ClearPedBloodDamage(ped)
 						ESX.ShowNotification(TranslateCap("notif_health_management_heal_self"))
 					else
 						revivePed(ped)
