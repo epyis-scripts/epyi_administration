@@ -3,9 +3,10 @@ _threads = {
 	godmode = {},
 	invisibility = {},
 	fastwalk = {},
-    fastswim = {},
-    superjump = {},
-    stayinvehicle = {}
+	fastswim = {},
+	superjump = {},
+	stayinvehicle = {},
+	seethrough = {},
 }
 
 -- Thread initialization
@@ -99,22 +100,39 @@ _threads.stayinvehicle.enable = function()
 	Citizen.CreateThread(function()
 		_threads.stayinvehicle.isActivated = true
 		while _threads.stayinvehicle.isActivated do
-            local player = PlayerPedId()
+			local player = PlayerPedId()
 			SetPedCanRagdoll(player, false)
-            SetPedCanRagdollFromPlayerImpact(player, false)
-            SetPedCanBeKnockedOffVehicle(player, 1)
-            SetPedRagdollOnCollision(player, false)
-            SetPedCanBeDraggedOut(player, false)
+			SetPedCanRagdollFromPlayerImpact(player, false)
+			SetPedCanBeKnockedOffVehicle(player, 1)
+			SetPedRagdollOnCollision(player, false)
+			SetPedCanBeDraggedOut(player, false)
 			Citizen.Wait(1000)
 		end
 	end)
 end
 _threads.stayinvehicle.disable = function()
 	_threads.stayinvehicle.isActivated = false
-    local player = PlayerPedId()
-    SetPedCanRagdoll(player, true)
-    SetPedCanRagdollFromPlayerImpact(player, true)
-    SetPedCanBeKnockedOffVehicle(player, 0)
-    SetPedRagdollOnCollision(player, true)
-    SetPedCanBeDraggedOut(player, true)
+	local player = PlayerPedId()
+	SetPedCanRagdoll(player, true)
+	SetPedCanRagdollFromPlayerImpact(player, true)
+	SetPedCanBeKnockedOffVehicle(player, 0)
+	SetPedRagdollOnCollision(player, true)
+	SetPedCanBeDraggedOut(player, true)
+end
+
+-- Thread initialization
+-- Thread → See through
+_threads.seethrough.isActivated = false
+_threads.seethrough.enable = function()
+	Citizen.CreateThread(function()
+		_threads.seethrough.isActivated = true
+		while _threads.seethrough.isActivated do
+			SetSeethrough(true)
+			Citizen.Wait(1000)
+		end
+	end)
+end
+_threads.seethrough.disable = function()
+	_threads.seethrough.isActivated = false
+	SetSeethrough(false)
 end
