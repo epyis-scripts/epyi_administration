@@ -12,6 +12,7 @@ function main_showContentThisFrame(playerGroup)
 		end,
 		function()
 			isStaffModeEnabled = false
+			stopAllThreads()
 		end
 	)
 	if not isStaffModeEnabled then

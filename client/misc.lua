@@ -25,3 +25,11 @@ function revivePed(ped)
 	ClearExtraTimecycleModifier()
 	DoScreenFadeIn(800)
 end
+
+---stopAllThreads → Set all threads to disable mode
+---@return void
+function stopAllThreads()
+	for k, _ in pairs(_threads) do
+		_threads[k].disable()
+	end
+end
