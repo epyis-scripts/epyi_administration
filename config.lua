@@ -29,6 +29,7 @@ Config.Groups = {
 			["submenu_personnal_health_management"] = true,
 			["submenu_personnal_godmode"] = true,
 			["submenu_personnal_invisibility"] = true,
+			["submenu_personnal_fastwalk"] = true,
 		},
 	}
 }

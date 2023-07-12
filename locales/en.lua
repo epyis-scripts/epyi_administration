@@ -36,6 +36,8 @@ Locales["en"] = {
     ["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
     ["main_personnal_invisibility"] = "Enable/Disable your invisibility",
     ["main_personnal_invisibility_desc"] = "Allows you to be completely invisible to other players",
+    ["main_personnal_fastwalk"] = "Enable/Disable your fastwalk mode",
+    ["main_personnal_fastwalk_desc"] = "Walk and run at rocket speed",
 
     -- Notifications
     ["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -45,5 +47,7 @@ Locales["en"] = {
     ["notif_godmode_enabled_self"] = "Your god mode has been ~g~enabled",
     ["notif_godmode_disabled_self"] = "Your god mode has been ~r~disabled",
     ["notif_invisibility_enabled_self"] = "Your invisibility has been ~g~enabled",
-    ["notif_invisibility_disabled_self"] = "Your invisibility has been ~r~disabled"
+    ["notif_invisibility_disabled_self"] = "Your invisibility has been ~r~disabled",
+    ["notif_fastwalk_enabled_self"] = "Your fastwalk mode has been ~g~enabled",
+    ["notif_fastwalk_disabled_self"] = "Your fastwalk mode has been ~r~disabled"
 }

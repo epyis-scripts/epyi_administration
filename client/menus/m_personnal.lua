@@ -7,6 +7,7 @@ local playerOptionsArray = {
 local playerOptionsArrayIndex = 1
 local playerGodmodeCheckbox = false
 local playerInvisibilityCheckbox = false
+local playerFastwalkCheckbox = false
 
 ---main_personnal_showContentThisFrame → Function to show the main/personnal menu content
 ---@return void
@@ -60,5 +61,20 @@ function main_personnal_showContentThisFrame(playerGroup)
         _threads.invisibility.disable()
         playerInvisibilityCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_invisibility_disabled_self"))
+    end)
+    RageUI.Checkbox(TranslateCap("main_personnal_fastwalk"), TranslateCap("main_personnal_fastwalk_desc"), playerFastwalkCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"]}, function()end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"] then
+            return
+        end
+        _threads.fastwalk.enable()
+        playerFastwalkCheckbox = true
+        ESX.ShowNotification(TranslateCap("notif_fastwalk_enabled_self"))
+    end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"] then
+            return
+        end
+        _threads.fastwalk.disable()
+        playerFastwalkCheckbox = false
+        ESX.ShowNotification(TranslateCap("notif_fastwalk_disabled_self"))
     end)
 end
