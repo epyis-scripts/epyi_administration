@@ -30,20 +30,25 @@ function main_personnal_showContentThisFrame(playerGroup)
 			if Selected then
 				local ped = PlayerPedId()
 				if playerOptionsArrayIndex == 1 then -- if selected item is "heal"
-					SetEntityHealth(ped, GetEntityMaxHealth(ped))
-					ESX.ShowNotification(TranslateCap("notif_health_management_heal_self"))
+					if not IsEntityDead(ped) then
+						SetEntityHealth(ped, GetEntityMaxHealth(ped))
+						ESX.ShowNotification(TranslateCap("notif_health_management_heal_self"))
+					else
+						revivePed(ped)
+						ESX.ShowNotification(TranslateCap("notif_health_management_heal_revive_self"))
+					end
 				elseif playerOptionsArrayIndex == 2 then -- if selected item is "feed"
 					TriggerEvent("esx_status:set", "hunger", 1000000)
-					ESX.ShowNotification(TranslateCap("notif_health_management_heal_feed"))
+					ESX.ShowNotification(TranslateCap("notif_health_management_heal_feed_self"))
 				elseif playerOptionsArrayIndex == 3 then -- if selected item is "hydrate"
 					TriggerEvent("esx_status:set", "thirst", 1000000)
-					ESX.ShowNotification(TranslateCap("notif_health_management_heal_hydrate"))
+					ESX.ShowNotification(TranslateCap("notif_health_management_heal_hydrate_self"))
 				elseif playerOptionsArrayIndex == 4 then -- if selected item is "give shield"
 					SetPedArmour(ped, 100)
-					ESX.ShowNotification(TranslateCap("notif_health_management_heal_shield"))
+					ESX.ShowNotification(TranslateCap("notif_health_management_heal_shield_self"))
 				elseif playerOptionsArrayIndex == 5 then -- if selected item is "suicide"
 					SetEntityHealth(ped, 0)
-					ESX.ShowNotification(TranslateCap("notif_health_management_heal_suicide"))
+					ESX.ShowNotification(TranslateCap("notif_health_management_heal_suicide_self"))
 				end
 			end
 		end

@@ -28,6 +28,7 @@ client_scripts({
 
 	"client/menus_init.lua",
 	"client/keys.lua",
+	"client/misc.lua",
 	"client/threads.lua",
 	"client/menus/main.lua",
 	"client/menus/m_personnal.lua",

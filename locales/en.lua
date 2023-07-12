@@ -50,10 +50,11 @@ Locales["en"] = {
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
-	["notif_health_management_heal_feed"] = "You have been ~g~feeded",
-	["notif_health_management_heal_hydrate"] = "You have been ~g~hydrated",
-	["notif_health_management_heal_shield"] = "You get some ~g~protection",
-	["notif_health_management_heal_suicide"] = "You committed ~r~suicide",
+	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",
+	["notif_health_management_heal_hydrate_self"] = "You have been ~g~hydrated",
+	["notif_health_management_heal_shield_self"] = "You get some ~g~protection",
+	["notif_health_management_heal_suicide_self"] = "You committed ~r~suicide",
+	["notif_health_management_heal_revive_self"] = "You ~g~resurrected",
 	["notif_godmode_enabled_self"] = "God mode has been ~g~enabled",
 	["notif_godmode_disabled_self"] = "God mode has been ~r~disabled",
 	["notif_invisibility_enabled_self"] = "Invisibility has been ~g~enabled",
