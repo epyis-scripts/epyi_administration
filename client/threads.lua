@@ -7,6 +7,7 @@ _threads = {
 	superjump = {},
 	stayinvehicle = {},
 	seethrough = {},
+	shownames = { showed = {} },
 }
 
 -- Thread initialization
@@ -135,4 +136,45 @@ end
 _threads.seethrough.disable = function()
 	_threads.seethrough.isActivated = false
 	SetSeethrough(false)
+end
+
+-- Thread initialization
+-- Thread → Show names
+_threads.shownames.isActivated = false
+_threads.shownames.enable = function()
+	Citizen.CreateThread(function()
+		_threads.shownames.isActivated = true
+		while _threads.shownames.isActivated do
+			for k, v in pairs(ESX.Game.GetPlayers()) do
+				local targetPed = GetPlayerPed(v)
+				local selfPed = PlayerPedId()
+				local targetPedCoords = GetEntityCoords(targetPed)
+				local selfPedCoords = GetEntityCoords(selfPed)
+				if GetDistanceBetweenCoords(selfPedCoords, targetPedCoords, true) < 400.0 then
+					_threads.shownames.showed[v] = CreateFakeMpGamerTag(
+						targetPed,
+						("[%s] %s"):format(GetPlayerServerId(v), string.upper(GetPlayerName(v))),
+						false,
+						false,
+						"",
+						0
+					)
+					SetMpGamerTagVisibility(_threads.shownames.showed[v], 2, 1)
+					SetMpGamerTagAlpha(_threads.shownames.showed[v], 2, 255)
+					SetMpGamerTagHealthBarColor(_threads.shownames.showed[v], 129)
+				else
+					RemoveMpGamerTag(_threads.shownames.showed[v])
+					_threads.shownames.showed[v] = nil
+				end
+			end
+			Citizen.Wait(1)
+		end
+	end)
+end
+_threads.shownames.disable = function()
+	_threads.shownames.isActivated = false
+	for _, v in pairs(_threads.shownames.showed) do
+		RemoveMpGamerTag(v)
+		_threads.shownames.showed = {}
+	end
 end

@@ -32,7 +32,7 @@ function main_personnal_showContentThisFrame(playerGroup)
 				if playerOptionsArrayIndex == 1 then -- if selected item is "heal"
 					if not IsEntityDead(ped) then
 						SetEntityHealth(ped, GetEntityMaxHealth(ped))
-                        ClearPedBloodDamage(ped)
+						ClearPedBloodDamage(ped)
 						ESX.ShowNotification(TranslateCap("notif_health_management_heal_self"))
 					else
 						revivePed(ped)
@@ -199,6 +199,27 @@ function main_personnal_showContentThisFrame(playerGroup)
 			end
 			_threads.seethrough.disable()
 			ESX.ShowNotification(TranslateCap("notif_seethrough_disabled_self"))
+		end
+	)
+	RageUI.Checkbox(
+		TranslateCap("main_personnal_shownames"),
+		TranslateCap("main_personnal_shownames_desc"),
+		_threads.shownames.isActivated,
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_personnal_shownames"] },
+		function() end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_personnal_shownames"] then
+				return
+			end
+			_threads.shownames.enable()
+			ESX.ShowNotification(TranslateCap("notif_shownames_enabled_self"))
+		end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_personnal_shownames"] then
+				return
+			end
+			_threads.shownames.disable()
+			ESX.ShowNotification(TranslateCap("notif_shownames_disabled_self"))
 		end
 	)
 end

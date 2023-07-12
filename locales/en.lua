@@ -47,6 +47,8 @@ Locales["en"] = {
 	["main_personnal_stayinvehicle_desc"] = "Allows you to never be ejected from your vehicle",
 	["main_personnal_seethrough"] = "Enable/Disable thermal vision",
 	["main_personnal_seethrough_desc"] = "Allows you to see the heat produced by your surroundings",
+	["main_personnal_shownames"] = "Enable/Disable player names display",
+	["main_personnal_shownames_desc"] = "Allows you to see player names when you are close to them",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -69,4 +71,6 @@ Locales["en"] = {
 	["notif_stayinvehicle_disabled_self"] = "Stay in vehicle has been ~r~disabled",
 	["notif_seethrough_enabled_self"] = "Thermal vision has been ~g~enabled",
 	["notif_seethrough_disabled_self"] = "Thermal vision has been ~r~disabled",
+	["notif_shownames_enabled_self"] = "Display of player names has been ~g~enabled",
+	["notif_shownames_disabled_self"] = "Display of player names has been ~r~disabled",
 }
