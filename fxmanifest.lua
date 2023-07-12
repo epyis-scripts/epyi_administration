@@ -32,6 +32,7 @@ client_scripts({
 	"client/threads.lua",
 	"client/menus/main.lua",
 	"client/menus/m_personnal.lua",
+	"client/menus/m_vehicles.lua",
 })
 
 server_scripts({
