@@ -51,6 +51,14 @@ Locales["en"] = {
 	["main_personnal_shownames"] = "Enable/Disable player names display",
 	["main_personnal_shownames_desc"] = "Allows you to see player names when you are close to them",
 
+	-- Elements → Menu menu / vehicles
+	["main_vehicles_current"] = "Current vehicle management",
+	["main_vehicles_current_desc"] = "Allows you to manage the vehicle you are currently in",
+	["main_vehicles_favorites"] = "Managing favorite vehicles",
+	["main_vehicles_favorites_desc"] = "Allows you to add vehicles to favorites so you never lose them",
+	["main_vehicles_spawn"] = "Spawn a vehicle",
+	["main_vehicles_spawn_desc"] = "Spawn a vehicle from the list of available vehicles",
+
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
 	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",

@@ -20,12 +20,11 @@ Config.Groups = {
 		Label = "Admin",
 		Color = "~r~",
 		Access = {
+			-- Main menu
 			["mainmenu_open"] = true,
+
+			-- Submenu → Personnal
 			["submenu_personnal_access"] = true,
-			["submenu_players_access"] = true,
-			["submenu_vehicles_access"] = true,
-			["submenu_reports_access"] = true,
-			["submenu_server_access"] = true,
 			["submenu_personnal_health_management"] = true,
 			["submenu_personnal_godmode"] = true,
 			["submenu_personnal_invisibility"] = true,
@@ -35,6 +34,21 @@ Config.Groups = {
 			["submenu_personnal_stayinvehicle"] = true,
 			["submenu_personnal_seethrough"] = true,
 			["submenu_personnal_shownames"] = true,
+
+			-- Submenu → Players
+			["submenu_players_access"] = true,
+
+			-- Submenu → Vehicles
+			["submenu_vehicles_access"] = true,
+			["submenu_vehicles_current_access"] = true,
+			["submenu_vehicles_favorites_access"] = true,
+			["submenu_vehicles_spawn_access"] = true,
+
+			-- Submenu → Reports
+			["submenu_reports_access"] = true,
+
+			-- Submenu → Server
+			["submenu_server_access"] = true,
 		},
 	},
 }
