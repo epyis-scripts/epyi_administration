@@ -12,6 +12,8 @@ Locales["en"] = {
 
 	-- Global
 	["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
+	["player_not_in_vehicle"] = "The play isn't in a vehicle",
+	["self_not_in_vehicle"] = "You're not in a vehicle",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
 	["players_actions_hydrate"] = "Hydrate",
