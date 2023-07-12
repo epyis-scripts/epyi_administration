@@ -40,7 +40,7 @@ function main_showContentThisFrame(playerGroup)
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_access"],
 		function(_, _, _) end,
-        RMenu:Get("epyi_administration", "main_vehicles")
+		RMenu:Get("epyi_administration", "main_vehicles")
 	)
 	RageUI.ButtonWithStyle(
 		TranslateCap("main_menu_access_reports"),
