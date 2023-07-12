@@ -33,7 +33,6 @@ function main_personnal_showContentThisFrame(playerGroup)
     end)
     RageUI.Checkbox(TranslateCap("main_personnal_godmode"), TranslateCap("main_personnal_godmode_desc"), playerGodmodeCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_godmode"]}, function()end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_godmode"] then
-            ESX.ShowNotification(TranslateCap("insuficient_permissions"))
             return
         end
         SetEntityInvincible(PlayerPedId(), true)
@@ -41,7 +40,6 @@ function main_personnal_showContentThisFrame(playerGroup)
         ESX.ShowNotification(TranslateCap("notif_godmode_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_godmode"] then
-            ESX.ShowNotification(TranslateCap("insuficient_permissions"))
             return
         end
         SetEntityInvincible(PlayerPedId(), false)
@@ -50,7 +48,6 @@ function main_personnal_showContentThisFrame(playerGroup)
     end)
     RageUI.Checkbox(TranslateCap("main_personnal_invisibility"), TranslateCap("main_personnal_invisibility_desc"), playerInvisibilityCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_invisibility"]}, function()end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
-            ESX.ShowNotification(TranslateCap("insuficient_permissions"))
             return
         end
         SetEntityVisible(PlayerPedId(), false, 0)
@@ -58,7 +55,6 @@ function main_personnal_showContentThisFrame(playerGroup)
         ESX.ShowNotification(TranslateCap("notif_invisibility_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
-            ESX.ShowNotification(TranslateCap("insuficient_permissions"))
             return
         end
         SetEntityVisible(PlayerPedId(), true, 0) 

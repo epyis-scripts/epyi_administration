@@ -26,8 +26,8 @@ Config.Groups = {
 			["submenu_vehicles_access"] = true,
 			["submenu_reports_access"] = true,
 			["submenu_server_access"] = true,
-			["submenu_personnal_health_management"] = true,
-			["submenu_personnal_godmode"] = true,
+			["submenu_personnal_health_management"] = false,
+			["submenu_personnal_godmode"] = false,
 			["submenu_personnal_invisibility"] = true,
 		},
 	}
