@@ -36,10 +36,14 @@ Locales["en"] = {
     ["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
     ["main_personnal_invisibility"] = "Enable/Disable your invisibility",
     ["main_personnal_invisibility_desc"] = "Allows you to be completely invisible to other players",
-    ["main_personnal_fastwalk"] = "Enable/Disable your fastwalk mode",
+    ["main_personnal_fastwalk"] = "Enable/Disable the fastwalk mode",
     ["main_personnal_fastwalk_desc"] = "Walk and run at rocket speed",
-    ["main_personnal_fastswim"] = "Enable/Disable your fastswim mode",
+    ["main_personnal_fastswim"] = "Enable/Disable the fastswim mode",
     ["main_personnal_fastswim_desc"] = "Lets you swim as fast as nemo",
+    ["main_personnal_superjump"] = "Enable/Disable the superjump mode",
+    ["main_personnal_superjump_desc"] = "Allows you to jump very high to be able to go to the moon",
+    ["main_personnal_stayinvehicle"] = "Enable/Disable stay in vehicle mode",
+    ["main_personnal_stayinvehicle_desc"] = "Allows you to never be ejected from your vehicle",
 
     -- Notifications
     ["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -53,5 +57,9 @@ Locales["en"] = {
     ["notif_fastwalk_enabled_self"] = "Your fastwalk mode has been ~g~enabled",
     ["notif_fastwalk_disabled_self"] = "Your fastwalk mode has been ~r~disabled",
     ["notif_fastswim_enabled_self"] = "Your fastswim mode has been ~g~enabled",
-    ["notif_fastswim_disabled_self"] = "Your fastswim mode has been ~r~disabled"
+    ["notif_fastswim_disabled_self"] = "Your fastswim mode has been ~r~disabled",
+    ["notif_superjump_enabled_self"] = "Your superjump mode has been ~g~enabled",
+    ["notif_superjump_disabled_self"] = "Your superjump mode has been ~r~disabled",
+    ["notif_stayinvehicle_enabled_self"] = "Stay in vehicle has been ~g~enabled",
+    ["notif_stayinvehicle_disabled_self"] = "Stay in vehicle has been ~r~disabled"
 }

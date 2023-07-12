@@ -81,4 +81,30 @@ function main_personnal_showContentThisFrame(playerGroup)
         _threads.fastswim.disable()
         ESX.ShowNotification(TranslateCap("notif_fastswim_disabled_self"))
     end)
+    RageUI.Checkbox(TranslateCap("main_personnal_superjump"), TranslateCap("main_personnal_superjump_desc"), _threads.superjump.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_superjump"]}, function()end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_superjump"] then
+            return
+        end
+        _threads.superjump.enable()
+        ESX.ShowNotification(TranslateCap("notif_superjump_enabled_self"))
+    end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_superjump"] then
+            return
+        end
+        _threads.superjump.disable()
+        ESX.ShowNotification(TranslateCap("notif_superjump_disabled_self"))
+    end)
+    RageUI.Checkbox(TranslateCap("main_personnal_stayinvehicle"), TranslateCap("main_personnal_stayinvehicle_desc"), _threads.stayinvehicle.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_stayinvehicle"]}, function()end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_stayinvehicle"] then
+            return
+        end
+        _threads.stayinvehicle.enable()
+        ESX.ShowNotification(TranslateCap("notif_stayinvehicle_enabled_self"))
+    end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_stayinvehicle"] then
+            return
+        end
+        _threads.stayinvehicle.disable()
+        ESX.ShowNotification(TranslateCap("notif_stayinvehicle_disabled_self"))
+    end)
 end

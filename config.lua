@@ -31,6 +31,8 @@ Config.Groups = {
 			["submenu_personnal_invisibility"] = true,
 			["submenu_personnal_fastwalk"] = true,
 			["submenu_personnal_fastswim"] = true,
+			["submenu_personnal_superjump"] = true,
+			["submenu_personnal_stayinvehicle"] = true,
 		},
 	}
 }

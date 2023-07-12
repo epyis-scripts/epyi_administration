@@ -3,7 +3,9 @@ _threads = {
 	godmode = {},
 	invisibility = {},
 	fastwalk = {},
-    fastswim = {}
+    fastswim = {},
+    superjump = {},
+    stayinvehicle = {}
 }
 
 -- Thread initialization
@@ -72,4 +74,47 @@ end
 _threads.fastswim.disable = function()
 	_threads.fastswim.isActivated = false
 	SetSwimMultiplierForPlayer(PlayerId(), 0.0)
+end
+
+-- Thread initialization
+-- Thread → Super jump
+_threads.superjump.isActivated = false
+_threads.superjump.enable = function()
+	Citizen.CreateThread(function()
+		_threads.superjump.isActivated = true
+		while _threads.superjump.isActivated do
+			SetSuperJumpThisFrame(PlayerId())
+			Citizen.Wait(1)
+		end
+	end)
+end
+_threads.superjump.disable = function()
+	_threads.superjump.isActivated = false
+end
+
+-- Thread initialization
+-- Thread → Stay in vehicle
+_threads.stayinvehicle.isActivated = false
+_threads.stayinvehicle.enable = function()
+	Citizen.CreateThread(function()
+		_threads.stayinvehicle.isActivated = true
+		while _threads.stayinvehicle.isActivated do
+            local player = PlayerPedId()
+			SetPedCanRagdoll(player, false)
+            SetPedCanRagdollFromPlayerImpact(player, false)
+            SetPedCanBeKnockedOffVehicle(player, 1)
+            SetPedRagdollOnCollision(player, false)
+            SetPedCanBeDraggedOut(player, false)
+			Citizen.Wait(1000)
+		end
+	end)
+end
+_threads.stayinvehicle.disable = function()
+	_threads.stayinvehicle.isActivated = false
+    local player = PlayerPedId()
+    SetPedCanRagdoll(player, true)
+    SetPedCanRagdollFromPlayerImpact(player, true)
+    SetPedCanBeKnockedOffVehicle(player, 0)
+    SetPedRagdollOnCollision(player, true)
+    SetPedCanBeDraggedOut(player, true)
 end
