@@ -32,7 +32,7 @@ Locales["en"] = {
     -- Elements → Menu menu / personnal
     ["main_personnal_health_management"] = "Managing your health",
     ["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
-    ["main_personnal_godmode"] = "Enable/Disable your invincibility",
+    ["main_personnal_godmode"] = "Enable/Disable your god mode",
     ["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
     ["main_personnal_invisibility"] = "Enable/Disable your invisibility",
     ["main_personnal_invisibility_desc"] = "Allows you to be completely invisible to other players",

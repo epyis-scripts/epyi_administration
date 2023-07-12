@@ -35,14 +35,14 @@ function main_personnal_showContentThisFrame(playerGroup)
         if not Config.Groups[playerGroup].Access["submenu_personnal_godmode"] then
             return
         end
-        SetEntityInvincible(PlayerPedId(), true)
         playerGodmodeCheckbox = true
+        _threads.godmode.enable()
         ESX.ShowNotification(TranslateCap("notif_godmode_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_godmode"] then
             return
         end
-        SetEntityInvincible(PlayerPedId(), false)
+        _threads.godmode.disable()
         playerGodmodeCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_godmode_disabled_self"))
     end)
@@ -50,14 +50,14 @@ function main_personnal_showContentThisFrame(playerGroup)
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
             return
         end
-        SetEntityVisible(PlayerPedId(), false, 0)
+        _threads.invisibility.enable()
         playerInvisibilityCheckbox = true
         ESX.ShowNotification(TranslateCap("notif_invisibility_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
             return
         end
-        SetEntityVisible(PlayerPedId(), true, 0) 
+        _threads.invisibility.disable()
         playerInvisibilityCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_invisibility_disabled_self"))
     end)
