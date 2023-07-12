@@ -4,6 +4,7 @@ Locales["en"] = {
 	["main_subtitle"] = "This is the ~r~administration~s~ menu",
 	["main_personnal_subtitle"] = "Management of ~r~my character",
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
+	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
 
 	-- Keys
 	["keys_menu_description"] = "~r~Open the administration menu",
