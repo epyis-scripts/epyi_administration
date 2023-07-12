@@ -14,6 +14,7 @@ Locales["en"] = {
 	["players_actions_feed"] = "Feed",
 	["players_actions_hydrate"] = "Hydrate",
 	["players_actions_shield"] = "Give shield",
+	["players_actions_suicide"] = "Suicide",
 
 	-- Elements → Main menu
 	["main_menu_staffmode"] = "~r~Enable/Disable ~s~the staff mode",
@@ -52,6 +53,7 @@ Locales["en"] = {
 	["notif_health_management_heal_feed"] = "You have been ~g~feeded",
 	["notif_health_management_heal_hydrate"] = "You have been ~g~hydrated",
 	["notif_health_management_heal_shield"] = "You get some ~g~protection",
+	["notif_health_management_heal_suicide"] = "You committed ~r~suicide",
 	["notif_godmode_enabled_self"] = "God mode has been ~g~enabled",
 	["notif_godmode_disabled_self"] = "God mode has been ~r~disabled",
 	["notif_invisibility_enabled_self"] = "Invisibility has been ~g~enabled",

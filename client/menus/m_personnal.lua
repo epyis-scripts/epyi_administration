@@ -3,6 +3,7 @@ local playerOptionsArray = {
 	Translate("players_actions_feed"),
 	Translate("players_actions_hydrate"),
 	Translate("players_actions_shield"),
+	Translate("players_actions_suicide"),
 }
 local playerOptionsArrayIndex = 1
 
@@ -40,6 +41,9 @@ function main_personnal_showContentThisFrame(playerGroup)
 				elseif playerOptionsArrayIndex == 4 then -- if selected item is "give shield"
 					SetPedArmour(ped, 100)
 					ESX.ShowNotification(TranslateCap("notif_health_management_heal_shield"))
+				elseif playerOptionsArrayIndex == 5 then -- if selected item is "suicide"
+					SetEntityHealth(ped, 0)
+					ESX.ShowNotification(TranslateCap("notif_health_management_heal_suicide"))
 				end
 			end
 		end
