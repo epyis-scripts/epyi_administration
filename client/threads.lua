@@ -3,6 +3,7 @@ _threads = {
 	godmode = {},
 	invisibility = {},
 	fastwalk = {},
+    fastswim = {}
 }
 
 -- Thread initialization
@@ -54,4 +55,21 @@ end
 _threads.fastwalk.disable = function()
 	_threads.fastwalk.isActivated = false
 	SetPedMoveRateOverride(PlayerPedId(), 0.0)
+end
+
+-- Thread initialization
+-- Thread → Fast swim
+_threads.fastswim.isActivated = false
+_threads.fastswim.enable = function()
+	Citizen.CreateThread(function()
+		_threads.fastswim.isActivated = true
+		while _threads.fastswim.isActivated do
+			SetSwimMultiplierForPlayer(PlayerId(), 1.49)
+			Citizen.Wait(1000)
+		end
+	end)
+end
+_threads.fastswim.disable = function()
+	_threads.fastswim.isActivated = false
+	SetSwimMultiplierForPlayer(PlayerId(), 0.0)
 end

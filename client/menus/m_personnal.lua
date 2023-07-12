@@ -68,4 +68,17 @@ function main_personnal_showContentThisFrame(playerGroup)
         _threads.fastwalk.disable()
         ESX.ShowNotification(TranslateCap("notif_fastwalk_disabled_self"))
     end)
+    RageUI.Checkbox(TranslateCap("main_personnal_fastswim"), TranslateCap("main_personnal_fastswim_desc"), _threads.fastswim.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_fastswim"]}, function()end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_fastswim"] then
+            return
+        end
+        _threads.fastswim.enable()
+        ESX.ShowNotification(TranslateCap("notif_fastswim_enabled_self"))
+    end, function()
+        if not Config.Groups[playerGroup].Access["submenu_personnal_fastswim"] then
+            return
+        end
+        _threads.fastswim.disable()
+        ESX.ShowNotification(TranslateCap("notif_fastswim_disabled_self"))
+    end)
 end

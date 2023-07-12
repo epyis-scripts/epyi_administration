@@ -38,6 +38,8 @@ Locales["en"] = {
     ["main_personnal_invisibility_desc"] = "Allows you to be completely invisible to other players",
     ["main_personnal_fastwalk"] = "Enable/Disable your fastwalk mode",
     ["main_personnal_fastwalk_desc"] = "Walk and run at rocket speed",
+    ["main_personnal_fastswim"] = "Enable/Disable your fastswim mode",
+    ["main_personnal_fastswim_desc"] = "Lets you swim as fast as nemo",
 
     -- Notifications
     ["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -49,5 +51,7 @@ Locales["en"] = {
     ["notif_invisibility_enabled_self"] = "Your invisibility has been ~g~enabled",
     ["notif_invisibility_disabled_self"] = "Your invisibility has been ~r~disabled",
     ["notif_fastwalk_enabled_self"] = "Your fastwalk mode has been ~g~enabled",
-    ["notif_fastwalk_disabled_self"] = "Your fastwalk mode has been ~r~disabled"
+    ["notif_fastwalk_disabled_self"] = "Your fastwalk mode has been ~r~disabled",
+    ["notif_fastswim_enabled_self"] = "Your fastswim mode has been ~g~enabled",
+    ["notif_fastswim_disabled_self"] = "Your fastswim mode has been ~r~disabled"
 }
