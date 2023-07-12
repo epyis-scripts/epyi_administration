@@ -29,15 +29,13 @@ function openMenu()
         RageUI.CloseAll()
         isMenuOpened = false
     else
-        ESX.TriggerServerCallback("epyi_administration:hasPermission", function(result)
-            if not result then
-                ESX.ShowNotification(TranslateCap("cannot_open_menu"))
+        local playerGroup = nil
+        ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
+            playerGroup = group
+            if not Config.Groups[playerGroup] or not Config.Groups[playerGroup].Access["mainmenu_open"] then
+                ESX.ShowNotification(TranslateCap("insuficient_permissions"))
                 return
             end
-            local playerGroup = nil
-            ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
-                playerGroup = group
-            end, GetPlayerServerId(PlayerId()))
             isMenuOpened = true
             RageUI.Visible(RMenu:Get("epyi_administration", "main"), true)
             while isMenuOpened do
@@ -49,6 +47,6 @@ function openMenu()
                 end)
                 Citizen.Wait(1)
             end
-        end, "mainmenu_open")
+        end, GetPlayerServerId(PlayerId()))
     end
 end

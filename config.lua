@@ -20,16 +20,16 @@ Config.Groups = {
 		Label = "Admin",
 		Color = "~r~",
 		Access = {
-			["mainmenu_open"] = "allow",
-			["submenu_personnal_access"] = "allow",
-			["submenu_players_access"] = "allow",
-			["submenu_vehicles_access"] = "allow",
-			["submenu_reports_access"] = "allow",
-			["submenu_server_access"] = "allow",
-			["submenu_personnal_health_management"] = "allow",
-			["submenu_personnal_godmode"] = "allow",
-			["submenu_personnal_invisibility"] = "allow",
+			["mainmenu_open"] = true,
+			["submenu_personnal_access"] = true,
+			["submenu_players_access"] = true,
+			["submenu_vehicles_access"] = true,
+			["submenu_reports_access"] = true,
+			["submenu_server_access"] = true,
+			["submenu_personnal_health_management"] = true,
+			["submenu_personnal_godmode"] = true,
+			["submenu_personnal_invisibility"] = true,
 		},
-	},
+	}
 }
 

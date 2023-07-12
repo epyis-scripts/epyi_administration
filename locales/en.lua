@@ -9,7 +9,7 @@ Locales["en"] = {
     ["keys_menu_noclip"] = "~r~Use the noclip",
 
     -- Global
-    ["cannot_open_menu"] = "You can't open the admin menu because you are not a staff member",
+    ["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
     ["players_actions_heal"] = "Heal",
     ["players_actions_feed"] = "Feed",
     ["players_actions_hydrate"] = "Hydrate",

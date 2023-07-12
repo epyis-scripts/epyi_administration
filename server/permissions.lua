@@ -5,13 +5,3 @@ ESX.RegisterServerCallback("epyi_administration:getPlayerGroup", function(source
 	local group = xTarget.getGroup()
 	cb(group)
 end)
-
----hasPermission → check if player has permission
----@return boolean
-ESX.RegisterServerCallback("epyi_administration:hasPermission", function(source, cb, permission)
-	if IsPlayerAceAllowed(source, "epyi_administration." .. permission) then
-		cb(true)
-		return
-	end
-	cb(false)
-end)
