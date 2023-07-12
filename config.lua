@@ -31,6 +31,22 @@ Config.Groups = {
 			["submenu_personnal_invisibility"] = true,
 			["submenu_personnal_fastwalk"] = true,
 		},
-	}
+	},
+	mod = { -- If you change the admin group identifier, I recommand you to go to ESX Framework configuration and change the admin group too
+		Priority = 90,
+		Label = "Modérateur",
+		Color = "~b~",
+		Access = {
+			["mainmenu_open"] = true,
+			["submenu_personnal_access"] = true,
+			["submenu_players_access"] = true,
+			["submenu_vehicles_access"] = true,
+			["submenu_reports_access"] = true,
+			["submenu_server_access"] = true,
+			["submenu_personnal_health_management"] = true,
+			["submenu_personnal_godmode"] = false,
+			["submenu_personnal_invisibility"] = true,
+			["submenu_personnal_fastwalk"] = false,
+		},
+	},
 }
-

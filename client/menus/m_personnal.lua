@@ -5,9 +5,6 @@ local playerOptionsArray = {
     Translate("players_actions_shield")
 }
 local playerOptionsArrayIndex = 1
-local playerGodmodeCheckbox = false
-local playerInvisibilityCheckbox = false
-local playerFastwalkCheckbox = false
 
 ---main_personnal_showContentThisFrame → Function to show the main/personnal menu content
 ---@return void
@@ -32,11 +29,10 @@ function main_personnal_showContentThisFrame(playerGroup)
             end 
         end
     end)
-    RageUI.Checkbox(TranslateCap("main_personnal_godmode"), TranslateCap("main_personnal_godmode_desc"), playerGodmodeCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_godmode"]}, function()end, function()
+    RageUI.Checkbox(TranslateCap("main_personnal_godmode"), TranslateCap("main_personnal_godmode_desc"), _threads.godmode.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_godmode"]}, function()end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_godmode"] then
             return
         end
-        playerGodmodeCheckbox = true
         _threads.godmode.enable()
         ESX.ShowNotification(TranslateCap("notif_godmode_enabled_self"))
     end, function()
@@ -44,37 +40,32 @@ function main_personnal_showContentThisFrame(playerGroup)
             return
         end
         _threads.godmode.disable()
-        playerGodmodeCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_godmode_disabled_self"))
     end)
-    RageUI.Checkbox(TranslateCap("main_personnal_invisibility"), TranslateCap("main_personnal_invisibility_desc"), playerInvisibilityCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_invisibility"]}, function()end, function()
+    RageUI.Checkbox(TranslateCap("main_personnal_invisibility"), TranslateCap("main_personnal_invisibility_desc"), _threads.invisibility.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_invisibility"]}, function()end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
             return
         end
         _threads.invisibility.enable()
-        playerInvisibilityCheckbox = true
         ESX.ShowNotification(TranslateCap("notif_invisibility_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_invisibility"] then
             return
         end
         _threads.invisibility.disable()
-        playerInvisibilityCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_invisibility_disabled_self"))
     end)
-    RageUI.Checkbox(TranslateCap("main_personnal_fastwalk"), TranslateCap("main_personnal_fastwalk_desc"), playerFastwalkCheckbox, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"]}, function()end, function()
+    RageUI.Checkbox(TranslateCap("main_personnal_fastwalk"), TranslateCap("main_personnal_fastwalk_desc"), _threads.fastwalk.isActivated, {Enabled = Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"]}, function()end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"] then
             return
         end
         _threads.fastwalk.enable()
-        playerFastwalkCheckbox = true
         ESX.ShowNotification(TranslateCap("notif_fastwalk_enabled_self"))
     end, function()
         if not Config.Groups[playerGroup].Access["submenu_personnal_fastwalk"] then
             return
         end
         _threads.fastwalk.disable()
-        playerFastwalkCheckbox = false
         ESX.ShowNotification(TranslateCap("notif_fastwalk_disabled_self"))
     end)
 end

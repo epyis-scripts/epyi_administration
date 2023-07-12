@@ -1,8 +1,8 @@
 -- Threads pre init
 _threads = {
 	godmode = {},
-    invisibility = {},
-    fastwalk = {}
+	invisibility = {},
+	fastwalk = {},
 }
 
 -- Thread initialization
@@ -10,7 +10,7 @@ _threads = {
 _threads.godmode.isActivated = false
 _threads.godmode.enable = function()
 	Citizen.CreateThread(function()
-        _threads.godmode.isActivated = true
+		_threads.godmode.isActivated = true
 		while _threads.godmode.isActivated do
 			SetEntityInvincible(PlayerPedId(), true)
 			Citizen.Wait(1000)
@@ -27,7 +27,7 @@ end
 _threads.invisibility.isActivated = false
 _threads.invisibility.enable = function()
 	Citizen.CreateThread(function()
-        _threads.invisibility.isActivated = true
+		_threads.invisibility.isActivated = true
 		while _threads.invisibility.isActivated do
 			SetEntityVisible(PlayerPedId(), false, 0)
 			Citizen.Wait(1000)
@@ -44,7 +44,7 @@ end
 _threads.fastwalk.isActivated = false
 _threads.fastwalk.enable = function()
 	Citizen.CreateThread(function()
-        _threads.fastwalk.isActivated = true
+		_threads.fastwalk.isActivated = true
 		while _threads.fastwalk.isActivated do
 			SetPedMoveRateOverride(PlayerPedId(), 2.20)
 			Citizen.Wait(1)
