@@ -12,7 +12,7 @@ Locales["en"] = {
 
 	-- Global
 	["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
-	["player_not_in_vehicle"] = "The play isn't in a vehicle",
+	["player_not_in_vehicle"] = "The player isn't in a vehicle",
 	["self_not_in_vehicle"] = "You're not in a vehicle",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
@@ -62,6 +62,10 @@ Locales["en"] = {
 	["main_vehicles_spawn"] = "Spawn a vehicle",
 	["main_vehicles_spawn_desc"] = "Spawn a vehicle from the list of available vehicles",
 
+	-- Elements → Menu menu / vehicles / vehicles_current
+	["main_vehicles_current_repair"] = "Repair your vehicle",
+	["main_vehicles_current_repair_desc"] = "Allows you to return your vehicle to its factory condition",
+
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
 	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",
@@ -85,4 +89,5 @@ Locales["en"] = {
 	["notif_seethrough_disabled_self"] = "Thermal vision has been ~r~disabled",
 	["notif_shownames_enabled_self"] = "Display of player names has been ~g~enabled",
 	["notif_shownames_disabled_self"] = "Display of player names has been ~r~disabled",
+	["notif_repair_vehicle_success"] = "Your vehicle has been repaired ~g~successfully!",
 }
