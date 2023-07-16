@@ -1,4 +1,5 @@
 ---main_showContentThisFrame → Function to show the main menu content
+---@param playerGroup string
 ---@return void
 function main_showContentThisFrame(playerGroup)
 	RageUI.Checkbox(
