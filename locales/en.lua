@@ -65,6 +65,8 @@ Locales["en"] = {
 	-- Elements → Menu menu / vehicles / vehicles_current
 	["main_vehicles_current_repair"] = "Repair your vehicle",
 	["main_vehicles_current_repair_desc"] = "Allows you to return your vehicle to its factory condition",
+	["main_vehicles_current_clean"] = "Clean your vehicle",
+	["main_vehicles_current_clean_desc"] = "Make your vehicle shine",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -90,4 +92,5 @@ Locales["en"] = {
 	["notif_shownames_enabled_self"] = "Display of player names has been ~g~enabled",
 	["notif_shownames_disabled_self"] = "Display of player names has been ~r~disabled",
 	["notif_repair_vehicle_success"] = "Your vehicle has been repaired ~g~successfully!",
+	["notif_clean_vehicle_success"] = "Your vehicle has been cleaned ~g~successfully!",
 }
