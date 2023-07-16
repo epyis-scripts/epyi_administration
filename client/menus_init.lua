@@ -23,8 +23,8 @@ RMenu.Add(
 	"epyi_administration",
 	"main",
 	RageUI.CreateMenu(
-		Translate("menu_title"),
-		Translate("main_subtitle"),
+		_("menu_title"),
+		_("main_subtitle"),
 		Config.MenuStyle.Margins.left,
 		Config.MenuStyle.Margins.top,
 		menuTexture,
@@ -36,8 +36,8 @@ RMenu.Add(
 	"main_personnal",
 	RageUI.CreateSubMenu(
 		RMenu:Get("epyi_administration", "main"),
-		TranslateCap("menu_title"),
-		TranslateCap("main_personnal_subtitle"),
+		_U("menu_title"),
+		_U("main_personnal_subtitle"),
 		Config.MenuStyle.Margins.left,
 		Config.MenuStyle.Margins.top,
 		menuTexture,
@@ -49,8 +49,8 @@ RMenu.Add(
 	"main_vehicles",
 	RageUI.CreateSubMenu(
 		RMenu:Get("epyi_administration", "main"),
-		TranslateCap("menu_title"),
-		TranslateCap("main_vehicles_subtitle"),
+		_U("menu_title"),
+		_U("main_vehicles_subtitle"),
 		Config.MenuStyle.Margins.left,
 		Config.MenuStyle.Margins.top,
 		menuTexture,
@@ -62,8 +62,8 @@ RMenu.Add(
 	"main_vehicles_current",
 	RageUI.CreateSubMenu(
 		RMenu:Get("epyi_administration", "main_vehicles"),
-		TranslateCap("menu_title"),
-		TranslateCap("main_vehicles_current_subtitle"),
+		_U("menu_title"),
+		_U("main_vehicles_current_subtitle"),
 		Config.MenuStyle.Margins.left,
 		Config.MenuStyle.Margins.top,
 		menuTexture,
@@ -108,7 +108,7 @@ function openMenu()
 		ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
 			playerGroup = group
 			if not Config.Groups[playerGroup] or not Config.Groups[playerGroup].Access["mainmenu_open"] then
-				ESX.ShowNotification(TranslateCap("insuficient_permissions"))
+				ESX.ShowNotification(_U("insuficient_permissions"))
 				return
 			end
 			isMenuOpened = true
