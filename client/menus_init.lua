@@ -8,12 +8,15 @@ playerGroup = nil
 -- Menu texture initialization
 -- create the menu texture with the config parameters
 if Config.MenuStyle.BannerStyle.ImageUrl ~= nil then
+	local runtimeTXD = CreateRuntimeTxd("Custom_Menu_Head")
 	local Object = CreateDui(
 		Config.MenuStyle.BannerStyle.ImageUrl,
 		Config.MenuStyle.BannerStyle.ImageSize.Width,
 		Config.MenuStyle.BannerStyle.ImageSize.Height
 	)
 	_G.Object = Object
+	local objectTexture = GetDuiHandle(Object)
+	local Texture = CreateRuntimeTextureFromDuiHandle(runtimeTXD, "Custom_Menu_Head", objectTexture)
 	menuTexture = "Custom_Menu_Head"
 end
 
@@ -73,30 +76,33 @@ RMenu.Add(
 RMenu:Get("epyi_administration", "main").Closed = function()
 	isMenuOpened = false
 end
-RMenu:Get("epyi_administration", "main"):SetRectangleBanner(
-	Config.MenuStyle.BannerStyle.Color.r,
-	Config.MenuStyle.BannerStyle.Color.g,
-	Config.MenuStyle.BannerStyle.Color.b,
-	Config.MenuStyle.BannerStyle.Color.a
-)
-RMenu:Get("epyi_administration", "main_personnal"):SetRectangleBanner(
-	Config.MenuStyle.BannerStyle.Color.r,
-	Config.MenuStyle.BannerStyle.Color.g,
-	Config.MenuStyle.BannerStyle.Color.b,
-	Config.MenuStyle.BannerStyle.Color.a
-)
-RMenu:Get("epyi_administration", "main_vehicles"):SetRectangleBanner(
-	Config.MenuStyle.BannerStyle.Color.r,
-	Config.MenuStyle.BannerStyle.Color.g,
-	Config.MenuStyle.BannerStyle.Color.b,
-	Config.MenuStyle.BannerStyle.Color.a
-)
-RMenu:Get("epyi_administration", "main_vehicles_current"):SetRectangleBanner(
-	Config.MenuStyle.BannerStyle.Color.r,
-	Config.MenuStyle.BannerStyle.Color.g,
-	Config.MenuStyle.BannerStyle.Color.b,
-	Config.MenuStyle.BannerStyle.Color.a
-)
+
+if Config.MenuStyle.BannerStyle.ImageUrl == nil then
+	RMenu:Get("epyi_administration", "main"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+	RMenu:Get("epyi_administration", "main_personnal"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+	RMenu:Get("epyi_administration", "main_vehicles"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+	RMenu:Get("epyi_administration", "main_vehicles_current"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+end
 
 ---openMenu → Function to open the administration main menu
 ---@return void
