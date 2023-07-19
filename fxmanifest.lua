@@ -30,10 +30,7 @@ client_scripts({
 	"client/keys.lua",
 	"client/misc.lua",
 	"client/threads.lua",
-	"client/menus/main.lua",
-	"client/menus/personnal.lua",
-	"client/menus/vehicles.lua",
-	"client/menus/vehicles_current.lua",
+	"client/menus/*.lua",
 })
 
 server_scripts({
