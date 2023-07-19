@@ -65,13 +65,13 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 	)
 	RageUI.List(
 		_U("main_vehicles_current_open_door"),
-		doorArray,
-		doorArrayIndex,
+		_var.vehicle.doorArray,
+		_var.vehicle.doorArrayIndex,
 		_U("main_vehicles_current_open_door_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_vehicles_opendoor"],
 		function(_h, _a, Selected, Index)
-			doorArrayIndex = Index
+			_var.vehicle.doorArrayIndex = Index
 			if Selected then
 				local ped = PlayerPedId()
 				local pedVehicle = GetVehiclePedIsIn(ped, false)
@@ -79,19 +79,19 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
 				end
-				if doorArray[doorArrayIndex] == _("door_frontleft") then
+				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
 					SetVehicleDoorOpen(pedVehicle, 0, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_frontright") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
 					SetVehicleDoorOpen(pedVehicle, 1, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_backleft") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
 					SetVehicleDoorOpen(pedVehicle, 2, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_backright") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
 					SetVehicleDoorOpen(pedVehicle, 3, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_hood") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
 					SetVehicleDoorOpen(pedVehicle, 4, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_trunk") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
 					SetVehicleDoorOpen(pedVehicle, 5, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_all") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
 					for i = 0, 5 do
 						SetVehicleDoorOpen(pedVehicle, i, false, false)
 					end
@@ -101,13 +101,13 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 	)
 	RageUI.List(
 		_U("main_vehicles_current_close_door"),
-		doorArray,
-		doorArrayIndex,
+		_var.vehicle.doorArray,
+		_var.vehicle.doorArrayIndex,
 		_U("main_vehicles_current_close_door_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_vehicles_closedoor"],
 		function(_h, _a, Selected, Index)
-			doorArrayIndex = Index
+			_var.vehicle.doorArrayIndex = Index
 			if Selected then
 				local ped = PlayerPedId()
 				local pedVehicle = GetVehiclePedIsIn(ped, false)
@@ -115,19 +115,19 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
 				end
-				if doorArray[doorArrayIndex] == _("door_frontleft") then
+				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
 					SetVehicleDoorShut(pedVehicle, 0, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_frontright") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
 					SetVehicleDoorShut(pedVehicle, 1, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_backleft") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
 					SetVehicleDoorShut(pedVehicle, 2, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_backright") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
 					SetVehicleDoorShut(pedVehicle, 3, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_hood") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
 					SetVehicleDoorShut(pedVehicle, 4, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_trunk") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
 					SetVehicleDoorShut(pedVehicle, 5, false, false)
-				elseif doorArray[doorArrayIndex] == _("door_all") then
+				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
 					for i = 0, 5 do
 						SetVehicleDoorShut(pedVehicle, i, false, false)
 					end

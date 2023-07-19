@@ -5,18 +5,18 @@ function main_showContentThisFrame(playerGroup)
 	RageUI.Checkbox(
 		_U("main_menu_staffmode"),
 		_U("main_menu_staffmode_desc"),
-		isStaffModeEnabled,
+		_var.client.isStaffModeActivated,
 		{},
 		function() end,
 		function()
-			isStaffModeEnabled = true
+			_var.client.isStaffModeActivated = true
 		end,
 		function()
-			isStaffModeEnabled = false
+			_var.client.isStaffModeActivated = false
 			stopAllThreads()
 		end
 	)
-	if not isStaffModeEnabled then
+	if not _var.client.isStaffModeActivated then
 		return
 	end
 	RageUI.Separator("")

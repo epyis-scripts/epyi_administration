@@ -1,5 +1,5 @@
 ---main_personnal_showContentThisFrame → Function to show the main/personnal menu content
----@param playerGroup string
+---@param _var.client.staffGroup string
 ---@return void
 function main_vehicles_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(

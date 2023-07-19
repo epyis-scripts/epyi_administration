@@ -1,11 +1,16 @@
 -- Variables initialization
 -- init some local variables
-isStaffModeEnabled = false
-isMenuOpened = false
-menuTexture = nil
-playerGroup = nil
-doorArrayIndex = 1
-doorArray = {
+_var = {
+    client = {},
+    menu = {},
+    vehicle = {}
+}
+_var.client.isStaffModeActivated = false
+_var.client.staffGroup = nil
+_var.menu.isOpened = false
+_var.menu.bannerTexture = nil
+_var.vehicle.doorArrayIndex = 1
+_var.vehicle.doorArray = {
 	_("door_frontleft"),
 	_("door_frontright"),
 	_("door_backleft"),
