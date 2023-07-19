@@ -108,7 +108,6 @@ end
 ---@return void
 function openMenu()
 	if isMenuOpened then
-		RageUI.CloseAll()
 		isMenuOpened = false
 	else
 		ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
@@ -158,6 +157,7 @@ function openMenu()
 				)
 				Citizen.Wait(1)
 			end
+			RageUI.CloseAll()
 		end, GetPlayerServerId(PlayerId()))
 	end
 end
