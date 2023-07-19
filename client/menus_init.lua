@@ -1,10 +1,3 @@
--- Variables initialization
--- init some local variables
-isStaffModeEnabled = false
-isMenuOpened = false
-menuTexture = nil
-playerGroup = nil
-
 -- Menu texture initialization
 -- create the menu texture with the config parameters
 if Config.MenuStyle.BannerStyle.ImageUrl ~= nil then

@@ -46,6 +46,8 @@ Config.Groups = {
 			["submenu_vehicles_repair"] = true,
 			["submenu_vehicles_clean"] = true,
 			["submenu_vehicles_plate"] = true,
+			["submenu_vehicles_opendoor"] = true,
+			["submenu_vehicles_closedoor"] = true,
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true,

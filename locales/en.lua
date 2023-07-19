@@ -20,6 +20,13 @@ Locales["en"] = {
 	["players_actions_hydrate"] = "Hydrate",
 	["players_actions_shield"] = "Give shield",
 	["players_actions_suicide"] = "Suicide",
+	["door_frontleft"] = "Front left",
+	["door_frontright"] = "Front right",
+	["door_backleft"] = "Back left",
+	["door_backright"] = "Back right",
+	["door_hood"] = "Hood",
+	["door_trunk"] = "Trunk",
+	["door_all"] = "All doors",
 
 	-- Elements → Main menu
 	["main_menu_staffmode"] = "~r~Enable/Disable ~s~the staff mode",
@@ -70,6 +77,10 @@ Locales["en"] = {
 	["main_vehicles_current_clean_desc"] = "Make your vehicle shine",
 	["main_vehicles_current_plate"] = "Change the vehicle plate",
 	["main_vehicles_current_plate_desc"] = "Change the license plate of your vehicle",
+	["main_vehicles_current_open_door"] = "Open a door",
+	["main_vehicles_current_open_door_desc"] = "Allows you to open a vehicle door",
+	["main_vehicles_current_close_door"] = "Close a door",
+	["main_vehicles_current_close_door_desc"] = "Allows you to close a vehicle door",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",

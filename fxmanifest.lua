@@ -26,6 +26,7 @@ client_scripts({
 	"RageUI/menu/windows/*.lua",
 	"RageUI/menu/Function.lua",
 
+	"client/var_init.lua",
 	"client/menus_init.lua",
 	"client/keys.lua",
 	"client/misc.lua",
