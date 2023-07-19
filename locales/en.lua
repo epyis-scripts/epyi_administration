@@ -13,6 +13,7 @@ Locales["en"] = {
 	-- Global
 	["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
 	["player_not_in_vehicle"] = "The player isn't in a vehicle",
+	["textentry_string_invalid"] = "The provided text is ~r~invalid",
 	["self_not_in_vehicle"] = "You're not in a vehicle",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
@@ -67,6 +68,8 @@ Locales["en"] = {
 	["main_vehicles_current_repair_desc"] = "Allows you to return your vehicle to its factory condition",
 	["main_vehicles_current_clean"] = "Clean your vehicle",
 	["main_vehicles_current_clean_desc"] = "Make your vehicle shine",
+	["main_vehicles_current_plate"] = "Change the vehicle plate",
+	["main_vehicles_current_plate_desc"] = "Change the license plate of your vehicle",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -93,4 +96,8 @@ Locales["en"] = {
 	["notif_shownames_disabled_self"] = "Display of player names has been ~r~disabled",
 	["notif_repair_vehicle_success"] = "Your vehicle has been repaired ~g~successfully!",
 	["notif_clean_vehicle_success"] = "Your vehicle has been cleaned ~g~successfully!",
+	["notif_plate_changed_success"] = "Your vehicle's license plate has been successfully set to ~r~%s~s~!",
+
+	-- Text entries
+	["textentry_change_vehicle_plate"] = "Please specify the ~r~vehicle license plate",
 }

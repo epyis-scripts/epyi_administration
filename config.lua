@@ -45,6 +45,7 @@ Config.Groups = {
 			["submenu_vehicles_spawn_access"] = true,
 			["submenu_vehicles_repair"] = true,
 			["submenu_vehicles_clean"] = true,
+			["submenu_vehicles_plate"] = true,
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true,
