@@ -26,7 +26,7 @@ function main_personnal_showContentThisFrame(playerGroup)
 		_U("main_personnal_health_management_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_personnal_health_management"],
-		function(_, _, Selected, Index)
+		function(_h, _a, Selected, Index)
 			playerOptionsArrayIndex = Index
 			if Selected then
 				local ped = PlayerPedId()

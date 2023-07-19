@@ -25,7 +25,7 @@ function main_showContentThisFrame(playerGroup)
 		_U("main_menu_access_personnal_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_personnal_access"],
-		function(_, _, _) end,
+		function(_h, _a, _s) end,
 		RMenu:Get("epyi_administration", "main_personnal")
 	)
 	RageUI.ButtonWithStyle(
@@ -33,14 +33,14 @@ function main_showContentThisFrame(playerGroup)
 		_U("main_menu_access_players_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_players_access"],
-		function(_, _, _) end
+		function(_h, _a, _s) end
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_menu_access_vehicles"),
 		_U("main_menu_access_vehicles_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_access"],
-		function(_, _, _) end,
+		function(_h, _a, _s) end,
 		RMenu:Get("epyi_administration", "main_vehicles")
 	)
 	RageUI.ButtonWithStyle(
@@ -48,13 +48,13 @@ function main_showContentThisFrame(playerGroup)
 		_U("main_menu_access_reports_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_reports_access"],
-		function(_, _, _) end
+		function(_h, _a, _s) end
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_menu_access_server"),
 		_U("main_menu_access_server_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_server_access"],
-		function(_, _, _) end
+		function(_h, _a, _s) end
 	)
 end
