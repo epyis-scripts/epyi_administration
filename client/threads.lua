@@ -16,6 +16,9 @@ _threads = {
 _threads.godmode.isActivated = false
 _threads.godmode.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.godmode.isActivated then
+			return
+		end
 		_threads.godmode.isActivated = true
 		while _threads.godmode.isActivated do
 			SetEntityInvincible(PlayerPedId(), true)
@@ -33,6 +36,9 @@ end
 _threads.invisibility.isActivated = false
 _threads.invisibility.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.invisibility.isActivated then
+			return
+		end
 		_threads.invisibility.isActivated = true
 		while _threads.invisibility.isActivated do
 			SetEntityVisible(PlayerPedId(), false, 0)
@@ -50,6 +56,9 @@ end
 _threads.fastwalk.isActivated = false
 _threads.fastwalk.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.fastwalk.isActivated then
+			return
+		end
 		_threads.fastwalk.isActivated = true
 		while _threads.fastwalk.isActivated do
 			SetPedMoveRateOverride(PlayerPedId(), 2.20)
@@ -67,6 +76,9 @@ end
 _threads.fastswim.isActivated = false
 _threads.fastswim.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.fastswim.isActivated then
+			return
+		end
 		_threads.fastswim.isActivated = true
 		while _threads.fastswim.isActivated do
 			SetSwimMultiplierForPlayer(PlayerId(), 1.49)
@@ -84,6 +96,9 @@ end
 _threads.superjump.isActivated = false
 _threads.superjump.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.superjump.isActivated then
+			return
+		end
 		_threads.superjump.isActivated = true
 		while _threads.superjump.isActivated do
 			SetSuperJumpThisFrame(PlayerId())
@@ -100,6 +115,9 @@ end
 _threads.stayinvehicle.isActivated = false
 _threads.stayinvehicle.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.stayinvehicle.isActivated then
+			return
+		end
 		_threads.stayinvehicle.isActivated = true
 		while _threads.stayinvehicle.isActivated do
 			local player = PlayerPedId()
@@ -127,6 +145,9 @@ end
 _threads.seethrough.isActivated = false
 _threads.seethrough.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.seethrough.isActivated then
+			return
+		end
 		_threads.seethrough.isActivated = true
 		while _threads.seethrough.isActivated do
 			SetSeethrough(true)
@@ -144,6 +165,9 @@ end
 _threads.shownames.isActivated = false
 _threads.shownames.enable = function()
 	Citizen.CreateThread(function()
+		if _threads.shownames.isActivated then
+			return
+		end
 		_threads.shownames.isActivated = true
 		while _threads.shownames.isActivated do
 			for k, v in pairs(ESX.Game.GetPlayers()) do
