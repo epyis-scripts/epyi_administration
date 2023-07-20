@@ -17,6 +17,7 @@ _var.menu.favritesActionsArray = {
 	_("main_vehicles_favorites_interact_spawn"),
 	_("main_vehicles_favorites_interact_delete"),
 }
+_var.menu.searchVehicle = nil
 _var.activeThreads.getVehiclesFavorites = false
 _var.vehicle.doorArrayIndex = 1
 _var.vehicle.doorArray = {
