@@ -10,6 +10,7 @@ _var.client.isStaffModeActivated = false
 _var.client.staffGroup = nil
 _var.client.playerData = {}
 _var.client.userData = {}
+_var.client.serverReports = {}
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
 _var.menu.favritesActionsArrayIndex = 1
@@ -20,6 +21,7 @@ _var.menu.favritesActionsArray = {
 _var.menu.searchVehicle = ""
 _var.menu.findedVehicle = nil
 _var.activeThreads.getVehiclesFavorites = false
+_var.activeThreads.getReports = false
 _var.vehicle.doorArrayIndex = 1
 _var.vehicle.doorArray = {
 	_("door_frontleft"),

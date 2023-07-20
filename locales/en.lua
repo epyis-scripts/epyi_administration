@@ -17,6 +17,7 @@ Locales["en"] = {
 	["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
 	["player_not_in_vehicle"] = "The player isn't in a vehicle",
 	["self_not_in_vehicle"] = "You're not in a vehicle",
+	["invalid"] = "Invalid",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
 	["players_actions_hydrate"] = "Hydrate",
@@ -101,6 +102,9 @@ Locales["en"] = {
 	["main_vehicles_spawn_search"] = "Search by model name",
 	["main_vehicles_spawn_search_desc"] = "Search for a vehicle by its model",
 	["main_vehicles_spawn_spawn_desc"] = "Spawn a ~r~%s ~s~from category ~r~%s",
+
+	-- Elements → Menu menu / Reports
+	["main_reports_report_desc"] = "~r~Reason of the report:~s~\n%s",
 
 	-- Commands
 	["command_report"] = "Allows you to request help from the staff", 
