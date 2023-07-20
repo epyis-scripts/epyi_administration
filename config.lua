@@ -12,7 +12,19 @@ Config.MenuStyle = {
 	},
 }
 
-Config.Keys = { Menu = "F10", NoClip = "F3" } -- [table] → The the menu keys
+Config.Keys = { -- [table] → The the menu keys
+	Menu = "F10",
+	NoClip = {
+		use = "F3",
+		forward = "Z",
+		backward = "S",
+		left = "Q",
+		right = "D",
+		up = "A",
+		down = "W",
+		speed = "LEFTSHIFT",
+	},
+}
 
 Config.Groups = {
 	admin = {
@@ -26,6 +38,7 @@ Config.Groups = {
 			-- Submenu → Personnal
 			["submenu_personnal_access"] = true,
 			["submenu_personnal_health_management"] = true,
+			["submenu_personnal_noclip"] = true,
 			["submenu_personnal_godmode"] = true,
 			["submenu_personnal_invisibility"] = true,
 			["submenu_personnal_fastwalk"] = true,

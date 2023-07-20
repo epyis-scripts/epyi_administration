@@ -50,6 +50,8 @@ Locales["en"] = {
 	-- Elements → Menu menu / personnal
 	["main_personnal_health_management"] = "Managing your health",
 	["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
+	["main_personnal_noclip"] = "Enable/Disable your noclip",
+	["main_personnal_noclip_desc"] = "Allows you to pass through walls like a ghost",
 	["main_personnal_godmode"] = "Enable/Disable your god mode",
 	["main_personnal_godmode_desc"] = "Makes you invincible to any damage",
 	["main_personnal_invisibility"] = "Enable/Disable your invisibility",
@@ -140,6 +142,8 @@ Locales["en"] = {
 	["notif_health_management_heal_shield_self"] = "You get some ~g~protection",
 	["notif_health_management_heal_suicide_self"] = "You committed ~r~suicide",
 	["notif_health_management_heal_revive_self"] = "You ~g~resurrected",
+	["notif_noclip_enabled_self"] = "Noclip has been ~g~enabled",
+	["notif_noclip_disabled_self"] = "Noclip has been ~r~disabled",
 	["notif_godmode_enabled_self"] = "God mode has been ~g~enabled",
 	["notif_godmode_disabled_self"] = "God mode has been ~r~disabled",
 	["notif_invisibility_enabled_self"] = "Invisibility has been ~g~enabled",

@@ -56,6 +56,27 @@ function main_personnal_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.Checkbox(
+		_U("main_personnal_noclip"),
+		_U("main_personnal_noclip_desc"),
+		_threads.noclip.isActivated,
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_personnal_noclip"] },
+		function() end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_personnal_noclip"] then
+				return
+			end
+			_threads.noclip.enable()
+			ESX.ShowNotification(_U("notif_noclip_enabled_self"))
+		end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_personnal_noclip"] then
+				return
+			end
+			_threads.noclip.disable()
+			ESX.ShowNotification(_U("notif_noclip_disabled_self"))
+		end
+	)
+	RageUI.Checkbox(
 		_U("main_personnal_godmode"),
 		_U("main_personnal_godmode_desc"),
 		_threads.godmode.isActivated,

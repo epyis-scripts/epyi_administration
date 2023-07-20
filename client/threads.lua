@@ -9,6 +9,7 @@ _threads = {
 	seethrough = {},
 	shownames = { showed = {} },
 	vehicleboost = {},
+	noclip = {},
 }
 
 -- Thread initialization
@@ -232,4 +233,140 @@ _threads.vehicleboost.enable = function(pedVehicle, value)
 end
 _threads.vehicleboost.disable = function()
 	_threads.vehicleboost.isActivated = false
+end
+
+-- Thread initialization
+-- Thread → Noclip
+_threads.noclip.isActivated = false
+_threads.noclip.enable = function()
+	Citizen.CreateThread(function()
+		if _threads.noclip.isActivated then
+			return
+		end
+		_threads.noclip.isActivated = true
+		local ped = PlayerPedId()
+		if IsPedInAnyVehicle(ped, false) then
+			_var.noclip.entity = GetVehiclePedIsIn(ped, false)
+		else
+			_var.noclip.entity = ped
+		end
+		SetEntityAlpha(_var.noclip.entity, 51, 0)
+		if _var.noclip.entity ~= ped then
+			SetEntityAlpha(ped, 51, 0)
+			SetEntityVisible(_var.noclip.entity, false, 0)
+		end
+		SetEntityVisible(ped, false, 0)
+		SetEntityCollision(_var.noclip.entity, false, false)
+		FreezeEntityPosition(_var.noclip.entity, true)
+		SetEntityInvincible(_var.noclip.entity, true)
+		SetEntityVisible(_var.noclip.entity, false, true)
+		SetEveryoneIgnorePlayer(ped, true)
+		SetPoliceIgnorePlayer(ped, true)
+		while _threads.noclip.isActivated do
+			local yOffset = 0.0
+			local zOffset = 0.0
+			setInstructionnalButtons({
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.forward], 0), "Avancer" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.backward], 0), "Reculé" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.left], 0), "Gauche" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.right], 0), "Droite" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.up], 0), "Monter" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.down], 0), "Descendre" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.speed], 0), _var.noclip.speedLabel },
+			}, 0)
+			drawInstructionnalButtons()
+			DisableAllControlActions()
+			EnableControlAction(0, 1, true)
+			EnableControlAction(0, 2, true)
+			EnableControlAction(0, 176, true)
+			EnableControlAction(0, 69, true)
+			EnableControlAction(0, 92, true)
+			EnableControlAction(0, 106, true)
+			EnableControlAction(0, 122, true)
+			EnableControlAction(0, 135, true)
+			EnableControlAction(0, 142, true)
+			EnableControlAction(0, 144, true)
+			EnableControlAction(0, 223, true)
+			EnableControlAction(0, 229, true)
+			EnableControlAction(0, 237, true)
+			EnableControlAction(0, 257, true)
+			EnableControlAction(0, 329, true)
+			EnableControlAction(0, 346, true)
+			EnableControlAction(0, 156, true)
+			EnableControlAction(0, 191, true)
+			EnableControlAction(0, 201, true)
+			EnableControlAction(0, 215, true)
+			EnableControlAction(0, 23, true)
+			EnableControlAction(0, 200, true)
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.forward]) then
+				yOffset = _var.noclip.offsets.y
+			end
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.backward]) then
+				yOffset = -_var.noclip.offsets.y
+			end
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.left]) then
+				SetEntityHeading(ped, GetEntityHeading(ped) + _var.noclip.offsets.h)
+			end
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.right]) then
+				SetEntityHeading(ped, GetEntityHeading(ped) - _var.noclip.offsets.h)
+			end
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.up]) then
+				zOffset = _var.noclip.offsets.z
+			end
+			if IsDisabledControlPressed(0, _var.keys[Config.Keys.NoClip.down]) then
+				zOffset = -_var.noclip.offsets.z
+			end
+			if IsDisabledControlJustPressed(0, _var.keys[Config.Keys.NoClip.speed]) then
+				if _var.noclip.speedArrayIndex ~= #_var.noclip.speedArray then
+					_var.noclip.speedArrayIndex = _var.noclip.speedArrayIndex + 1
+					_var.noclip.currentSpeed = _var.noclip.speedArray[_var.noclip.speedArrayIndex]
+				else
+					_var.noclip.currentSpeed = _var.noclip.speedArray[1]
+					_var.noclip.speedArrayIndex = 1
+				end
+			end
+			if _var.noclip.currentSpeed == 0 then
+				_var.noclip.speedLabel = "Très Lent"
+			elseif _var.noclip.currentSpeed == 1 then
+				_var.noclip.speedLabel = "Lent"
+			elseif _var.noclip.currentSpeed == 2 then
+				_var.noclip.speedLabel = "Normal"
+			elseif _var.noclip.currentSpeed == 5 then
+				_var.noclip.speedLabel = "Rapide"
+			elseif _var.noclip.currentSpeed == 10 then
+				_var.noclip.speedLabel = "Très Rapide"
+			elseif _var.noclip.currentSpeed == 15 then
+				_var.noclip.speedLabel = "Max Speed"
+			end
+			local newPos = GetOffsetFromEntityInWorldCoords(
+				_var.noclip.entity,
+				0.0,
+				yOffset * (_var.noclip.currentSpeed + 0.3),
+				zOffset * (_var.noclip.currentSpeed + 0.3)
+			)
+			SetEntityVelocity(_var.noclip.entity, 0.0, 0.0, 0.0)
+			SetEntityRotation(_var.noclip.entity, 0.0, 0.0, 0.0, 0, false)
+			SetEntityHeading(_var.noclip.entity, GetGameplayCamRelativeHeading())
+			SetEntityCoordsNoOffset(_var.noclip.entity, newPos.x, newPos.y, newPos.z, true, true, true)
+			SetEntityVisible(ped, false, 0)
+			SetLocalPlayerVisibleLocally(true)
+			Citizen.Wait(0)
+		end
+	end)
+end
+_threads.noclip.disable = function()
+	local ped = PlayerPedId()
+	ResetEntityAlpha(_var.noclip.entity)
+	if _var.noclip.entity ~= ped then
+		ResetEntityAlpha(ped)
+		SetEntityVisible(_var.noclip.entity, true, 0)
+	end
+	SetEntityVisible(ped, true, 0)
+	SetEntityCollision(_var.noclip.entity, true, true)
+	FreezeEntityPosition(_var.noclip.entity, false)
+	SetEntityInvincible(_var.noclip.entity, false)
+	SetEntityVisible(_var.noclip.entity, true, false)
+	SetEveryoneIgnorePlayer(ped, false)
+	SetPoliceIgnorePlayer(ped, false)
+	_threads.noclip.isActivated = false
 end
