@@ -85,6 +85,8 @@ Locales["en"] = {
 	["main_vehicles_current_color_main_desc"] = "Allows you to change the main color of your vehicle",
 	["main_vehicles_current_color_secondary"] = "Secondary color",
 	["main_vehicles_current_color_secondary_desc"] = "Allows you to change the secondary color of your vehicle",
+	["main_vehicles_current_boost"] = "Vehicle boost",
+	["main_vehicles_current_boost_desc"] = "Allows you to multiply the torque of the vehicle's engine",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
@@ -112,6 +114,7 @@ Locales["en"] = {
 	["notif_repair_vehicle_success"] = "Your vehicle has been repaired ~g~successfully!",
 	["notif_clean_vehicle_success"] = "Your vehicle has been cleaned ~g~successfully!",
 	["notif_plate_changed_success"] = "Your vehicle's license plate has been successfully set to ~r~%s~s~!",
+	["notif_vehicleboost_success"] = "The vehicle's torque multiplier has been successfully set to ~r~x%s~s~!",
 
 	-- Text entries
 	["textentry_change_vehicle_plate"] = "Please specify the ~r~vehicle license plate",

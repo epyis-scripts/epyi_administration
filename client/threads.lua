@@ -8,6 +8,7 @@ _threads = {
 	stayinvehicle = {},
 	seethrough = {},
 	shownames = { showed = {} },
+	vehicleboost = {},
 }
 
 -- Thread initialization
@@ -177,4 +178,34 @@ _threads.shownames.disable = function()
 		RemoveMpGamerTag(v)
 		_threads.shownames.showed = {}
 	end
+end
+
+-- Thread initialization
+-- Thread → Vehicle boost
+_threads.vehicleboost.boostedVehicle = nil
+_threads.vehicleboost.boostValue = nil
+_threads.vehicleboost.isActivated = false
+_threads.vehicleboost.enable = function(pedVehicle, value)
+	Citizen.CreateThread(function()
+		if pedVehicle ~= _threads.vehicleboost.boostedVehicle or value ~= _threads.vehicleboost.boostValue then
+			_threads.vehicleboost.disable()
+		end
+		if _threads.vehicleboost.isActivated then
+			return
+		end
+		if value == 1 then
+			_threads.vehicleboost.disable()
+			return
+		end
+		_threads.vehicleboost.boostedVehicle = pedVehicle
+		_threads.vehicleboost.boostValue = value
+		_threads.vehicleboost.isActivated = true
+		while _threads.vehicleboost.isActivated do
+			SetVehicleCheatPowerIncrease(pedVehicle, value / 1.5)
+			Citizen.Wait(1)
+		end
+	end)
+end
+_threads.vehicleboost.disable = function()
+	_threads.vehicleboost.isActivated = false
 end

@@ -123,3 +123,5 @@ _var.vehicle.paintColorsArray = {}
 for _, color in pairs(_var.vehicle.paintColors) do
 	table.insert(_var.vehicle.paintColorsArray, color[1])
 end
+_var.vehicle.boostArrayIndex = 1
+_var.vehicle.boostArray = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 }
