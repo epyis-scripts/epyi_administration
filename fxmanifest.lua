@@ -38,6 +38,7 @@ server_scripts({
 	"@oxmysql/lib/MySQL.lua",
 	"server/init_sql.lua",
 	"server/permissions.lua",
+	"server/datastore.lua",
 })
 
 dependencies({
