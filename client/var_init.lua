@@ -3,12 +3,21 @@
 _var = {
 	client = {},
 	menu = {},
+	activeThreads = {},
 	vehicle = {},
 }
 _var.client.isStaffModeActivated = false
 _var.client.staffGroup = nil
+_var.client.playerData = {}
+_var.client.userData = {}
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
+_var.menu.favritesActionsArrayIndex = 1
+_var.menu.favritesActionsArray = {
+	_("main_vehicles_favorites_interact_spawn"),
+	_("main_vehicles_favorites_interact_delete"),
+}
+_var.activeThreads.getVehiclesFavorites = false
 _var.vehicle.doorArrayIndex = 1
 _var.vehicle.doorArray = {
 	_("door_frontleft"),

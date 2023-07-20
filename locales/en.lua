@@ -5,6 +5,7 @@ Locales["en"] = {
 	["main_personnal_subtitle"] = "Management of ~r~my character",
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
 	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
+	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
 
 	-- Keys
 	["keys_menu_description"] = "~r~Open the administration menu",
@@ -88,6 +89,13 @@ Locales["en"] = {
 	["main_vehicles_current_boost"] = "Vehicle boost",
 	["main_vehicles_current_boost_desc"] = "Allows you to multiply the torque of the vehicle's engine",
 
+	-- Elements → Menu menu / vehicles / vehicles_favorites
+	["main_vehicles_favorites_add"] = "Add current vehicle to favorites",
+	["main_vehicles_favorites_add_desc"] = "Add the vehicle you are in to your favourites. This will allow you to make it reappear later!",
+	["main_vehicles_favorites_interact_desc"] = "Interact with favorite vehicle ~r~%s",
+	["main_vehicles_favorites_interact_spawn"] = "Spawn",
+	["main_vehicles_favorites_interact_delete"] = "Delete",
+
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
 	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",
@@ -115,7 +123,11 @@ Locales["en"] = {
 	["notif_clean_vehicle_success"] = "Your vehicle has been cleaned ~g~successfully!",
 	["notif_plate_changed_success"] = "Your vehicle's license plate has been successfully set to ~r~%s~s~!",
 	["notif_vehicleboost_success"] = "The vehicle's torque multiplier has been successfully set to ~r~x%s~s~!",
+	["notif_add_vehicle_favorite_success"] = "The vehicle with the name ~r~%s~s~ has been ~g~successfully added~s~ to favorites",
+	["notif_remove_vehicle_favorite_success"] = "The vehicle with the name ~r~%s~s~ has been ~r~successfully removed~s~ from favorites",
+	["notif_datastore_error"] = "An error occurred while ~r~saving data",
 
 	-- Text entries
 	["textentry_change_vehicle_plate"] = "Please specify the ~r~vehicle license plate",
+	["textentry_add_to_favorites_name"] = "Please specify ~r~the name~s~ of your vehicle",
 }
