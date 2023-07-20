@@ -81,6 +81,10 @@ Locales["en"] = {
 	["main_vehicles_current_open_door_desc"] = "Allows you to open a vehicle door",
 	["main_vehicles_current_close_door"] = "Close a door",
 	["main_vehicles_current_close_door_desc"] = "Allows you to close a vehicle door",
+	["main_vehicles_current_color_main"] = "Main color",
+	["main_vehicles_current_color_main_desc"] = "Allows you to change the main color of your vehicle",
+	["main_vehicles_current_color_secondary"] = "Secondary color",
+	["main_vehicles_current_color_secondary_desc"] = "Allows you to change the secondary color of your vehicle",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",

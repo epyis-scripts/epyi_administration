@@ -48,6 +48,8 @@ Config.Groups = {
 			["submenu_vehicles_plate"] = true,
 			["submenu_vehicles_opendoor"] = true,
 			["submenu_vehicles_closedoor"] = true,
+			["submenu_vehicles_color_main"] = true,
+			["submenu_vehicles_color_secondary"] = true,
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true,
