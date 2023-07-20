@@ -105,7 +105,10 @@ function openMenu()
 	else
 		ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
 			_var.client.staffGroup = group
-			if not Config.Groups[_var.client.staffGroup] or not Config.Groups[_var.client.staffGroup].Access["mainmenu_open"] then
+			if
+				not Config.Groups[_var.client.staffGroup]
+				or not Config.Groups[_var.client.staffGroup].Access["mainmenu_open"]
+			then
 				ESX.ShowNotification(_U("insuficient_permissions"))
 				return
 			end
