@@ -92,6 +92,19 @@ RMenu.Add(
 		_var.menu.bannerTexture
 	)
 )
+RMenu.Add(
+	"epyi_administration",
+	"main_reports",
+	RageUI.CreateSubMenu(
+		RMenu:Get("epyi_administration", "main"),
+		_U("menu_title"),
+		_U("main_reports_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menu.bannerTexture,
+		_var.menu.bannerTexture
+	)
+)
 RMenu:Get("epyi_administration", "main").Closed = function()
 	_var.menu.isOpened = false
 end
@@ -128,6 +141,12 @@ if Config.MenuStyle.BannerStyle.ImageUrl == nil then
 		Config.MenuStyle.BannerStyle.Color.a
 	)
 	RMenu:Get("epyi_administration", "main_vehicles_spawn"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+	RMenu:Get("epyi_administration", "main_reports"):SetRectangleBanner(
 		Config.MenuStyle.BannerStyle.Color.r,
 		Config.MenuStyle.BannerStyle.Color.g,
 		Config.MenuStyle.BannerStyle.Color.b,
@@ -205,6 +224,15 @@ function openMenu()
 					Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 					function()
 						main_vehicles_spawn_showContentThisFrame(_var.client.staffGroup)
+					end
+				)
+				RageUI.IsVisible(
+					RMenu:Get("epyi_administration", "main_reports"),
+					true,
+					Config.MenuStyle.BannerStyle.UseGlareEffect,
+					Config.MenuStyle.BannerStyle.UseInstructionalButtons,
+					function()
+						main_reports_showContentThisFrame(_var.client.staffGroup)
 					end
 				)
 				Citizen.Wait(1)
