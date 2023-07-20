@@ -1,0 +1,2 @@
+-- Variables initialization
+-- init some local variables
