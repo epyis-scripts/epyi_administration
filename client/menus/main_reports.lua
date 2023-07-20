@@ -9,12 +9,14 @@ function main_reports_showContentThisFrame(playerGroup)
 		_var.activeThreads.getReports = true
 		_var.client.playerData = ESX.GetPlayerData()
 		ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
-			_var.client.serverReports = reports
+			_var.reports.list = reports
 		end, _var.client.playerData.identifier)
 		Citizen.Wait(500)
 		_var.activeThreads.getReports = false
 	end)
-	for key, report in pairs(_var.client.serverReports) do
+	_var.reports.count = 0
+	for key, report in pairs(_var.reports.list) do
+		_var.reports.count = _var.reports.count + 1
 		local group = _U("invalid")
 		if Config.Groups[report.user.group] ~= nil then
 			group = Config.Groups[report.user.group].Color .. Config.Groups[report.user.group].Label
@@ -27,4 +29,9 @@ function main_reports_showContentThisFrame(playerGroup)
 			function(_h, _a, _s) end
 		)
 	end
+    if _var.reports.count == 0 then
+        RageUI.Separator("")
+        RageUI.Separator(_U("main_reports_no_report"))
+        RageUI.Separator("")
+    end
 end

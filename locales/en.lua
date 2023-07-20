@@ -105,6 +105,7 @@ Locales["en"] = {
 
 	-- Elements → Menu menu / Reports
 	["main_reports_report_desc"] = "~r~Reason of the report:~s~\n%s",
+	["main_reports_no_report"] = "There is ~r~no report ~s~available",
 
 	-- Commands
 	["command_report"] = "Allows you to request help from the staff", 

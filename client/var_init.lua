@@ -5,12 +5,14 @@ _var = {
 	menu = {},
 	activeThreads = {},
 	vehicle = {},
+	reports = {},
 }
 _var.client.isStaffModeActivated = false
 _var.client.staffGroup = nil
 _var.client.playerData = {}
 _var.client.userData = {}
-_var.client.serverReports = {}
+_var.reports.list = {}
+_var.reports.count = 0
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
 _var.menu.favritesActionsArrayIndex = 1
