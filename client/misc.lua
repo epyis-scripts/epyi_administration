@@ -34,6 +34,28 @@ function stopAllThreads()
 	end
 end
 
+---leaveAllReports → Leave all reports taken by client
+---@return void
+function leaveAllReports()
+	_var.client.playerData = ESX.GetPlayerData()
+	ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
+		_var.reports.list = reports
+		for key, report in pairs(_var.reports.list) do
+			if report.staff.takerIdentifier == _var.client.playerData.identifier then
+				report.staff.taken = false
+				report.staff.takerIdentifier = nil
+				report.staff.takerSource = nil
+				report.staff.takerGroup = nil
+				ESX.TriggerServerCallback("epyi_administration:setReport", function(result)
+					if not result then
+						ESX.ShowNotification(_U("notif_report_editing_error"))
+					end
+				end, _var.client.playerData.identifier, key, _var.reports.list[key])
+			end
+		end
+	end, _var.client.playerData.identifier)
+end
+
 ---textEntry → Open a popup to write some text
 ---@param textEntry string
 ---@param inputText string

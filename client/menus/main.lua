@@ -14,6 +14,7 @@ function main_showContentThisFrame(playerGroup)
 		function()
 			_var.client.isStaffModeActivated = false
 			stopAllThreads()
+			leaveAllReports()
 		end
 	)
 	if not _var.client.isStaffModeActivated then
