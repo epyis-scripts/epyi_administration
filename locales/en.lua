@@ -99,6 +99,7 @@ Locales["en"] = {
 	-- Elements → Menu menu / vehicles / vehicles_spawner
 	["main_vehicles_spawn_search"] = "Search by model name",
 	["main_vehicles_spawn_search_desc"] = "Search for a vehicle by its model",
+	["main_vehicles_spawn_spawn_desc"] = "Spawn a ~r~%s ~s~from category ~r~%s",
 
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
