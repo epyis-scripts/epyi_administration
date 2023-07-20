@@ -6,6 +6,7 @@ Locales["en"] = {
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
 	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
 	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
+	["main_vehicles_spawn_subtitle"] = "Spawn a ~r~vehicle",
 
 	-- Keys
 	["keys_menu_description"] = "~r~Open the administration menu",

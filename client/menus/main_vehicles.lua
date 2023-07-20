@@ -23,6 +23,7 @@ function main_vehicles_showContentThisFrame(playerGroup)
 		_U("main_vehicles_spawn_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_spawn_access"],
-		function(_h, _a, _s) end
+		function(_h, _a, _s) end,
+		RMenu:Get("epyi_administration", "main_vehicles_spawn")
 	)
 end
