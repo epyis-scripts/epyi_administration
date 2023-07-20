@@ -39,6 +39,7 @@ server_scripts({
 	"server/init_sql.lua",
 	"server/permissions.lua",
 	"server/datastore.lua",
+	"server/reports.lua",
 })
 
 dependencies({

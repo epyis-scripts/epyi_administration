@@ -102,6 +102,11 @@ Locales["en"] = {
 	["main_vehicles_spawn_search_desc"] = "Search for a vehicle by its model",
 	["main_vehicles_spawn_spawn_desc"] = "Spawn a ~r~%s ~s~from category ~r~%s",
 
+	-- Commands
+	["command_report"] = "Allows you to request help from the staff", 
+	["command_report_no_reason"] = "No reason specified",
+	["command_report_success"] = "A report has been sent to the staff (Reason: ~r~%s~s~)",
+
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
 	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",
