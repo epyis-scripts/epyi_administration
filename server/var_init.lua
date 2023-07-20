@@ -1,2 +1,7 @@
 -- Variables initialization
--- init some local variables
+-- init some server variables
+_var = {
+    reports = {
+        list = {}
+    }
+}
