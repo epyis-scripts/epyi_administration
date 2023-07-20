@@ -13,10 +13,17 @@ _var.client.playerData = {}
 _var.client.userData = {}
 _var.reports.list = {}
 _var.reports.count = 0
+_var.reports.countHiden = 0
 _var.reports.selectedReport = 1
 _var.menu.cooldownStatus = false
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
+_var.menu.reportsFilterArrayIndex = 1
+_var.menu.reportsFilterArray = {
+	_("main_reports_filter_all"),
+	_("main_reports_filter_waiting"),
+	_("main_reports_filter_taken"),
+}
 _var.menu.favritesActionsArrayIndex = 1
 _var.menu.favritesActionsArray = {
 	_("main_vehicles_favorites_interact_spawn"),
