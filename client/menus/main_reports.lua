@@ -15,16 +15,20 @@ function main_reports_showContentThisFrame(playerGroup)
 		_var.activeThreads.getReports = false
 	end)
 	_var.reports.count = 0
-    _var.reports.countHiden = 0
+	_var.reports.countHiden = 0
 	for _k, report in pairs(_var.reports.list) do
 		_var.reports.count = _var.reports.count + 1
-        if _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_waiting") then
+		if _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_waiting") then
 			if report.staff.taken then
-                _var.reports.countHiden = _var.reports.countHiden + 1
+				_var.reports.countHiden = _var.reports.countHiden + 1
 			end
 		elseif _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_taken") then
 			if not report.staff.taken then
-                _var.reports.countHiden = _var.reports.countHiden + 1
+				_var.reports.countHiden = _var.reports.countHiden + 1
+			end
+		elseif _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_taken_me") then
+			if report.staff.takerIdentifier ~= _var.client.playerData.identifier then
+				_var.reports.countHiden = _var.reports.countHiden + 1
 			end
 		end
 	end
@@ -47,12 +51,17 @@ function main_reports_showContentThisFrame(playerGroup)
 		if _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_waiting") then
 			if report.staff.taken then
 				showThisReport = false
-                _var.reports.count = _var.reports.count - 1
+				_var.reports.count = _var.reports.count - 1
 			end
 		elseif _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_taken") then
 			if not report.staff.taken then
 				showThisReport = false
-                _var.reports.count = _var.reports.count - 1
+				_var.reports.count = _var.reports.count - 1
+			end
+		elseif _var.menu.reportsFilterArray[_var.menu.reportsFilterArrayIndex] == _("main_reports_filter_taken_me") then
+			if report.staff.takerIdentifier ~= _var.client.playerData.identifier then
+				showThisReport = false
+				_var.reports.count = _var.reports.count - 1
 			end
 		end
 		if showThisReport then

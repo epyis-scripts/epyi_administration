@@ -23,6 +23,7 @@ _var.menu.reportsFilterArray = {
 	_("main_reports_filter_all"),
 	_("main_reports_filter_waiting"),
 	_("main_reports_filter_taken"),
+	_("main_reports_filter_taken_me"),
 }
 _var.menu.favritesActionsArrayIndex = 1
 _var.menu.favritesActionsArray = {
