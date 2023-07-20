@@ -15,7 +15,6 @@ Locales["en"] = {
 	-- Global
 	["insuficient_permissions"] = "Sorry, but you are not allowed to do this",
 	["player_not_in_vehicle"] = "The player isn't in a vehicle",
-	["textentry_string_invalid"] = "The provided text is ~r~invalid",
 	["self_not_in_vehicle"] = "You're not in a vehicle",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
@@ -97,6 +96,10 @@ Locales["en"] = {
 	["main_vehicles_favorites_interact_spawn"] = "Spawn",
 	["main_vehicles_favorites_interact_delete"] = "Delete",
 
+	-- Elements → Menu menu / vehicles / vehicles_spawner
+	["main_vehicles_spawn_search"] = "Search by model name",
+	["main_vehicles_spawn_search_desc"] = "Search for a vehicle by its model",
+
 	-- Notifications
 	["notif_health_management_heal_self"] = "You have been ~g~healed",
 	["notif_health_management_heal_feed_self"] = "You have been ~g~feeded",
@@ -129,6 +132,8 @@ Locales["en"] = {
 	["notif_datastore_error"] = "An error occurred while ~r~saving data",
 
 	-- Text entries
+	["textentry_string_invalid"] = "The provided text is ~r~invalid",
 	["textentry_change_vehicle_plate"] = "Please specify the ~r~vehicle license plate",
 	["textentry_add_to_favorites_name"] = "Please specify ~r~the name~s~ of your vehicle",
+	["textentry_search_vehicle_model"] = "Please specify ~r~the model~s~ of the vehicle",
 }
