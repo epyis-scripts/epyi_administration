@@ -8,6 +8,7 @@ Locales["en"] = {
 	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
 	["main_vehicles_spawn_subtitle"] = "Spawn a ~r~vehicle",
 	["main_reports_subtitle"] = "Management of ~r~reports",
+	["main_reports_edit_subtitle"] = "Management of the ~r~report",
 
 	-- Keys
 	["keys_menu_description"] = "~r~Open the administration menu",
@@ -18,6 +19,7 @@ Locales["en"] = {
 	["player_not_in_vehicle"] = "The player isn't in a vehicle",
 	["self_not_in_vehicle"] = "You're not in a vehicle",
 	["invalid"] = "Invalid",
+	["nobody"] = "Nobody",
 	["players_actions_heal"] = "Heal",
 	["players_actions_feed"] = "Feed",
 	["players_actions_hydrate"] = "Hydrate",
@@ -106,9 +108,21 @@ Locales["en"] = {
 	-- Elements → Menu menu / Reports
 	["main_reports_report_desc"] = "~r~Reason of the report:~s~\n%s",
 	["main_reports_no_report"] = "There is ~r~no report ~s~available",
+	["main_reports_edit_by"] = "Report by: ~r~%s",
+	["main_reports_edit_status"] = "Report status: ~r~%s",
+	["main_reports_edit_taker"] = "Taken by: ~r~%s",
+	["main_reports_edit_by_id"] = "ID: ~r~%s",
+	["main_reports_edit_status_taken"] = "~g~Report was taken",
+	["main_reports_edit_status_waiting"] = "~r~Report is waiting",
+	["main_reports_edit_take"] = "Take the report",
+	["main_reports_edit_leave"] = "Leave the report to the other staff",
+	["main_reports_edit_goto"] = "Teleport to the player",
+	["main_reports_edit_bring"] = "Teleport the player at my location",
+	["main_reports_edit_delete"] = "Permanently delete this report",
+	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
 
 	-- Commands
-	["command_report"] = "Allows you to request help from the staff", 
+	["command_report"] = "Allows you to request help from the staff",
 	["command_report_no_reason"] = "No reason specified",
 	["command_report_success"] = "A report has been sent to the staff (Reason: ~r~%s~s~)",
 
@@ -142,6 +156,13 @@ Locales["en"] = {
 	["notif_add_vehicle_favorite_success"] = "The vehicle with the name ~r~%s~s~ has been ~g~successfully added~s~ to favorites",
 	["notif_remove_vehicle_favorite_success"] = "The vehicle with the name ~r~%s~s~ has been ~r~successfully removed~s~ from favorites",
 	["notif_datastore_error"] = "An error occurred while ~r~saving data",
+	["notif_report_editing_error"] = "An error occurred while ~r~editing reports",
+	["notif_report_status_take"] = "You have ~g~take ~s~the report ~r~n°%s",
+	["notif_report_status_leave"] = "You have ~r~leaved ~s~the report ~r~n°%s",
+	["notif_goto_success"] = "You teleported to ~r~%s",
+	["notif_bring_success"] = "You have teleported ~r~%s~s~ to you",
+	["notif_report_watching_deleted"] = "The report you were editing ~r~has been deleted",
+	["notif_report_delete_success"] = "Report ~r~n°%s~s~ deleted successfully!",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",

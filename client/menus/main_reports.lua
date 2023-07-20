@@ -22,16 +22,26 @@ function main_reports_showContentThisFrame(playerGroup)
 			group = Config.Groups[report.user.group].Color .. Config.Groups[report.user.group].Label
 		end
 		RageUI.ButtonWithStyle(
-			report.user.name .. " [" .. group .. "~s~]",
+			(report.staff.taken and _U("main_reports_edit_status_taken") or _U("main_reports_edit_status_waiting"))
+				.. "~s~ - "
+				.. _U("main_reports_edit_by", "~s~" .. report.user.name)
+				.. " ["
+				.. group
+				.. "~s~]",
 			_U("main_reports_report_desc", report.user.reason),
 			{},
 			true,
-			function(_h, _a, _s) end
+			function(_h, _a, Selected)
+				if Selected then
+					_var.reports.selectedReport = key
+				end
+			end,
+			RMenu:Get("epyi_administration", "main_reports_edit")
 		)
 	end
-    if _var.reports.count == 0 then
-        RageUI.Separator("")
-        RageUI.Separator(_U("main_reports_no_report"))
-        RageUI.Separator("")
-    end
+	if _var.reports.count == 0 then
+		RageUI.Separator("")
+		RageUI.Separator(_U("main_reports_no_report"))
+		RageUI.Separator("")
+	end
 end
