@@ -7,6 +7,9 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
 	deferrals.update(_U("deffer_ban_checker"))
 	Citizen.Wait(0)
 	TriggerEvent("esx_datastore:getDataStore", "epyi_admin_userdata", identifier, function(store)
+		if store == nil then
+			deferrals.done()
+		end
 		banData = store.get("ban_status") or {}
 		if banData == {} then
 			deferrals.done()
