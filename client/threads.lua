@@ -266,12 +266,12 @@ _threads.noclip.enable = function()
 			local yOffset = 0.0
 			local zOffset = 0.0
 			setInstructionnalButtons({
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.forward], 0), "Avancer" },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.backward], 0), "Reculé" },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.left], 0), "Gauche" },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.right], 0), "Droite" },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.up], 0), "Monter" },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.down], 0), "Descendre" },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.forward], 0), _U("noclip_go_forward") },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.backward], 0), _U("noclip_go_backward") },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.left], 0), _U("noclip_go_left") },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.right], 0), _U("noclip_go_right") },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.up], 0), _U("noclip_go_up") },
+				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.down], 0), _U("noclip_go_down") },
 				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.speed], 0), _var.noclip.speedLabel },
 			}, 0)
 			drawInstructionnalButtons()
@@ -326,17 +326,17 @@ _threads.noclip.enable = function()
 				end
 			end
 			if _var.noclip.currentSpeed == 0 then
-				_var.noclip.speedLabel = "Très Lent"
+				_var.noclip.speedLabel = _U("noclip_speed_0")
 			elseif _var.noclip.currentSpeed == 1 then
-				_var.noclip.speedLabel = "Lent"
+				_var.noclip.speedLabel = _U("noclip_speed_1")
 			elseif _var.noclip.currentSpeed == 2 then
-				_var.noclip.speedLabel = "Normal"
+				_var.noclip.speedLabel = _U("noclip_speed_2")
 			elseif _var.noclip.currentSpeed == 5 then
-				_var.noclip.speedLabel = "Rapide"
+				_var.noclip.speedLabel = _U("noclip_speed_5")
 			elseif _var.noclip.currentSpeed == 10 then
-				_var.noclip.speedLabel = "Très Rapide"
+				_var.noclip.speedLabel = _U("noclip_speed_10")
 			elseif _var.noclip.currentSpeed == 15 then
-				_var.noclip.speedLabel = "Max Speed"
+				_var.noclip.speedLabel = _U("noclip_speed_15")
 			end
 			local newPos = GetOffsetFromEntityInWorldCoords(
 				_var.noclip.entity,

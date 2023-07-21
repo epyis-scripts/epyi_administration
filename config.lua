@@ -48,6 +48,9 @@ Config.Groups = {
 			["submenu_personnal_seethrough"] = true,
 			["submenu_personnal_shownames"] = true,
 
+			-- Submenu → Personnal → Appearance
+			["submenu_personnal_appearance_access"] = true,
+
 			-- Submenu → Players
 			["submenu_players_access"] = true,
 

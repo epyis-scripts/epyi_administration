@@ -3,6 +3,7 @@ Locales["en"] = {
 	["menu_title"] = "Admin menu",
 	["main_subtitle"] = "This is the ~r~administration~s~ menu",
 	["main_personnal_subtitle"] = "Management of ~r~my character",
+	["main_personnal_appearance_subtitle"] = "Management of ~r~my appearance",
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
 	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
 	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
@@ -50,6 +51,8 @@ Locales["en"] = {
 	-- Elements → Menu menu / personnal
 	["main_personnal_health_management"] = "Managing your health",
 	["main_personnal_health_management_desc"] = "Gives you life, thirst, food and shield",
+	["main_personnal_appearance"] = "Managing your appearance",
+	["main_personnal_appearance_desc"] = "Change your appearance or transform into different peds",
 	["main_personnal_noclip"] = "Enable/Disable your noclip",
 	["main_personnal_noclip_desc"] = "Allows you to pass through walls like a ghost",
 	["main_personnal_godmode"] = "Enable/Disable your god mode",
@@ -129,6 +132,20 @@ Locales["en"] = {
 	["main_reports_edit_bring"] = "Teleport the player at my location",
 	["main_reports_edit_delete"] = "Permanently delete this report",
 	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
+
+	-- Noclip
+	["noclip_go_forward"] = "Go forward",
+	["noclip_go_backward"] = "Go backward",
+	["noclip_go_left"] = "Go left",
+	["noclip_go_right"] = "Go right",
+	["noclip_go_up"] = "Go up",
+	["noclip_go_down"] = "Go down",
+	["noclip_speed_0"] = "Very slow",
+	["noclip_speed_1"] = "Slow",
+	["noclip_speed_2"] = "Normal",
+	["noclip_speed_5"] = "Fast",
+	["noclip_speed_10"] = "Very fast",
+	["noclip_speed_15"] = "Max speed",
 
 	-- Commands
 	["command_report"] = "Allows you to request help from the staff",

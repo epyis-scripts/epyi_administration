@@ -8,6 +8,7 @@ _var = {
 	reports = {},
 	instructionnal = {},
 	noclip = {},
+	peds = {},
 }
 _var.client.isStaffModeActivated = false
 _var.client.staffGroup = nil
