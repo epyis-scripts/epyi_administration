@@ -155,6 +155,10 @@ Locales["en"] = {
 	["main_reports_edit_delete"] = "Permanently delete this report",
 	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
 
+	-- Elements → Menu menu / Server
+	["main_server_clearall"] = "Thoroughly clean the area",
+	["main_server_clearall_desc"] = "Delete all peds and vehicles within the given radius",
+
 	-- Noclip
 	["noclip_go_forward"] = "Go forward",
 	["noclip_go_backward"] = "Go backward",
@@ -217,7 +221,9 @@ Locales["en"] = {
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
+	["textentry_number_invalid"] = "The provided number is ~r~invalid",
 	["textentry_change_vehicle_plate"] = "Please specify the ~r~vehicle license plate",
 	["textentry_add_to_favorites_name"] = "Please specify ~r~the name~s~ of your vehicle",
 	["textentry_search_vehicle_model"] = "Please specify ~r~the model~s~ of the vehicle",
+	["textentry_radius"] = "Please specify ~r~the radius~s~",
 }
