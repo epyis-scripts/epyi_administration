@@ -158,6 +158,8 @@ Locales["en"] = {
 	-- Elements → Menu menu / Server
 	["main_server_weather"] = "Change the weather",
 	["main_server_weather_desc"] = "Allows you to change the server weather",
+	["main_server_time"] = "Change the server time",
+	["main_server_time_desc"] = "Allows you to change the server time",
 	["main_server_blackout"] = "Enable/Disable general blackout",
 	["main_server_blackout_desc"] = "Lets put the city in total blackout",
 	["main_server_clearall"] = "Thoroughly clean the area",

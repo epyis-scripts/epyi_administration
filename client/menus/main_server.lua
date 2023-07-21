@@ -20,6 +20,25 @@ function main_server_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	RageUI.List(
+		_U("main_server_time"),
+		_var.menu.timeArray,
+		_var.menu.timeArrayIndex,
+		_U("main_server_time_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_server_time"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected, Index)
+			_var.menu.timeArrayIndex = Index
+			if Selected then
+				TriggerServerEvent(
+					"epyi_administration:changeWeatherOrBlackout",
+					_var.menu.weatherArray[_var.menu.weatherArrayIndex],
+					_var.menu.blackoutCheckbox,
+					_var.menu.timeArray[_var.menu.timeArrayIndex]
+				)
+			end
+		end
+	)
 	RageUI.Checkbox(
 		_U("main_server_blackout"),
 		_U("main_server_blackout_desc"),

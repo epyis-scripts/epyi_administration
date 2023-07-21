@@ -82,7 +82,7 @@ end
 ---@param blackout boolean
 ---@return void
 RegisterNetEvent("epyi_administration:syncWeather")
-AddEventHandler("epyi_administration:syncWeather", function(weather, blackout)
+AddEventHandler("epyi_administration:syncWeather", function(weather, blackout, time)
 	_var.menu.blackoutCheckbox = blackout
 	SetArtificialLightsState(blackout)
 	SetArtificialLightsStateAffectsVehicles(false)
@@ -97,4 +97,5 @@ AddEventHandler("epyi_administration:syncWeather", function(weather, blackout)
 	SetWeatherTypePersist(weather)
 	SetWeatherTypeNow(weather)
 	SetWeatherTypeNowPersist(weather)
+	NetworkOverrideClockTime(time, 0, 0)
 end)

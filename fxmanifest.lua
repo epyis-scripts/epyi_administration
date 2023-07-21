@@ -44,7 +44,7 @@ server_scripts({
 	"server/permissions.lua",
 	"server/datastore.lua",
 	"server/reports.lua",
-	"server/weather.lua",
+	"server/weather_time.lua",
 })
 
 dependencies({

@@ -3,10 +3,11 @@
 ---@param blackout boolean
 ---@return void
 RegisterNetEvent("epyi_administration:changeWeatherOrBlackout")
-AddEventHandler("epyi_administration:changeWeatherOrBlackout", function(weather, blackout)
+AddEventHandler("epyi_administration:changeWeatherOrBlackout", function(weather, blackout, time)
 	_var.weather = weather
 	_var.blackout = blackout
-	TriggerClientEvent("epyi_administration:syncWeather", -1, _var.weather, _var.blackout)
+	_var.time = tonumber(time)
+	TriggerClientEvent("epyi_administration:syncWeather", -1, _var.weather, _var.blackout, _var.time)
 end)
 
 -- Thread to sync the weather on player loggin
@@ -16,7 +17,7 @@ Citizen.CreateThread(function()
 			local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
 			if not xPlayer then
 				table.remove(_var.syncedWeatherBlackoutPlayers, key)
-				logToConsole("Disable weather sync for player with identifier: " .. identifier)
+				logToConsole("Disable weather/time sync for player with identifier: " .. identifier)
 			end
 		end
 		local xPlayers = ESX.GetExtendedPlayers()
@@ -29,8 +30,8 @@ Citizen.CreateThread(function()
 			end
 			if not isSynced then
 				table.insert(_var.syncedWeatherBlackoutPlayers, xPlayer.identifier)
-				TriggerClientEvent("epyi_administration:syncWeather", xPlayer.source, _var.weather, _var.blackout)
-				logToConsole("Enable weather sync for player with identifier: " .. xPlayer.identifier)
+				TriggerClientEvent("epyi_administration:syncWeather", xPlayer.source, _var.weather, _var.blackout, _var.time)
+				logToConsole("Enable weather/time sync for player with identifier: " .. xPlayer.identifier)
 			end
 		end
 		Citizen.Wait(1000)

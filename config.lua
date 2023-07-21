@@ -72,6 +72,7 @@ Config.Groups = {
 			-- Submenu → Server
 			["submenu_server_access"] = true,
 			["submenu_server_weather"] = true,
+			["submenu_server_time"] = true,
 			["submenu_server_blackout"] = true,
 			["submenu_server_clearall"] = true,
 			["submenu_server_clearvehicles"] = true,
