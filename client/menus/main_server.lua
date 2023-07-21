@@ -2,6 +2,53 @@
 ---@param playerGroup string
 ---@return void
 function main_server_showContentThisFrame(playerGroup)
+	RageUI.List(
+		_U("main_server_weather"),
+		_var.menu.weatherArray,
+		_var.menu.weatherArrayIndex,
+		_U("main_server_weather_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_server_weather"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected, Index)
+			_var.menu.weatherArrayIndex = Index
+			if Selected then
+				TriggerServerEvent(
+					"epyi_administration:changeWeatherOrBlackout",
+					_var.menu.weatherArray[_var.menu.weatherArrayIndex],
+					_var.menu.blackoutCheckbox
+				)
+			end
+		end
+	)
+	RageUI.Checkbox(
+		_U("main_server_blackout"),
+		_U("main_server_blackout_desc"),
+		_var.menu.blackoutCheckbox,
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_server_blackout"] },
+		function() end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_server_blackout"] then
+				return
+			end
+			_var.menu.blackoutCheckbox = true
+			TriggerServerEvent(
+				"epyi_administration:changeWeatherOrBlackout",
+				_var.menu.weatherArray[_var.menu.weatherArrayIndex],
+				_var.menu.blackoutCheckbox
+			)
+		end,
+		function()
+			if not Config.Groups[playerGroup].Access["submenu_server_blackout"] then
+				return
+			end
+			_var.menu.blackoutCheckbox = false
+			TriggerServerEvent(
+				"epyi_administration:changeWeatherOrBlackout",
+				_var.menu.weatherArray[_var.menu.weatherArrayIndex],
+				_var.menu.blackoutCheckbox
+			)
+		end
+	)
 	RageUI.ButtonWithStyle(
 		_U("main_server_clearall"),
 		_U("main_server_clearall_desc"),

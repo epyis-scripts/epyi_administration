@@ -156,6 +156,10 @@ Locales["en"] = {
 	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
 
 	-- Elements → Menu menu / Server
+	["main_server_weather"] = "Change the weather",
+	["main_server_weather_desc"] = "Allows you to change the server weather",
+	["main_server_blackout"] = "Enable/Disable general blackout",
+	["main_server_blackout_desc"] = "Lets put the city in total blackout",
 	["main_server_clearall"] = "Thoroughly clean the area",
 	["main_server_clearall_desc"] = "Delete all peds and vehicles within the given radius",
 	["main_server_clearvehicle"] = "Clear all vehicles from the area",

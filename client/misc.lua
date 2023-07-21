@@ -76,3 +76,25 @@ function textEntry(textEntry, inputText, maxLength)
 		return nil
 	end
 end
+
+---syncWeather → Set weather (used by the server to sync weather)
+---@param weather string
+---@param blackout boolean
+---@return void
+RegisterNetEvent("epyi_administration:syncWeather")
+AddEventHandler("epyi_administration:syncWeather", function(weather, blackout)
+	_var.menu.blackoutCheckbox = blackout
+	SetArtificialLightsState(blackout)
+	SetArtificialLightsStateAffectsVehicles(false)
+	for key, weather in pairs(_var.menu.weatherArray) do
+		if _var.menu.weatherArray[_var.menu.weatherArrayIndex] == weather then
+			_var.menu.weatherArrayIndex = key
+		end
+	end
+	SetWeatherTypeOverTime(weather, 0.0)
+	ClearOverrideWeather()
+	ClearWeatherTypePersist()
+	SetWeatherTypePersist(weather)
+	SetWeatherTypeNow(weather)
+	SetWeatherTypeNowPersist(weather)
+end)

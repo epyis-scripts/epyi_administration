@@ -38,16 +38,18 @@ client_scripts({
 server_scripts({
 	"@oxmysql/lib/MySQL.lua",
 	"server/version.lua",
+	"server/logs.lua",
 	"server/var_init.lua",
 	"server/init_sql.lua",
 	"server/permissions.lua",
 	"server/datastore.lua",
 	"server/reports.lua",
+	"server/weather.lua",
 })
 
 dependencies({
 	"es_extended",
 	"oxmysql",
 	"esx_status",
-	"esx_datastore"
+	"esx_datastore",
 })

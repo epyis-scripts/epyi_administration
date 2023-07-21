@@ -28,6 +28,25 @@ _var.reports.selectedReport = 1
 _var.menu.cooldownStatus = false
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
+_var.menu.blackoutCheckbox = false
+_var.menu.weatherArrayIndex = 1
+_var.menu.weatherArray = {
+	"EXTRASUNNY",
+	"CLEAR",
+	"SMOG",
+	"FOGGY",
+	"OVERCAST",
+	"CLOUDS",
+	"NEUTRAL",
+	"CLEARING",
+	"RAIN",
+	"THUNDER",
+	"SNOW",
+	"SNOWLIGHT",
+	"BLIZZARD",
+	"XMAS",
+	"HALLOWEEN",
+}
 _var.menu.pedsCategoryFilterArrayIndex = 1
 _var.menu.pedsCategoryFilterArray = {
 	_U("main_personnal_appearance_pedscategory0"),
