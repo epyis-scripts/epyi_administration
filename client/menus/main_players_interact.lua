@@ -212,4 +212,34 @@ function main_players_interact_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	RageUI.ButtonWithStyle(
+		_U("main_reports_edit_goto"),
+		_U("main_reports_edit_goto_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected)
+			if Selected then
+				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
+				local userPedCoords = GetEntityCoords(userPed)
+				local staffPed = PlayerPedId()
+				SetEntityCoords(staffPed, userPedCoords, false)
+				ESX.ShowNotification(_U("notif_goto_success", player.name))
+			end
+		end
+	)
+	RageUI.ButtonWithStyle(
+		_U("main_reports_edit_bring"),
+		_U("main_reports_edit_bring_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected)
+			if Selected then
+				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
+				local staffPed = PlayerPedId()
+				local staffPedCoords = GetEntityCoords(staffPed)
+				SetEntityCoords(userPed, staffPedCoords, false)
+				ESX.ShowNotification(_U("notif_bring_success", player.name))
+			end
+		end
+	)
 end

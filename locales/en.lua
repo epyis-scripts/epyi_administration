@@ -167,7 +167,9 @@ Locales["en"] = {
 	["main_reports_edit_take"] = "Take the report",
 	["main_reports_edit_leave"] = "Leave the report to the other staff",
 	["main_reports_edit_goto"] = "Teleport to the player",
+	["main_reports_edit_goto_desc"] = "Allows you to teleport to the player",
 	["main_reports_edit_bring"] = "Teleport the player at my location",
+	["main_reports_edit_bring_desc"] = "Allows you to teleport the player to you",
 	["main_reports_edit_delete"] = "Permanently delete this report",
 	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
 
