@@ -114,6 +114,8 @@ Locales["en"] = {
 	["main_players_interact_bring_desc"] = "Allows you to teleport the player to you",
 	["main_players_interact_dm"] = "Send a private message",
 	["main_players_interact_dm_desc"] = "Allows you to send a private message to the player",
+	["main_players_interact_kick"] = "~r~Kick the player",
+	["main_players_interact_kick_desc"] = "Allows to kick the player from the server",
 
 	-- Elements → Menu menu / interact
 

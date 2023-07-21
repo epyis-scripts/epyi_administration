@@ -23,6 +23,15 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		RageUI.CloseAll()
 		ESX.ShowNotification("notif_report_watching_deleted")
 	end
+	local targetisLower = true
+	if
+		Config.Groups[playerGroup] ~= nil
+		and Config.Groups[_var.reports.list[_var.reports.selectedReport].user.group] ~= nil
+		and Config.Groups[_var.reports.list[_var.reports.selectedReport].user.group].Priority
+			> Config.Groups[playerGroup].Priority
+	then
+		targetisLower = false
+	end
 	RageUI.Separator("")
 	RageUI.Separator(
 		_U(
@@ -187,7 +196,8 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		_U("main_reports_edit_advanced"),
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact"],
+		Config.Groups[playerGroup].Access["submenu_players_interact"]
+			and (Config.Groups[playerGroup].Access["submenu_players_interact_highergroup"] and true or targetisLower),
 		function(_h, _a, Selected)
 			if Selected then
 				local canSkip = false

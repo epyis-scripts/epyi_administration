@@ -263,4 +263,14 @@ function main_players_interact_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+    RageUI.ButtonWithStyle(
+		_U("main_players_interact_kick"),
+		_U("main_players_interact_kick_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact_kick"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected)
+			if Selected then
+			end
+		end
+	)
 end

@@ -57,6 +57,7 @@ Config.Groups = {
 			["submenu_players_interact_goto"] = true,
 			["submenu_players_interact_bring"] = true,
 			["submenu_players_interact_dm"] = true,
+			["submenu_players_interact_kick"] = true,
 
 			-- Submenu → Vehicles
 			["submenu_vehicles_access"] = true,

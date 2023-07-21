@@ -19,7 +19,7 @@ function main_players_showContentThisFrame(playerGroup)
 		if
 			Config.Groups[playerGroup] ~= nil
 			and Config.Groups[player.group] ~= nil
-			and Config.Groups[player.group].Priority >= Config.Groups[playerGroup].Priority
+			and Config.Groups[player.group].Priority > Config.Groups[playerGroup].Priority
 		then
 			targetisLower = false
 		end
