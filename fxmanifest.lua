@@ -43,6 +43,7 @@ server_scripts({
 	"server/init_sql.lua",
 	"server/permissions.lua",
 	"server/datastore.lua",
+	"server/players.lua",
 	"server/reports.lua",
 	"server/weather_time.lua",
 })
