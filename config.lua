@@ -79,4 +79,56 @@ Config.Groups = {
 			["submenu_server_clearpeds"] = true,
 		},
 	},
+	user = {
+		Priority = 70,
+		Label = "User",
+		Color = "~s~",
+		Access = {
+			-- Main menu
+			["mainmenu_open"] = true,
+
+			-- Submenu → Personnal
+			["submenu_personnal_access"] = false,
+			["submenu_personnal_health_management"] = false,
+			["submenu_personnal_appearance"] = false,
+			["submenu_personnal_noclip"] = false,
+			["submenu_personnal_godmode"] = false,
+			["submenu_personnal_invisibility"] = false,
+			["submenu_personnal_fastwalk"] = false,
+			["submenu_personnal_fastswim"] = false,
+			["submenu_personnal_superjump"] = false,
+			["submenu_personnal_stayinvehicle"] = false,
+			["submenu_personnal_seethrough"] = false,
+			["submenu_personnal_shownames"] = false,
+
+			-- Submenu → Players
+			["submenu_players_access"] = true,
+
+			-- Submenu → Vehicles
+			["submenu_vehicles_access"] = false,
+			["submenu_vehicles_current_access"] = false,
+			["submenu_vehicles_favorites_access"] = false,
+			["submenu_vehicles_spawn_access"] = false,
+			["submenu_vehicles_repair"] = false,
+			["submenu_vehicles_clean"] = false,
+			["submenu_vehicles_plate"] = false,
+			["submenu_vehicles_opendoor"] = false,
+			["submenu_vehicles_closedoor"] = false,
+			["submenu_vehicles_color_main"] = false,
+			["submenu_vehicles_color_secondary"] = false,
+			["submenu_vehicles_boost"] = false,
+
+			-- Submenu → Reports
+			["submenu_reports_access"] = false,
+
+			-- Submenu → Server
+			["submenu_server_access"] = false,
+			["submenu_server_weather"] = false,
+			["submenu_server_time"] = false,
+			["submenu_server_blackout"] = false,
+			["submenu_server_clearall"] = false,
+			["submenu_server_clearvehicles"] = false,
+			["submenu_server_clearpeds"] = false,
+		},
+	},
 }

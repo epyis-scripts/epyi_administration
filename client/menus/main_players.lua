@@ -15,8 +15,12 @@ function main_players_showContentThisFrame(playerGroup)
 		_var.activeThreads.getPlayers = false
 	end)
 	for _k, player in pairs(_var.players.list) do
+		local group = _U("invalid")
+		if Config.Groups[player.group] ~= nil then
+			group = Config.Groups[player.group].Color .. Config.Groups[player.group].Label
+		end
 		RageUI.ButtonWithStyle(
-			player.name .. " - " .. GetPlayerName(GetPlayerFromServerId(player.source)),
+			player.name .. " - " .. GetPlayerName(GetPlayerFromServerId(player.source)) .. " ~s~[" .. group .. "~s~]",
 			nil,
 			{ RightLabel = "→" },
 			true,

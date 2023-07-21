@@ -3,7 +3,7 @@
 ---@return table
 ESX.RegisterServerCallback("epyi_administration:getPlayers", function(source, cb, identifier)
 	xPlayer = ESX.GetPlayerFromIdentifier(identifier)
-	if not Config.Groups[xPlayer.getGroup()].Access["submenu_players_access"] then
+	if not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_access"] then
 		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
