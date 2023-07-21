@@ -10,6 +10,10 @@
 ```
 ## 💾 Dependencies
 - **es_extended** from <a href="https://github.com/esx-framework/esx_core">esx_core official repository</a>
+- **oxmysql** from <a href="https://github.com/overextended/oxmysql">oxmysql official repository</a>
+- **esx_skin** from <a href="https://github.com/esx-framework/esx_core">esx_core official repository</a>
+- **esx_status** from <a href="https://github.com/esx-framework/esx_status">esx_status official repository</a>
+- **esx_datastore** from <a href="https://github.com/esx-framework/esx_datastore">esx_datastore official repository</a>
 ## 🔧 Installation guide
 1. Go download a **release of the script**
 2. Extract the downloaded zip
