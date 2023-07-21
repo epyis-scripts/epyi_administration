@@ -72,6 +72,8 @@ Config.Groups = {
 			-- Submenu → Server
 			["submenu_server_access"] = true,
 			["submenu_server_clearall"] = true,
+			["submenu_server_clearvehicles"] = true,
+			["submenu_server_clearpeds"] = true,
 		},
 	},
 }

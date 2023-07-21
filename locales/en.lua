@@ -158,6 +158,10 @@ Locales["en"] = {
 	-- Elements → Menu menu / Server
 	["main_server_clearall"] = "Thoroughly clean the area",
 	["main_server_clearall_desc"] = "Delete all peds and vehicles within the given radius",
+	["main_server_clearvehicle"] = "Clear all vehicles from the area",
+	["main_server_clearvehicle_desc"] = "Delete vehicles within the given radius",
+	["main_server_clearpeds"] = "Clear all peds from the area",
+	["main_server_clearpeds_desc"] = "Delete all peds within the given radius",
 
 	-- Noclip
 	["noclip_go_forward"] = "Go forward",
@@ -218,6 +222,9 @@ Locales["en"] = {
 	["notif_report_watching_deleted"] = "The report you were editing ~r~has been deleted",
 	["notif_report_delete_success"] = "Report ~r~n°%s~s~ deleted successfully!",
 	["notif_appearance_back_success"] = "Your appearance has been ~g~successfully ~s~reset!",
+	["notif_area_clearall_success"] = "The area has been completely cleaned ~g~successfully~s~!",
+	["notif_area_clearvehicles_success"] = "All vehicles in the area have been ~g~successfully~s~ removed!",
+	["notif_area_clearpeds_success"] = "All peds in the area have been ~g~successfully~s~ removed!",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
