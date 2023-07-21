@@ -1,4 +1,4 @@
----main_personnal_appearance_showContentThisFrame → Function to show the main/personnal menu content
+---main_personnal_appearance_showContentThisFrame → Function to show the main/personnal/appearanceance menu content
 ---@param playerGroup string
 ---@return void
 function main_personnal_appearance_showContentThisFrame(playerGroup)

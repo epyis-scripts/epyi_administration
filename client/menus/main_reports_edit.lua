@@ -1,4 +1,4 @@
----main_reports_showContentThisFrame → Function to show the main/personnal menu content
+---main_reports_edit_showContentThisFrame → Function to show the main/reports/edit menu content
 ---@param playerGroup string
 ---@return void
 function main_reports_edit_showContentThisFrame(playerGroup)

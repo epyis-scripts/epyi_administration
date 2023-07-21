@@ -1,4 +1,4 @@
----main_vehicles_favorites_showContentThisFrame → Function to show the main/personnal menu content
+---main_vehicles_favorites_showContentThisFrame → Function to show the main/vehicles/favorites menu content
 ---@param playerGroup string
 ---@return void
 function main_vehicles_favorites_showContentThisFrame(playerGroup)

@@ -1,4 +1,4 @@
----main_personnal_showContentThisFrame → Function to show the main/personnal menu content
+---main_vehicles_showContentThisFrame → Function to show the main/vehicles menu content
 ---@param _var.client.staffGroup string
 ---@return void
 function main_vehicles_showContentThisFrame(playerGroup)

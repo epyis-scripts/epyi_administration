@@ -34,7 +34,8 @@ function main_showContentThisFrame(playerGroup)
 		_U("main_menu_access_players_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_players_access"],
-		function(_h, _a, _s) end
+		function(_h, _a, _s) end,
+		RMenu:Get("epyi_administration", "main_players")
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_menu_access_vehicles"),

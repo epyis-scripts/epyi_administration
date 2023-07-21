@@ -55,6 +55,32 @@ RMenu.Add(
 )
 RMenu.Add(
 	"epyi_administration",
+	"main_players",
+	RageUI.CreateSubMenu(
+		RMenu:Get("epyi_administration", "main"),
+		_U("menu_title"),
+		_U("main_players_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menu.bannerTexture,
+		_var.menu.bannerTexture
+	)
+)
+RMenu.Add(
+	"epyi_administration",
+	"main_players_interact",
+	RageUI.CreateSubMenu(
+		RMenu:Get("epyi_administration", "main_players"),
+		_U("menu_title"),
+		_U("main_players_interact_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menu.bannerTexture,
+		_var.menu.bannerTexture
+	)
+)
+RMenu.Add(
+	"epyi_administration",
 	"main_vehicles",
 	RageUI.CreateSubMenu(
 		RMenu:Get("epyi_administration", "main"),
@@ -161,6 +187,18 @@ if Config.MenuStyle.BannerStyle.ImageUrl == nil then
 		Config.MenuStyle.BannerStyle.Color.b,
 		Config.MenuStyle.BannerStyle.Color.a
 	)
+	RMenu:Get("epyi_administration", "main_players"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
+	RMenu:Get("epyi_administration", "main_players_interact"):SetRectangleBanner(
+		Config.MenuStyle.BannerStyle.Color.r,
+		Config.MenuStyle.BannerStyle.Color.g,
+		Config.MenuStyle.BannerStyle.Color.b,
+		Config.MenuStyle.BannerStyle.Color.a
+	)
 	RMenu:Get("epyi_administration", "main_personnal_appearance"):SetRectangleBanner(
 		Config.MenuStyle.BannerStyle.Color.r,
 		Config.MenuStyle.BannerStyle.Color.g,
@@ -254,6 +292,24 @@ function openMenu()
 					Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 					function()
 						main_personnal_appearance_showContentThisFrame(_var.client.staffGroup)
+					end
+				)
+				RageUI.IsVisible(
+					RMenu:Get("epyi_administration", "main_players"),
+					true,
+					Config.MenuStyle.BannerStyle.UseGlareEffect,
+					Config.MenuStyle.BannerStyle.UseInstructionalButtons,
+					function()
+						main_players_showContentThisFrame(_var.client.staffGroup)
+					end
+				)
+				RageUI.IsVisible(
+					RMenu:Get("epyi_administration", "main_players_interact"),
+					true,
+					Config.MenuStyle.BannerStyle.UseGlareEffect,
+					Config.MenuStyle.BannerStyle.UseInstructionalButtons,
+					function()
+						main_players_interact_showContentThisFrame(_var.client.staffGroup)
 					end
 				)
 				RageUI.IsVisible(
