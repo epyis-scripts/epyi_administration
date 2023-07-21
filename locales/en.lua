@@ -10,6 +10,7 @@ Locales["en"] = {
 	["main_vehicles_spawn_subtitle"] = "Spawn a ~r~vehicle",
 	["main_reports_subtitle"] = "Management of ~r~reports",
 	["main_reports_edit_subtitle"] = "Management of the ~r~report",
+	["main_server_subtitle"] = "Management of ~r~the server",
 
 	-- Keys
 	["keys_menu_description"] = "~r~Open the administration menu",

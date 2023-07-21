@@ -57,6 +57,7 @@ function main_showContentThisFrame(playerGroup)
 		_U("main_menu_access_server_desc"),
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_server_access"],
-		function(_h, _a, _s) end
+		function(_h, _a, _s) end,
+		RMenu:Get("epyi_administration", "main_server")
 	)
 end
