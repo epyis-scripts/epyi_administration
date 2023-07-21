@@ -50,6 +50,7 @@ Config.Groups = {
 
 			-- Submenu → Personnal → Appearance
 			["submenu_personnal_appearance_access"] = true,
+			["submenu_personnal_appearance_getback"] = true,
 
 			-- Submenu → Players
 			["submenu_players_access"] = true,

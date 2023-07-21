@@ -72,6 +72,12 @@ Locales["en"] = {
 	["main_personnal_shownames"] = "Enable/Disable player names display",
 	["main_personnal_shownames_desc"] = "Allows you to see player names when you are close to them",
 
+	-- Elements → Menu menu / personnal / appearance
+	["main_personnal_appearance_back"] = "Take on my initial appearance",
+	["main_personnal_appearance_back_desc"] = "Resume your default appearance",
+	["main_personnal_appearance_peds"] = "Choose a ped",
+	["main_personnal_appearance_peds_desc"] = "Choose a ped from the list of GTA peds",
+
 	-- Elements → Menu menu / vehicles
 	["main_vehicles_current"] = "Current vehicle management",
 	["main_vehicles_current_desc"] = "Allows you to manage the vehicle you are currently in",
@@ -191,6 +197,7 @@ Locales["en"] = {
 	["notif_bring_success"] = "You have teleported ~r~%s~s~ to you",
 	["notif_report_watching_deleted"] = "The report you were editing ~r~has been deleted",
 	["notif_report_delete_success"] = "Report ~r~n°%s~s~ deleted successfully!",
+	["notif_appearance_back_success"] = "Your appearance has been ~g~successfully ~s~reset!",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
