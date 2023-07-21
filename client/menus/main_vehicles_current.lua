@@ -5,7 +5,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_repair"),
 		_U("main_vehicles_current_repair_desc"),
-		{ RightLabel = "→" },
+		{},
 		Config.Groups[playerGroup].Access["submenu_vehicles_repair"],
 		function(_h, _a, Selected)
 			if Selected then
@@ -25,7 +25,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_clean"),
 		_U("main_vehicles_current_clean_desc"),
-		{ RightLabel = "→" },
+		{},
 		Config.Groups[playerGroup].Access["submenu_vehicles_clean"],
 		function(_h, _a, Selected)
 			if Selected then

@@ -38,6 +38,7 @@ Config.Groups = {
 			-- Submenu → Personnal
 			["submenu_personnal_access"] = true,
 			["submenu_personnal_health_management"] = true,
+			["submenu_personnal_appearance"] = true,
 			["submenu_personnal_noclip"] = true,
 			["submenu_personnal_godmode"] = true,
 			["submenu_personnal_invisibility"] = true,
@@ -47,10 +48,6 @@ Config.Groups = {
 			["submenu_personnal_stayinvehicle"] = true,
 			["submenu_personnal_seethrough"] = true,
 			["submenu_personnal_shownames"] = true,
-
-			-- Submenu → Personnal → Appearance
-			["submenu_personnal_appearance_access"] = true,
-			["submenu_personnal_appearance_getback"] = true,
 
 			-- Submenu → Players
 			["submenu_players_access"] = true,

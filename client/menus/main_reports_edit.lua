@@ -152,7 +152,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(
 		_U("main_reports_edit_goto"),
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
-		{ RightLabel = "→" },
+		{},
 		true,
 		function(_h, _a, Selected)
 			if Selected then
@@ -168,7 +168,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(
 		_U("main_reports_edit_bring"),
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
-		{ RightLabel = "→" },
+		{},
 		true,
 		function(_h, _a, Selected)
 			if Selected then
@@ -186,7 +186,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 	RageUI.ButtonWithStyle(
 		_U("main_reports_edit_delete"),
 		_U("main_reports_edit_delete_desc"),
-		{ RightLabel = "→", Color = { BackgroundColor = { 150, 50, 50, 20 } } },
+		{ Color = { BackgroundColor = { 150, 50, 50, 20 } } },
 		true,
 		function(_h, _a, Selected)
 			if Selected then

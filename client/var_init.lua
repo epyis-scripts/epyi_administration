@@ -28,6 +28,22 @@ _var.reports.selectedReport = 1
 _var.menu.cooldownStatus = false
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
+_var.menu.pedsCategoryFilterArrayIndex = 1
+_var.menu.pedsCategoryFilterArray = {
+	_U("main_personnal_appearance_pedscategory0"),
+	_U("main_personnal_appearance_pedscategory1"),
+	_U("main_personnal_appearance_pedscategory2"),
+	_U("main_personnal_appearance_pedscategory3"),
+	_U("main_personnal_appearance_pedscategory4"),
+	_U("main_personnal_appearance_pedscategory5"),
+	_U("main_personnal_appearance_pedscategory6"),
+	_U("main_personnal_appearance_pedscategory7"),
+	_U("main_personnal_appearance_pedscategory8"),
+	_U("main_personnal_appearance_pedscategory9"),
+	_U("main_personnal_appearance_pedscategory10"),
+	_U("main_personnal_appearance_pedscategory11"),
+	_U("main_personnal_appearance_pedscategory12"),
+}
 _var.menu.reportsFilterArrayIndex = 1
 _var.menu.reportsFilterArray = {
 	_("main_reports_filter_all"),
@@ -817,7 +833,7 @@ _var.vehicle.list = {
 }
 _var.peds.list = {
 	[1] = {
-		category = "Ambiant female",
+		category = _U("main_personnal_appearance_pedscategory1"),
 		models = {
 			[1] = { model = "a_f_m_beach_01", label = "Beach 01" },
 			[2] = { model = "a_f_m_bevhills_01", label = "Bevhills 01" },
@@ -897,7 +913,7 @@ _var.peds.list = {
 		},
 	},
 	[2] = {
-		category = "Ambiant male",
+		category = _U("main_personnal_appearance_pedscategory2"),
 		models = {
 			[1] = { model = "a_m_m_acult_01", label = "Acult 01" },
 			[2] = { model = "a_m_m_afriamer_01", label = "Afriamer 01" },
@@ -1031,7 +1047,7 @@ _var.peds.list = {
 		},
 	},
 	[3] = {
-		category = "Animals",
+		category = _U("main_personnal_appearance_pedscategory3"),
 		models = {
 			[1] = { model = "a_c_boar", label = "Boar" },
 			[2] = { model = "a_c_cat_01", label = "Cat 01" },
@@ -1068,7 +1084,7 @@ _var.peds.list = {
 		},
 	},
 	[4] = {
-		category = "Cutscene",
+		category = _U("main_personnal_appearance_pedscategory4"),
 		models = {
 			[1] = { model = "cs_amandatownley", label = "Amanda Townley" },
 			[2] = { model = "cs_andreas", label = "Andreas" },
@@ -1222,7 +1238,7 @@ _var.peds.list = {
 		},
 	},
 	[5] = {
-		category = "Gang female",
+		category = _U("main_personnal_appearance_pedscategory5"),
 		models = {
 			[1] = { model = "g_f_importexport_01", label = "Import Export 01" },
 			[2] = { model = "g_f_y_ballas_01", label = "Ballas 01" },
@@ -1232,7 +1248,7 @@ _var.peds.list = {
 		},
 	},
 	[6] = {
-		category = "Gang male",
+		category = _U("main_personnal_appearance_pedscategory6"),
 		models = {
 			[1] = { model = "g_m_importexport_01", label = "Import Export 01" },
 			[2] = { model = "g_m_m_armboss_01", label = "Arm Boss 01" },
@@ -1276,7 +1292,7 @@ _var.peds.list = {
 		},
 	},
 	[7] = {
-		category = "Multiplayer",
+		category = _U("main_personnal_appearance_pedscategory7"),
 		models = {
 			[1] = { model = "mp_f_bennymech_01", label = "Benny Mechanic 01" },
 			[2] = { model = "mp_f_boatstaff_01", label = "Boat Staff 01" },
@@ -1321,7 +1337,7 @@ _var.peds.list = {
 		},
 	},
 	[8] = {
-		category = "Scenario female",
+		category = _U("main_personnal_appearance_pedscategory8"),
 		models = {
 			[1] = { model = "s_f_m_fembarber", label = "Female Barber" },
 			[2] = { model = "s_f_m_maid_01", label = "Maid 01" },
@@ -1351,7 +1367,7 @@ _var.peds.list = {
 		},
 	},
 	[9] = {
-		category = "Scenario male",
+		category = _U("main_personnal_appearance_pedscategory9"),
 		models = {
 			[1] = { model = "s_m_m_ammucountry", label = "Ammu-Nation Country" },
 			[2] = { model = "s_m_m_armoured_01", label = "Armoured 01" },
@@ -1455,7 +1471,7 @@ _var.peds.list = {
 		},
 	},
 	[10] = {
-		category = "Story",
+		category = _U("main_personnal_appearance_pedscategory10"),
 		models = {
 			[1] = { model = "hc_driver", label = "Driver" },
 			[2] = { model = "hc_gunman", label = "Gunman" },
@@ -1606,7 +1622,7 @@ _var.peds.list = {
 		},
 	},
 	[11] = {
-		category = "Story scenario female",
+		category = _U("main_personnal_appearance_pedscategory11"),
 		models = {
 			[1] = { model = "u_f_m_corpse_01", label = "Corpse 01" },
 			[2] = { model = "u_f_m_miranda", label = "Miranda" },
@@ -1639,7 +1655,7 @@ _var.peds.list = {
 		},
 	},
 	[12] = {
-		category = "Story scenario male",
+		category = _U("main_personnal_appearance_pedscategory12"),
 		models = {
 			[1] = { model = "u_m_m_aldinapoli", label = "Aldinapoli" },
 			[2] = { model = "u_m_m_bankman", label = "Bankman" },

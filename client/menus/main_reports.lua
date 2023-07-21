@@ -77,7 +77,7 @@ function main_reports_showContentThisFrame(playerGroup)
 					.. group
 					.. "~s~]",
 				_U("main_reports_report_desc", report.user.reason),
-				{},
+				{ RightLabel = "→" },
 				true,
 				function(_h, _a, Selected)
 					if Selected then
