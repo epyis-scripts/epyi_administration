@@ -5,7 +5,7 @@ Locales["en"] = {
 	["main_personnal_subtitle"] = "Management of ~r~my character",
 	["main_personnal_appearance_subtitle"] = "Management of ~r~my appearance",
 	["main_players_subtitle"] = "Management of ~r~connected players",
-	["main_players_edit_subtitle"] = "Management of ~r~the player",
+	["main_players_interact_subtitle"] = "Management of ~r~the player",
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
 	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
 	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
@@ -95,6 +95,20 @@ Locales["en"] = {
 	["main_personnal_appearance_pedscategory10"] = "Story",
 	["main_personnal_appearance_pedscategory11"] = "Story scenario female",
 	["main_personnal_appearance_pedscategory12"] = "Story scenario male",
+
+	-- Elements → Menu menu / players
+	["main_players_desc"] = "Interact with player ~r~%s",
+	["main_players_interact_ooc_name"] = "His non-roleplay name: ~r~%s",
+	["main_players_interact_rp_name"] = "His roleplay name: ~r~%s",
+	["main_players_interact_money_action_add"] = "Add",
+	["main_players_interact_money_action_remove"] = "Remove",
+	["main_players_interact_money_action_set"] = "Set",
+	["main_players_interact_money_bank"] = "Bank money → ~r~%s$",
+	["main_players_interact_money_cash"] = "Cash money → ~r~%s$",
+	["main_players_interact_money_black"] = "Black money → ~r~%s$",
+	["main_players_interact_money_desc"] = "Allows you to manage player ~r~accounts",
+
+	-- Elements → Menu menu / interact
 
 	-- Elements → Menu menu / vehicles
 	["main_vehicles_current"] = "Current vehicle management",
@@ -223,6 +237,7 @@ Locales["en"] = {
 	["notif_remove_vehicle_favorite_success"] = "The vehicle with the name ~r~%s~s~ has been ~r~successfully removed~s~ from favorites",
 	["notif_datastore_error"] = "An error occurred while ~r~saving data",
 	["notif_report_editing_error"] = "An error occurred while ~r~editing reports",
+	["notif_error"] = "An error occurred",
 	["notif_report_status_take"] = "You have ~g~take ~s~the report ~r~n°%s",
 	["notif_report_status_leave"] = "You have ~r~leaved ~s~the report ~r~n°%s",
 	["notif_goto_success"] = "You teleported to ~r~%s",
@@ -233,6 +248,10 @@ Locales["en"] = {
 	["notif_area_clearall_success"] = "The area has been completely cleaned ~g~successfully~s~!",
 	["notif_area_clearvehicles_success"] = "All vehicles in the area have been ~g~successfully~s~ removed!",
 	["notif_area_clearpeds_success"] = "All peds in the area have been ~g~successfully~s~ removed!",
+	["notif_amount_too_much"] = "The amount given is ~r~too high",
+	["notif_addmoney_success"] = "Adding %s$ to account completed ~g~successfully ~s~!",
+	["notif_removemoney_success"] = "The deletion of %s$ from the account was done with ~g~success ~s~!",
+	["notif_setmoney_success"] = "The modification of the account to the amount of %s$ has been done with ~g~success ~s~!",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
@@ -241,4 +260,5 @@ Locales["en"] = {
 	["textentry_add_to_favorites_name"] = "Please specify ~r~the name~s~ of your vehicle",
 	["textentry_search_vehicle_model"] = "Please specify ~r~the model~s~ of the vehicle",
 	["textentry_radius"] = "Please specify ~r~the radius~s~",
+	["textentry_amount"] = "Please specify ~r~the amount~s~",
 }

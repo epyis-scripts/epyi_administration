@@ -51,6 +51,9 @@ Config.Groups = {
 
 			-- Submenu → Players
 			["submenu_players_access"] = true,
+			["submenu_players_interact"] = true,
+			["submenu_players_interact_highergroup"] = true,
+			["submenu_players_interact_managemoney"] = true,
 
 			-- Submenu → Vehicles
 			["submenu_vehicles_access"] = true,

@@ -17,6 +17,7 @@ _var.client.playerData = {}
 _var.client.userData = {}
 _var.reports.list = {}
 _var.players.list = {}
+_var.players.selected = {}
 _var.instructionnal.buttons = nil
 _var.noclip.entity = false
 _var.noclip.speedArrayIndex = 1
@@ -30,6 +31,12 @@ _var.reports.selectedReport = 1
 _var.menu.cooldownStatus = false
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
+_var.menu.accountsActionsArrayIndex = 1
+_var.menu.accountsActionsArray = {
+	_("main_players_interact_money_action_add"),
+	_("main_players_interact_money_action_remove"),
+	_("main_players_interact_money_action_set")
+}
 _var.menu.blackoutCheckbox = false
 _var.menu.timeArrayIndex = 1
 _var.menu.timeArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }

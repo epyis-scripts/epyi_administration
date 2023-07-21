@@ -15,18 +15,32 @@ function main_players_showContentThisFrame(playerGroup)
 		_var.activeThreads.getPlayers = false
 	end)
 	for _k, player in pairs(_var.players.list) do
+		local targetisLower = true
+		if
+			Config.Groups[playerGroup] ~= nil
+			and Config.Groups[player.group] ~= nil
+			and Config.Groups[player.group].Priority >= Config.Groups[playerGroup].Priority
+		then
+			targetisLower = false
+		end
 		local group = _U("invalid")
 		if Config.Groups[player.group] ~= nil then
 			group = Config.Groups[player.group].Color .. Config.Groups[player.group].Label
 		end
 		RageUI.ButtonWithStyle(
 			player.name .. " - " .. GetPlayerName(GetPlayerFromServerId(player.source)) .. " ~s~[" .. group .. "~s~]",
-			nil,
+			_U("main_players_desc", GetPlayerName(GetPlayerFromServerId(player.source)) .. " ~s~[" .. group .. "~s~]"),
 			{ RightLabel = "→" },
-			true,
-			function(_h, _a, _s)
-				-- body
-			end
+			Config.Groups[playerGroup].Access["submenu_players_interact"]
+				and (
+					Config.Groups[playerGroup].Access["submenu_players_interact_highergroup"] and true or targetisLower
+				),
+			function(_h, _a, Selected)
+				if Selected then
+					_var.players.selected = player
+				end
+			end,
+			RMenu:Get("epyi_administration", "main_players_interact")
 		)
 	end
 end
