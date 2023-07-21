@@ -34,7 +34,6 @@ AddEventHandler("epyi_administration:addPlayerMoney", function(target, type, amo
 		not Config.Groups[xPlayer.getGroup()]
 		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_managemoney"]
 	then
-		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
 	end
@@ -54,7 +53,6 @@ AddEventHandler("epyi_administration:removePlayerMoney", function(target, type, 
 		not Config.Groups[xPlayer.getGroup()]
 		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_managemoney"]
 	then
-		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
 	end
@@ -78,7 +76,6 @@ AddEventHandler("epyi_administration:setPlayerMoney", function(target, type, amo
 		not Config.Groups[xPlayer.getGroup()]
 		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_managemoney"]
 	then
-		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
 	end
@@ -98,7 +95,6 @@ AddEventHandler("epyi_administration:sendMessage", function(target, message)
 		not Config.Groups[xPlayer.getGroup()]
 		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_dm"]
 	then
-		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
 	end
@@ -109,4 +105,36 @@ AddEventHandler("epyi_administration:sendMessage", function(target, message)
 	end
 	xTarget.showNotification(_U("notif_dm_from_staff", message))
 	xPlayer.showNotification(_U("notif_dm_send_success", xTarget.getName()))
+end)
+
+RegisterNetEvent("epyi_administration:kickPlayer")
+AddEventHandler("epyi_administration:kickPlayer", function(target, reason)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	if
+		not Config.Groups[xPlayer.getGroup()]
+		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_kick"]
+	then
+		xPlayer.kick(_U("insuficient_permissions"))
+		return
+	end
+	local xTarget = ESX.GetPlayerFromId(target)
+	if not xTarget or not reason then
+		xPlayer.showNotification(_U("notif_error"))
+		return
+	end
+	xPlayer.showNotification(_U("notif_kick_success", xTarget.getName()))
+	logToConsole(
+		"Player "
+			.. xPlayer.getName()
+			.. " (Identifier: "
+			.. xPlayer.identifier
+			.. ") has kicked "
+			.. xTarget.getName()
+			.. " (Identifier: "
+			.. xTarget.identifier
+			.. ") for the reason '"
+			.. reason
+			.. "'"
+	)
+	xTarget.kick(_U("notif_kick_target", reason))
 end)

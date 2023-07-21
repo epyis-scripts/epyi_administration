@@ -264,6 +264,8 @@ Locales["en"] = {
 	["notif_setmoney_success"] = "The modification of the account to the amount of %s$ has been done with ~g~success ~s~!",
 	["notif_dm_from_staff"] = "~r~Message from a staff: ~s~%s",
 	["notif_dm_send_success"] = "Your message has been successfully sent to ~r~%s",
+	["notif_kick_success"] = "You successfully kicked ~r~%s ~s~ from the server!",
+	["notif_kick_target"] = "You were kicked by staff\nReason: %s",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
@@ -274,4 +276,5 @@ Locales["en"] = {
 	["textentry_radius"] = "Please specify ~r~the radius~s~",
 	["textentry_amount"] = "Please specify ~r~the amount~s~",
 	["textentry_message"] = "Please specify ~r~the message~s~",
+	["textentry_reason"] = "Please specify ~r~the reason~s~",
 }

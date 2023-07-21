@@ -263,13 +263,24 @@ function main_players_interact_showContentThisFrame(playerGroup)
 			end
 		end
 	)
-    RageUI.ButtonWithStyle(
+	RageUI.ButtonWithStyle(
 		_U("main_players_interact_kick"),
 		_U("main_players_interact_kick_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_players_interact_kick"] and not _var.menu.cooldownStatus,
 		function(_h, _a, Selected)
 			if Selected then
+				Citizen.CreateThread(function()
+					_var.menu.cooldownStatus = true
+					local reason = textEntry(_U("textentry_reason"), "", 50)
+					if reason == nil or reason == "" then
+						ESX.ShowNotification(_U("textentry_string_invalid"))
+						_var.menu.cooldownStatus = false
+						return
+					end
+					TriggerServerEvent("epyi_administration:kickPlayer", player.source, reason)
+					_var.menu.cooldownStatus = false
+				end)
 			end
 		end
 	)
