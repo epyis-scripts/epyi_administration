@@ -49,7 +49,7 @@ Locales["en"] = {
 	["main_menu_access_vehicles_desc"] = "Access to vehicle management",
 	["main_menu_access_reports"] = "Management of ~r~reports",
 	["main_menu_access_reports_desc"] = "Access the management of player help reports",
-	["main_menu_access_server"] = "Management ot ~r~the server",
+	["main_menu_access_server"] = "Management of ~r~the server",
 	["main_menu_access_server_desc"] = "Access advanced server management",
 
 	-- Elements → Menu menu / personnal
@@ -99,6 +99,8 @@ Locales["en"] = {
 
 	-- Elements → Menu menu / players
 	["main_players_desc"] = "Interact with player ~r~%s",
+
+	-- Elements → Menu menu / players / interact
 	["main_players_interact_ooc_name"] = "His non-roleplay name: ~r~%s",
 	["main_players_interact_rp_name"] = "His roleplay name: ~r~%s",
 	["main_players_interact_money_action_add"] = "Add",
@@ -118,8 +120,6 @@ Locales["en"] = {
 	["main_players_interact_kick_desc"] = "Allows to kick the player from the server",
 	["main_players_interact_ban"] = "~r~Ban the player",
 	["main_players_interact_ban_desc"] = "Allows to ban the player from the server",
-
-	-- Elements → Menu menu / interact
 
 	-- Elements → Menu menu / vehicles
 	["main_vehicles_current"] = "Current vehicle management",
