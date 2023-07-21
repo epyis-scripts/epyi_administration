@@ -138,13 +138,13 @@ Config.Groups = {
 			["submenu_reports_access"] = false, -- can access report and manage them
 
 			-- Submenu → Server
-			["submenu_server_access"] = true, -- can access advanced server options
-			["submenu_server_weather"] = true, -- can change the weather of the server
-			["submenu_server_time"] = true, -- can change the time of the server
-			["submenu_server_blackout"] = true, -- can set the server as blackout
-			["submenu_server_clearall"] = true, -- can remove vehicles and peds in an area
-			["submenu_server_clearvehicles"] = true, -- can remove vehicles in an area
-			["submenu_server_clearpeds"] = true, -- can remove peds in an area
+			["submenu_server_access"] = false, -- can access advanced server options
+			["submenu_server_weather"] = false, -- can change the weather of the server
+			["submenu_server_time"] = false, -- can change the time of the server
+			["submenu_server_blackout"] = false, -- can set the server as blackout
+			["submenu_server_clearall"] = false, -- can remove vehicles and peds in an area
+			["submenu_server_clearvehicles"] = false, -- can remove vehicles in an area
+			["submenu_server_clearpeds"] = false, -- can remove peds in an area
 		},
 	},
 }
