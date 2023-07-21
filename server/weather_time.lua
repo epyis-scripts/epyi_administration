@@ -13,6 +13,7 @@ end)
 -- Thread to sync the weather on player loggin
 Citizen.CreateThread(function()
 	while true do
+		Citizen.Wait(1000)
 		for key, identifier in pairs(_var.syncedWeatherBlackoutPlayers) do
 			local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
 			if not xPlayer then
@@ -34,6 +35,5 @@ Citizen.CreateThread(function()
 				logToConsole("Enable weather/time sync for player with identifier: " .. xPlayer.identifier)
 			end
 		end
-		Citizen.Wait(1000)
 	end
 end)

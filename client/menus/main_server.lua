@@ -15,7 +15,8 @@ function main_server_showContentThisFrame(playerGroup)
 				TriggerServerEvent(
 					"epyi_administration:changeWeatherOrBlackout",
 					_var.menu.weatherArray[_var.menu.weatherArrayIndex],
-					_var.menu.blackoutCheckbox
+					_var.menu.blackoutCheckbox,
+					_var.menu.timeArray[_var.menu.timeArrayIndex]
 				)
 			end
 		end
@@ -53,7 +54,8 @@ function main_server_showContentThisFrame(playerGroup)
 			TriggerServerEvent(
 				"epyi_administration:changeWeatherOrBlackout",
 				_var.menu.weatherArray[_var.menu.weatherArrayIndex],
-				_var.menu.blackoutCheckbox
+				_var.menu.blackoutCheckbox,
+				_var.menu.timeArray[_var.menu.timeArrayIndex]
 			)
 		end,
 		function()
@@ -64,7 +66,8 @@ function main_server_showContentThisFrame(playerGroup)
 			TriggerServerEvent(
 				"epyi_administration:changeWeatherOrBlackout",
 				_var.menu.weatherArray[_var.menu.weatherArrayIndex],
-				_var.menu.blackoutCheckbox
+				_var.menu.blackoutCheckbox,
+				_var.menu.timeArray[_var.menu.timeArrayIndex]
 			)
 		end
 	)
