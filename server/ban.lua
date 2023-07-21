@@ -8,7 +8,9 @@ AddEventHandler("playerConnecting", function(name, setCallback, deferrals)
 	Citizen.Wait(0)
 	TriggerEvent("esx_datastore:getDataStore", "epyi_admin_userdata", identifier, function(store)
 		if store == nil then
+			logToConsole("Player with identifier " .. identifier .. " is currently logging for the first time")
 			deferrals.done()
+			return
 		end
 		banData = store.get("ban_status") or {}
 		if banData == {} then
