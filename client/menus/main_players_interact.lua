@@ -284,4 +284,36 @@ function main_players_interact_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+    RageUI.ButtonWithStyle(
+		_U("main_players_interact_ban"),
+		_U("main_players_interact_ban_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact_ban"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected)
+			if Selected then
+				Citizen.CreateThread(function()
+					_var.menu.cooldownStatus = true
+					local reason = textEntry(_U("textentry_reason"), "", 50)
+					if reason == nil or reason == "" then
+						ESX.ShowNotification(_U("textentry_string_invalid"))
+						_var.menu.cooldownStatus = false
+						return
+					end
+                    local duration = textEntry(_U("textentry_duration"), "", 3)
+                    if duration == nil or duration == "" then
+                        ESX.ShowNotification(_U("textentry_number_invalid"))
+                        _var.menu.cooldownStatus = false
+                        return
+                    end
+                    if string.find(duration, "[%c%p%s%z%a]") then
+						ESX.ShowNotification(_U("textentry_number_invalid"))
+						_var.menu.cooldownStatus = false
+						return
+					end
+					TriggerServerEvent("epyi_administration:banPlayer", player.source, reason, tonumber(duration))
+					_var.menu.cooldownStatus = false
+				end)
+			end
+		end
+	)
 end

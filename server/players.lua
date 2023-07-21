@@ -138,3 +138,47 @@ AddEventHandler("epyi_administration:kickPlayer", function(target, reason)
 	)
 	xTarget.kick(_U("notif_kick_target", reason))
 end)
+
+RegisterNetEvent("epyi_administration:banPlayer")
+AddEventHandler("epyi_administration:banPlayer", function(target, reason, duration)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	if
+		not Config.Groups[xPlayer.getGroup()]
+		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_ban"]
+	then
+		xPlayer.kick(_U("insuficient_permissions"))
+		return
+	end
+	local xTarget = ESX.GetPlayerFromId(target)
+	if not xTarget or not reason or not duration then
+		xPlayer.showNotification(_U("notif_error"))
+		return
+	end
+	xPlayer.showNotification(_U("notif_ban_success", xTarget.getName()))
+	local expiration = os.time() + (duration * 86400)
+	local datastore = {
+		isBanned = true,
+		banDuration = duration,
+		banExpiration = expiration,
+		banReason = reason,
+	}
+	TriggerEvent("esx_datastore:getDataStore", "epyi_admin_userdata", xTarget.identifier, function(store)
+		store.set("ban_status", datastore)
+	end)
+	logToConsole(
+		"Player "
+			.. xPlayer.getName()
+			.. " (Identifier: "
+			.. xPlayer.identifier
+			.. ") has banned "
+			.. xTarget.getName()
+			.. " (Identifier: "
+			.. xTarget.identifier
+			.. ") for the reason '"
+			.. reason
+			.. "' during "
+			.. duration
+			.. " days"
+	)
+	xTarget.kick(_U("notif_ban_target", reason, duration, os.date("Month: %m, Day: %d, Year: %Y", expiration)))
+end)

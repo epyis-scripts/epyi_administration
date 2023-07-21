@@ -116,6 +116,8 @@ Locales["en"] = {
 	["main_players_interact_dm_desc"] = "Allows you to send a private message to the player",
 	["main_players_interact_kick"] = "~r~Kick the player",
 	["main_players_interact_kick_desc"] = "Allows to kick the player from the server",
+	["main_players_interact_ban"] = "~r~Ban the player",
+	["main_players_interact_ban_desc"] = "Allows to ban the player from the server",
 
 	-- Elements → Menu menu / interact
 
@@ -266,6 +268,11 @@ Locales["en"] = {
 	["notif_dm_send_success"] = "Your message has been successfully sent to ~r~%s",
 	["notif_kick_success"] = "You successfully kicked ~r~%s ~s~ from the server!",
 	["notif_kick_target"] = "You were kicked by staff\nReason: %s",
+	["notif_ban_success"] = "You successfully banned ~r~%s ~s~ from the server!",
+	["notif_ban_target"] = "You are banned from this server\nReason: %s\nDuration: %s days\nExpires on: %s",
+
+	-- Defferals
+	["deffer_ban_checker"] = "We are checking your ban status",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
@@ -277,4 +284,5 @@ Locales["en"] = {
 	["textentry_amount"] = "Please specify ~r~the amount~s~",
 	["textentry_message"] = "Please specify ~r~the message~s~",
 	["textentry_reason"] = "Please specify ~r~the reason~s~",
+	["textentry_duration"] = "Please specify ~r~the duration in days~s~",
 }

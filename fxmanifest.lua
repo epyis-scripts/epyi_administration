@@ -44,6 +44,7 @@ server_scripts({
 	"server/permissions.lua",
 	"server/datastore.lua",
 	"server/players.lua",
+	"server/ban.lua",
 	"server/reports.lua",
 	"server/weather_time.lua",
 })
