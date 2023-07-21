@@ -90,3 +90,23 @@ AddEventHandler("epyi_administration:setPlayerMoney", function(target, type, amo
 	xTarget.setAccountMoney(type, tonumber(amount))
 	xPlayer.showNotification(_U("notif_setmoney_success", amount))
 end)
+
+RegisterNetEvent("epyi_administration:sendMessage")
+AddEventHandler("epyi_administration:sendMessage", function(target, message)
+	local xPlayer = ESX.GetPlayerFromId(source)
+	if
+		not Config.Groups[xPlayer.getGroup()]
+		or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_interact_dm"]
+	then
+		cb({})
+		xPlayer.kick(_U("insuficient_permissions"))
+		return
+	end
+	local xTarget = ESX.GetPlayerFromId(target)
+	if not xTarget or not message then
+		xPlayer.showNotification(_U("notif_error"))
+		return
+	end
+	xTarget.showNotification(_U("notif_dm_from_staff", message))
+	xPlayer.showNotification(_U("notif_dm_send_success", xTarget.getName()))
+end)

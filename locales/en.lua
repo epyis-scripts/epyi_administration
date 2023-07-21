@@ -12,6 +12,7 @@ Locales["en"] = {
 	["main_vehicles_spawn_subtitle"] = "Spawn a ~r~vehicle",
 	["main_reports_subtitle"] = "Management of ~r~reports",
 	["main_reports_edit_subtitle"] = "Management of the ~r~report",
+	["main_reports_edit_advanced_subtitle"] = "Management of ~r~the player",
 	["main_server_subtitle"] = "Management of ~r~the server",
 
 	-- Keys
@@ -107,6 +108,12 @@ Locales["en"] = {
 	["main_players_interact_money_cash"] = "Cash money → ~r~%s$",
 	["main_players_interact_money_black"] = "Black money → ~r~%s$",
 	["main_players_interact_money_desc"] = "Allows you to manage player ~r~accounts",
+	["main_players_interact_goto"] = "Teleport to the player",
+	["main_players_interact_goto_desc"] = "Allows you to teleport to the player",
+	["main_players_interact_bring"] = "Teleport the player at my location",
+	["main_players_interact_bring_desc"] = "Allows you to teleport the player to you",
+	["main_players_interact_dm"] = "Send a private message",
+	["main_players_interact_dm_desc"] = "Allows you to send a private message to the player",
 
 	-- Elements → Menu menu / interact
 
@@ -167,9 +174,8 @@ Locales["en"] = {
 	["main_reports_edit_take"] = "Take the report",
 	["main_reports_edit_leave"] = "Leave the report to the other staff",
 	["main_reports_edit_goto"] = "Teleport to the player",
-	["main_reports_edit_goto_desc"] = "Allows you to teleport to the player",
 	["main_reports_edit_bring"] = "Teleport the player at my location",
-	["main_reports_edit_bring_desc"] = "Allows you to teleport the player to you",
+	["main_reports_edit_advanced"] = "Access advanced options of the player",
 	["main_reports_edit_delete"] = "Permanently delete this report",
 	["main_reports_edit_delete_desc"] = "This will ~r~permanently delete~s~ this report, you cannot go back!",
 
@@ -254,6 +260,8 @@ Locales["en"] = {
 	["notif_addmoney_success"] = "Adding %s$ to account completed ~g~successfully ~s~!",
 	["notif_removemoney_success"] = "The deletion of %s$ from the account was done with ~g~success ~s~!",
 	["notif_setmoney_success"] = "The modification of the account to the amount of %s$ has been done with ~g~success ~s~!",
+	["notif_dm_from_staff"] = "~r~Message from a staff: ~s~%s",
+	["notif_dm_send_success"] = "Your message has been successfully sent to ~r~%s",
 
 	-- Text entries
 	["textentry_string_invalid"] = "The provided text is ~r~invalid",
@@ -263,4 +271,5 @@ Locales["en"] = {
 	["textentry_search_vehicle_model"] = "Please specify ~r~the model~s~ of the vehicle",
 	["textentry_radius"] = "Please specify ~r~the radius~s~",
 	["textentry_amount"] = "Please specify ~r~the amount~s~",
+	["textentry_message"] = "Please specify ~r~the message~s~",
 }

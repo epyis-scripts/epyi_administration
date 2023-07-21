@@ -213,8 +213,8 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.ButtonWithStyle(
-		_U("main_reports_edit_goto"),
-		_U("main_reports_edit_goto_desc"),
+		_U("main_players_interact_goto"),
+		_U("main_players_interact_goto_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menu.cooldownStatus,
 		function(_h, _a, Selected)
@@ -228,8 +228,8 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.ButtonWithStyle(
-		_U("main_reports_edit_bring"),
-		_U("main_reports_edit_bring_desc"),
+		_U("main_players_interact_bring"),
+		_U("main_players_interact_bring_desc"),
 		{},
 		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menu.cooldownStatus,
 		function(_h, _a, Selected)
@@ -239,6 +239,27 @@ function main_players_interact_showContentThisFrame(playerGroup)
 				local staffPedCoords = GetEntityCoords(staffPed)
 				SetEntityCoords(userPed, staffPedCoords, false)
 				ESX.ShowNotification(_U("notif_bring_success", player.name))
+			end
+		end
+	)
+	RageUI.ButtonWithStyle(
+		_U("main_players_interact_dm"),
+		_U("main_players_interact_dm_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact_dm"] and not _var.menu.cooldownStatus,
+		function(_h, _a, Selected)
+			if Selected then
+				Citizen.CreateThread(function()
+					_var.menu.cooldownStatus = true
+					local message = textEntry(_U("textentry_message"), "", 70)
+					if message == nil or message == "" then
+						ESX.ShowNotification(_U("textentry_string_invalid"))
+						_var.menu.cooldownStatus = false
+						return
+					end
+					TriggerServerEvent("epyi_administration:sendMessage", player.source, message)
+					_var.menu.cooldownStatus = false
+				end)
 			end
 		end
 	)

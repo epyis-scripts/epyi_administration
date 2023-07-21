@@ -184,6 +184,31 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.ButtonWithStyle(
+		_U("main_reports_edit_advanced"),
+		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
+		{},
+		Config.Groups[playerGroup].Access["submenu_players_interact"],
+		function(_h, _a, Selected)
+			if Selected then
+				local canSkip = false
+				_var.client.playerData = ESX.GetPlayerData()
+				ESX.TriggerServerCallback("epyi_administration:getPlayers", function(players)
+					_var.players.list = players
+					for _k, player in pairs(_var.players.list) do
+						if player.identifier == _var.reports.list[_var.reports.selectedReport].user.identifier then
+							_var.players.selected = player
+						end
+					end
+					canSkip = true
+				end, _var.client.playerData.identifier)
+				while not canSkip do
+					Citizen.Wait(10)
+				end
+			end
+		end,
+		RMenu:Get("epyi_administration", "main_reports_edit_advanced")
+	)
+	RageUI.ButtonWithStyle(
 		_U("main_reports_edit_delete"),
 		_U("main_reports_edit_delete_desc"),
 		{ Color = { BackgroundColor = { 150, 50, 50, 20 } } },
