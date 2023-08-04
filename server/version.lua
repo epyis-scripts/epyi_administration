@@ -13,7 +13,7 @@ Citizen.CreateThread(function()
 			)
 			return
 		end
-		if curVersion ~= responseText then
+		if curVersion:gsub("%s+", "") ~= responseText:gsub("%s+", "") then
 			print(
 				"^5epyi_administration ^4is not up to date. The latest release is "
 					.. responseText
