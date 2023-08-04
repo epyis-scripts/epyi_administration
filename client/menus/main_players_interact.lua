@@ -41,7 +41,8 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"]
+			and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
@@ -100,7 +101,8 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"]
+			and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
@@ -159,7 +161,8 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"]
+			and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
