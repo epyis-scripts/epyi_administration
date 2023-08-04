@@ -299,9 +299,9 @@ function openMenu()
 			)
 			for _k, rageObject in pairs(_var.menus.admin.objects) do
 				if _var.menus.admin.cooldowns.items then
-					rageObject.Closable = false
+					rageObject.Controls.Back.Enabled = false
 				else
-					rageObject.Closable = true
+					rageObject.Controls.Back.Enabled = true
 				end
 			end
 			Citizen.Wait(0)
