@@ -27,5 +27,5 @@ Citizen.CreateThread(function()
 		"https://raw.githubusercontent.com/epyis-scripts/epyi_administration/main/version",
 		checkVersion,
 		"GET"
-	) 
+	)
 end)
