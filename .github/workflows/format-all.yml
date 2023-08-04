@@ -29,9 +29,6 @@ jobs:
           token: ${{ secrets.MY_GITHUB_TOKEN }}
           version: v0.18.0
           args: -- .
-      - name: Format files with Prettier
-        run: |
-            npx prettier --write '**/*.{ts,js,css,html}'
       - name: Update repo before push
         run: |
           git pull
