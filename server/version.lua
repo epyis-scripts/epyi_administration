@@ -28,4 +28,4 @@ Citizen.CreateThread(function()
 		checkVersion,
 		"GET"
 	)
-end) 
+end)
