@@ -3,6 +3,7 @@
 _var = {
 	client = {},
 	menu = {},
+	menus = {},
 	activeThreads = {},
 	vehicle = {},
 	players = {},
@@ -28,6 +29,28 @@ _var.noclip.offsets = { y = 0.5, z = 0.2, h = 20 }
 _var.reports.count = 0
 _var.reports.countHiden = 0
 _var.reports.selectedReport = 1
+_var.menus.admin = {
+	isOpened = false,
+	bannerTexture = nil,
+	cooldowns = {
+		items = false,
+	},
+	objects = {
+		main = nil,
+		mainPersonnal = nil,
+		mainPersonnalAppearance = nil,
+		mainPlayers = nil,
+		mainPlayersInteract = nil,
+		mainVehicles = nil,
+		mainVehiclesCurrent = nil,
+		mainVehiclesFavorites = nil,
+		mainVehiclesSpawn = nil,
+		mainReports = nil,
+		mainReportsEdit = nil,
+		mainReportsEditAdvanced = nil,
+		mainServer = nil,
+	},
+}
 _var.menu.cooldownStatus = false
 _var.menu.isOpened = false
 _var.menu.bannerTexture = nil
