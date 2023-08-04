@@ -20,17 +20,17 @@ local TotalMenus = {}
 ---@return _G
 ---@public
 function RMenu.Add(Type, Name, Menu)
-    if RMenu[Type] ~= nil then
-        RMenu[Type][Name] = {
-            Menu = Menu
-        }
-    else
-        RMenu[Type] = {}
-        RMenu[Type][Name] = {
-            Menu = Menu
-        }
-    end
-    table.insert(TotalMenus, Menu)
+	if RMenu[Type] ~= nil then
+		RMenu[Type][Name] = {
+			Menu = Menu,
+		}
+	else
+		RMenu[Type] = {}
+		RMenu[Type][Name] = {
+			Menu = Menu,
+		}
+	end
+	table.insert(TotalMenus, Menu)
 end
 
 ---Get
@@ -39,9 +39,9 @@ end
 ---@return table
 ---@public
 function RMenu:Get(Type, Name)
-    if self[Type] ~= nil and self[Type][Name] ~= nil then
-        return self[Type][Name].Menu
-    end
+	if self[Type] ~= nil and self[Type][Name] ~= nil then
+		return self[Type][Name].Menu
+	end
 end
 
 ---GetType
@@ -49,9 +49,9 @@ end
 ---@return table
 ---@public
 function RMenu:GetType(Type)
-    if self[Type] ~= nil then
-        return self[Type]
-    end
+	if self[Type] ~= nil then
+		return self[Type]
+	end
 end
 
 ---Settings
@@ -62,13 +62,12 @@ end
 ---@return void
 ---@public
 function RMenu:Settings(Type, Name, Settings, Value)
-    if Value ~= nil then
-        self[Type][Name][Settings] = Value
-    else
-        return self[Type][Name][Settings]
-    end
+	if Value ~= nil then
+		self[Type][Name][Settings] = Value
+	else
+		return self[Type][Name][Settings]
+	end
 end
-
 
 ---Delete
 ---@param Type string
@@ -76,8 +75,8 @@ end
 ---@return void
 ---@public
 function RMenu:Delete(Type, Name)
-    self[Type][Name] = nil
-    collectgarbage()
+	self[Type][Name] = nil
+	collectgarbage()
 end
 
 ---DeleteType
@@ -85,6 +84,6 @@ end
 ---@return void
 ---@public
 function RMenu:DeleteType(Type)
-    self[Type] = nil
-    collectgarbage()
+	self[Type] = nil
+	collectgarbage()
 end
