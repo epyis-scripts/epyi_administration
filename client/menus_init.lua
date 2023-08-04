@@ -297,6 +297,13 @@ function openMenu()
 					main_server_showContentThisFrame(_var.client.staffGroup)
 				end
 			)
+			for _k, rageObject in pairs(_var.menus.admin.objects) do
+				if _var.menus.admin.cooldowns.items then
+					rageObject.Controls.Back.Enabled = false
+				else
+					rageObject.Controls.Back.Enabled = true
+				end
+			end
 			Citizen.Wait(0)
 		end
 		RageUI.CloseAll()

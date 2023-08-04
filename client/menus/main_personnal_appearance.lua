@@ -41,17 +41,17 @@ function main_personnal_appearance_showContentThisFrame(playerGroup)
 					model.label .. " ~m~→ ~c~" .. model.model,
 					_U("main_personnal_appearance_peds_desc", model.label, model.model),
 					{ RightBadge = RageUI.BadgeStyle.Clothes },
-					not _var.menu.cooldownStatus,
+					not _var.menus.admin.cooldowns.items,
 					function(_h, _a, Selected)
 						if Selected then
-							_var.menu.cooldownStatus = true
+							_var.menus.admin.cooldowns.items = true
 							Citizen.CreateThread(function()
 								local pedHash = GetHashKey(model.model)
 								RequestModel(pedHash)
 								while not HasModelLoaded(pedHash) do
 									Citizen.Wait(1000)
 								end
-								_var.menu.cooldownStatus = false
+								_var.menus.admin.cooldowns.items = false
 								SetPlayerModel(PlayerId(), pedHash)
 								SetModelAsNoLongerNeeded(pedHash)
 								SetPedDefaultComponentVariation(PlayerPedId())

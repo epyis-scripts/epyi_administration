@@ -87,12 +87,12 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 			_U("main_reports_edit_take"),
 			_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 			{},
-			not _var.menu.cooldownStatus,
+			not _var.menus.admin.cooldowns.items,
 			function(_h, _a, Selected)
 				if Selected then
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					Citizen.SetTimeout(2000, function()
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 					end)
 					_var.client.playerData = ESX.GetPlayerData()
 					_var.reports.list[_var.reports.selectedReport].staff.taken = true
@@ -124,14 +124,14 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 			_U("main_reports_edit_leave"),
 			_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 			{},
-			not _var.menu.cooldownStatus
+			not _var.menus.admin.cooldowns.items
 				and _var.reports.list[_var.reports.selectedReport].staff.takerIdentifier
 					== _var.client.playerData.identifier,
 			function(_h, _a, Selected)
 				if Selected then
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					Citizen.SetTimeout(2000, function()
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 					end)
 					_var.client.playerData = ESX.GetPlayerData()
 					_var.reports.list[_var.reports.selectedReport].staff.taken = false

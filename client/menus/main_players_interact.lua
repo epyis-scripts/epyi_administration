@@ -41,21 +41,21 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local amount = textEntry(_U("textentry_amount"), "", 9)
 					if amount == nil or amount == "" then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if string.find(amount, "[%c%p%s%z%a]") then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if
@@ -89,7 +89,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 							tonumber(amount)
 						)
 					end
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
@@ -100,21 +100,21 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local amount = textEntry(_U("textentry_amount"), "", 9)
 					if amount == nil or amount == "" then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if string.find(amount, "[%c%p%s%z%a]") then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if
@@ -148,7 +148,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 							tonumber(amount)
 						)
 					end
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
@@ -159,21 +159,21 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_var.menu.accountsActionsArrayIndex,
 		_U("main_players_interact_money_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_managemoney"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected, Index)
 			_var.menu.accountsActionsArrayIndex = Index
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local amount = textEntry(_U("textentry_amount"), "", 9)
 					if amount == nil or amount == "" then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if string.find(amount, "[%c%p%s%z%a]") then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if
@@ -207,7 +207,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 							tonumber(amount)
 						)
 					end
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
@@ -216,7 +216,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_U("main_players_interact_goto"),
 		_U("main_players_interact_goto_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
@@ -231,7 +231,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_U("main_players_interact_bring"),
 		_U("main_players_interact_bring_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
@@ -246,19 +246,19 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_U("main_players_interact_dm"),
 		_U("main_players_interact_dm_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_dm"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_dm"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local message = textEntry(_U("textentry_message"), "", 70)
 					if message == nil or message == "" then
 						ESX.ShowNotification(_U("textentry_string_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					TriggerServerEvent("epyi_administration:sendMessage", player.source, message)
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
@@ -267,19 +267,19 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_U("main_players_interact_kick"),
 		_U("main_players_interact_kick_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_kick"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_kick"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local reason = textEntry(_U("textentry_reason"), "", 50)
 					if reason == nil or reason == "" then
 						ESX.ShowNotification(_U("textentry_string_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					TriggerServerEvent("epyi_administration:kickPlayer", player.source, reason)
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
@@ -288,30 +288,30 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		_U("main_players_interact_ban"),
 		_U("main_players_interact_ban_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_players_interact_ban"] and not _var.menu.cooldownStatus,
+		Config.Groups[playerGroup].Access["submenu_players_interact_ban"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				Citizen.CreateThread(function()
-					_var.menu.cooldownStatus = true
+					_var.menus.admin.cooldowns.items = true
 					local reason = textEntry(_U("textentry_reason"), "", 50)
 					if reason == nil or reason == "" then
 						ESX.ShowNotification(_U("textentry_string_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					local duration = textEntry(_U("textentry_duration"), "", 3)
 					if duration == nil or duration == "" then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					if string.find(duration, "[%c%p%s%z%a]") then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
-						_var.menu.cooldownStatus = false
+						_var.menus.admin.cooldowns.items = false
 						return
 					end
 					TriggerServerEvent("epyi_administration:banPlayer", player.source, reason, tonumber(duration))
-					_var.menu.cooldownStatus = false
+					_var.menus.admin.cooldowns.items = false
 				end)
 			end
 		end
