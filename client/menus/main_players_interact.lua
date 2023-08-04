@@ -284,7 +284,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 			end
 		end
 	)
-    RageUI.ButtonWithStyle(
+	RageUI.ButtonWithStyle(
 		_U("main_players_interact_ban"),
 		_U("main_players_interact_ban_desc"),
 		{},
@@ -299,13 +299,13 @@ function main_players_interact_showContentThisFrame(playerGroup)
 						_var.menu.cooldownStatus = false
 						return
 					end
-                    local duration = textEntry(_U("textentry_duration"), "", 3)
-                    if duration == nil or duration == "" then
-                        ESX.ShowNotification(_U("textentry_number_invalid"))
-                        _var.menu.cooldownStatus = false
-                        return
-                    end
-                    if string.find(duration, "[%c%p%s%z%a]") then
+					local duration = textEntry(_U("textentry_duration"), "", 3)
+					if duration == nil or duration == "" then
+						ESX.ShowNotification(_U("textentry_number_invalid"))
+						_var.menu.cooldownStatus = false
+						return
+					end
+					if string.find(duration, "[%c%p%s%z%a]") then
 						ESX.ShowNotification(_U("textentry_number_invalid"))
 						_var.menu.cooldownStatus = false
 						return

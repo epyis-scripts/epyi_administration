@@ -35,7 +35,7 @@ _var.menu.accountsActionsArrayIndex = 1
 _var.menu.accountsActionsArray = {
 	_("main_players_interact_money_action_add"),
 	_("main_players_interact_money_action_remove"),
-	_("main_players_interact_money_action_set")
+	_("main_players_interact_money_action_set"),
 }
 _var.menu.blackoutCheckbox = false
 _var.menu.timeArrayIndex = 1

@@ -44,17 +44,17 @@ function main_personnal_appearance_showContentThisFrame(playerGroup)
 					not _var.menu.cooldownStatus,
 					function(_h, _a, Selected)
 						if Selected then
-                            _var.menu.cooldownStatus = true
+							_var.menu.cooldownStatus = true
 							Citizen.CreateThread(function()
 								local pedHash = GetHashKey(model.model)
 								RequestModel(pedHash)
 								while not HasModelLoaded(pedHash) do
 									Citizen.Wait(1000)
 								end
-                                _var.menu.cooldownStatus = false
+								_var.menu.cooldownStatus = false
 								SetPlayerModel(PlayerId(), pedHash)
 								SetModelAsNoLongerNeeded(pedHash)
-                                SetPedDefaultComponentVariation(PlayerPedId())
+								SetPedDefaultComponentVariation(PlayerPedId())
 							end)
 						end
 					end

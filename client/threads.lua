@@ -267,7 +267,10 @@ _threads.noclip.enable = function()
 			local zOffset = 0.0
 			setInstructionnalButtons({
 				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.forward], 0), _U("noclip_go_forward") },
-				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.backward], 0), _U("noclip_go_backward") },
+				{
+					GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.backward], 0),
+					_U("noclip_go_backward"),
+				},
 				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.left], 0), _U("noclip_go_left") },
 				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.right], 0), _U("noclip_go_right") },
 				{ GetControlInstructionalButton(1, _var.keys[Config.Keys.NoClip.up], 0), _U("noclip_go_up") },

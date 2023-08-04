@@ -31,7 +31,13 @@ Citizen.CreateThread(function()
 			end
 			if not isSynced then
 				table.insert(_var.syncedWeatherBlackoutPlayers, xPlayer.identifier)
-				TriggerClientEvent("epyi_administration:syncWeather", xPlayer.source, _var.weather, _var.blackout, _var.time)
+				TriggerClientEvent(
+					"epyi_administration:syncWeather",
+					xPlayer.source,
+					_var.weather,
+					_var.blackout,
+					_var.time
+				)
 				logToConsole("Enable weather/time sync for player with identifier: " .. xPlayer.identifier)
 			end
 		end

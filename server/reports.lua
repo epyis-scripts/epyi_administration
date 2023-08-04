@@ -44,7 +44,9 @@ end
 ---@return table
 ESX.RegisterServerCallback("epyi_administration:getReports", function(source, cb, identifier)
 	xPlayer = ESX.GetPlayerFromIdentifier(identifier)
-	if not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_reports_access"] then
+	if
+		not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_reports_access"]
+	then
 		cb({})
 		xPlayer.kick(_U("insuficient_permissions"))
 		return
@@ -57,7 +59,9 @@ end)
 ---@return table
 ESX.RegisterServerCallback("epyi_administration:setReport", function(source, cb, identifier, key, data)
 	xPlayer = ESX.GetPlayerFromIdentifier(identifier)
-	if not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_reports_access"] then
+	if
+		not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_reports_access"]
+	then
 		cb(false)
 		xPlayer.kick(_U("insuficient_permissions"))
 		return

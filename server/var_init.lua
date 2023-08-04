@@ -7,5 +7,5 @@ _var = {
 	weather = "EXTRASUNNY",
 	blackout = false,
 	time = 12,
-	syncedWeatherBlackoutPlayers = {}
+	syncedWeatherBlackoutPlayers = {},
 }
