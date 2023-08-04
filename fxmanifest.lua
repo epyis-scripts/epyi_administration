@@ -1,10 +1,16 @@
+---
+--- @author Epyi - Work FiveM
+--- @version 0.1.3
+--- created at [04/08/2023 14:21]
+---
+
 fx_version("cerulean")
 game("gta5")
 
 name("epyi_administration")
 description("A RageUI Administration for ESX Legacy 1.7.5 or newer")
 author("Epyi (https://discord.gg/VyRPheG6Es)")
-version("1.0")
+version("0.1.3")
 
 shared_scripts({
 	"shared/locale.lua",
