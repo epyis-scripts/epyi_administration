@@ -8,7 +8,7 @@ function main_vehicles_showContentThisFrame(playerGroup)
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_current_access"],
 		function(_h, _a, _s) end,
-		RMenu:Get("epyi_administration", "main_vehicles_current")
+		_var.menus.admin.objects.mainVehiclesCurrent
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_favorites"),
@@ -16,7 +16,7 @@ function main_vehicles_showContentThisFrame(playerGroup)
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_favorites_access"],
 		function(_h, _a, _s) end,
-		RMenu:Get("epyi_administration", "main_vehicles_favorites")
+		_var.menus.admin.objects.mainVehiclesFavorites
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_spawn"),
@@ -24,6 +24,6 @@ function main_vehicles_showContentThisFrame(playerGroup)
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_vehicles_spawn_access"],
 		function(_h, _a, _s) end,
-		RMenu:Get("epyi_administration", "main_vehicles_spawn")
+		_var.menus.admin.objects.mainVehiclesSpawn
 	)
 end

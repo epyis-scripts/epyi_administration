@@ -61,7 +61,7 @@ function main_personnal_showContentThisFrame(playerGroup)
 		{ RightLabel = "→" },
 		Config.Groups[playerGroup].Access["submenu_personnal_appearance"],
 		function(_h, _a, _s) end,
-		RMenu:Get("epyi_administration", "main_personnal_appearance")
+		_var.menus.admin.objects.mainPersonnalAppearance
 	)
 	RageUI.Checkbox(
 		_U("main_personnal_noclip"),
