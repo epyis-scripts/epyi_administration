@@ -13,140 +13,6 @@ if Config.MenuStyle.BannerStyle.ImageUrl ~= nil then
 	_var.menus.admin.bannerTexture = "custom_menu_header"
 end
 
--- RageUI menu initialization
--- init the rageui menu with the config parameters
-_var.menus.admin.objects.main = RageUI.CreateMenu(
-	_("menu_title"),
-	_("main_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainPersonnal = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.main,
-	_U("menu_title"),
-	_U("main_personnal_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainPersonnalAppearance = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainPersonnal,
-	_U("menu_title"),
-	_U("main_personnal_appearance_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainPlayers = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.main,
-	_U("menu_title"),
-	_U("main_players_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainPlayersInteract = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainPlayers,
-	_U("menu_title"),
-	_U("main_players_interact_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainVehicles = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.main,
-	_U("menu_title"),
-	_U("main_vehicles_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainVehiclesCurrent = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainVehicles,
-	_U("menu_title"),
-	_U("main_vehicles_current_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainVehiclesFavorites = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainVehicles,
-	_U("menu_title"),
-	_U("main_vehicles_favorites_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainVehiclesSpawn = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainVehicles,
-	_U("menu_title"),
-	_U("main_vehicles_spawn_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainReports = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.main,
-	_U("menu_title"),
-	_U("main_reports_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainReportsEdit = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainReports,
-	_U("menu_title"),
-	_U("main_reports_edit_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainReportsEditAdvanced = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.mainReports,
-	_U("menu_title"),
-	_U("main_reports_edit_advanced_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-_var.menus.admin.objects.mainServer = RageUI.CreateSubMenu(
-	_var.menus.admin.objects.main,
-	_U("menu_title"),
-	_U("main_server_subtitle"),
-	Config.MenuStyle.Margins.left,
-	Config.MenuStyle.Margins.top,
-	_var.menus.admin.bannerTexture,
-	_var.menus.admin.bannerTexture
-)
-
-for _k, rageObject in pairs(_var.menus.admin.objects) do
-	-- Set the offset
-	rageObject:SetStyleSize(Config.MenuStyle.BannerStyle.widthOffset)
-
-	-- Set color if no custom banner
-	if Config.MenuStyle.BannerStyle.ImageUrl == nil then
-		rageObject:SetRectangleBanner(
-			Config.MenuStyle.BannerStyle.Color.r,
-			Config.MenuStyle.BannerStyle.Color.g,
-			Config.MenuStyle.BannerStyle.Color.b,
-			Config.MenuStyle.BannerStyle.Color.a
-		)
-	end
-end
-
 ---openMenu → Function to open the administration main menu
 ---@return void
 function openMenu()
@@ -155,6 +21,141 @@ function openMenu()
 		_var.menus.admin.isOpened = false
 		return
 	end
+
+	-- RageUI menu initialization
+	-- init the rageui menu with the config parameters
+	_var.menus.admin.objects.main = RageUI.CreateMenu(
+		_("menu_title"),
+		_("main_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainPersonnal = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.main,
+		_U("menu_title"),
+		_U("main_personnal_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainPersonnalAppearance = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainPersonnal,
+		_U("menu_title"),
+		_U("main_personnal_appearance_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainPlayers = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.main,
+		_U("menu_title"),
+		_U("main_players_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainPlayersInteract = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainPlayers,
+		_U("menu_title"),
+		_U("main_players_interact_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainVehicles = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.main,
+		_U("menu_title"),
+		_U("main_vehicles_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainVehiclesCurrent = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainVehicles,
+		_U("menu_title"),
+		_U("main_vehicles_current_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainVehiclesFavorites = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainVehicles,
+		_U("menu_title"),
+		_U("main_vehicles_favorites_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainVehiclesSpawn = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainVehicles,
+		_U("menu_title"),
+		_U("main_vehicles_spawn_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainReports = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.main,
+		_U("menu_title"),
+		_U("main_reports_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainReportsEdit = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainReports,
+		_U("menu_title"),
+		_U("main_reports_edit_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainReportsEditAdvanced = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainReports,
+		_U("menu_title"),
+		_U("main_reports_edit_advanced_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+	_var.menus.admin.objects.mainServer = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.main,
+		_U("menu_title"),
+		_U("main_server_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
+
+	for _k, rageObject in pairs(_var.menus.admin.objects) do
+		-- Set the offset
+		rageObject:SetStyleSize(Config.MenuStyle.BannerStyle.widthOffset)
+
+		-- Set color if no custom banner
+		if Config.MenuStyle.BannerStyle.ImageUrl == nil then
+			rageObject:SetRectangleBanner(
+				Config.MenuStyle.BannerStyle.Color.r,
+				Config.MenuStyle.BannerStyle.Color.g,
+				Config.MenuStyle.BannerStyle.Color.b,
+				Config.MenuStyle.BannerStyle.Color.a
+			)
+		end
+	end
+
 	-- Opening the menu if player have permission
 	ESX.TriggerServerCallback("epyi_administration:getPlayerGroup", function(group)
 		-- Save player group
