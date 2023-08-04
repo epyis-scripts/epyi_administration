@@ -1,10 +1,16 @@
+---
+--- @author Epyi - Work FiveM
+--- @version 0.1.3
+--- created at [04/08/2023 14:21]
+---
+
 fx_version("cerulean")
 game("gta5")
 
 name("epyi_administration")
 description("A RageUI Administration for ESX Legacy 1.7.5 or newer")
 author("Epyi (https://discord.gg/VyRPheG6Es)")
-version("1.0")
+version("0.1.3")
 
 shared_scripts({
 	"shared/locale.lua",
@@ -15,16 +21,16 @@ shared_scripts({
 })
 
 client_scripts({
-	"RageUI/RMenu.lua",
-	"RageUI/menu/RageUI.lua",
-	"RageUI/menu/Menu.lua",
-	"RageUI/menu/MenuController.lua",
-	"RageUI/components/*.lua",
-	"RageUI/menu/elements/*.lua",
-	"RageUI/menu/items/*.lua",
-	"RageUI/menu/panels/*.lua",
-	"RageUI/menu/windows/*.lua",
-	"RageUI/menu/Function.lua",
+	"src/RMenu.lua",
+	"src/menu/RageUI.lua",
+	"src/menu/Menu.lua",
+	"src/menu/MenuController.lua",
+	"src/components/*.lua",
+	"src/menu/elements/*.lua",
+	"src/menu/items/*.lua",
+	"src/menu/panels/*.lua",
+	"src/menu/panels/*.lua",
+	"src/menu/windows/*.lua",
 
 	"client/var_init.lua",
 	"client/instructionnal.lua",

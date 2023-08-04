@@ -216,7 +216,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 				end
 			end
 		end,
-		RMenu:Get("epyi_administration", "main_reports_edit_advanced")
+		_var.menus.admin.objects.mainReportsEditAdvanced
 	)
 	RageUI.ButtonWithStyle(
 		_U("main_reports_edit_delete"),
@@ -242,6 +242,6 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 				)
 			end
 		end,
-		RMenu:Get("epyi_administration", "main_reports")
+		_var.menus.admin.objects.mainReports
 	)
 end

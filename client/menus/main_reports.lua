@@ -84,7 +84,7 @@ function main_reports_showContentThisFrame(playerGroup)
 						_var.reports.selectedReport = key
 					end
 				end,
-				RMenu:Get("epyi_administration", "main_reports_edit")
+				_var.menus.admin.objects.mainReportsEdit
 			)
 		end
 	end

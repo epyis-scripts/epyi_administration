@@ -40,7 +40,7 @@ function main_players_showContentThisFrame(playerGroup)
 					_var.players.selected = player
 				end
 			end,
-			RMenu:Get("epyi_administration", "main_players_interact")
+			_var.menus.admin.objects.mainPlayersInteract
 		)
 	end
 end
