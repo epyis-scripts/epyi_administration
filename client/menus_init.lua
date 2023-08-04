@@ -32,6 +32,11 @@ function openMenu()
 		_var.menus.admin.bannerTexture,
 		_var.menus.admin.bannerTexture
 	)
+
+	_var.menus.admin.objects.main.Closed = function()
+		_var.menus.admin.isOpened = false
+	end
+
 	_var.menus.admin.objects.mainPersonnal = RageUI.CreateSubMenu(
 		_var.menus.admin.objects.main,
 		_U("menu_title"),
