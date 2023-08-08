@@ -142,6 +142,17 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					colorSecondary
 				)
 			end
+			if not Active then
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					return
+				end
+				local colorPrimary, _ = GetVehicleColours(pedVehicle)
+				for key, color in pairs(_var.vehicle.paintColors) do
+					if color[2] == colorPrimary then
+						_var.vehicle.paintColorsArrayIndexMain = key
+					end
+				end
+			end
 		end
 	)
 	RageUI.List(
@@ -163,6 +174,17 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					colorPrimary,
 					_var.vehicle.paintColors[_var.vehicle.paintColorsArrayIndexSecondary][2]
 				)
+			end
+			if not Active then
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					return
+				end
+				local _, colorSecondary = GetVehicleColours(pedVehicle)
+				for key, color in pairs(_var.vehicle.paintColors) do
+					if color[2] == colorSecondary then
+						_var.vehicle.paintColorsArrayIndexSecondary = key
+					end
+				end
 			end
 		end
 	)
