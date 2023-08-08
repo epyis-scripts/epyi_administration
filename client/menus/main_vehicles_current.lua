@@ -2,6 +2,9 @@
 ---@param playerGroup string
 ---@return void
 function main_vehicles_current_showContentThisFrame(playerGroup)
+	local ped = PlayerPedId()
+	local pedVehicle = GetVehiclePedIsIn(ped, false)
+
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_repair"),
 		_U("main_vehicles_current_repair_desc"),
@@ -9,8 +12,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_vehicles_repair"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -29,8 +30,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_vehicles_clean"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -47,8 +46,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_vehicles_flip"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -58,6 +55,29 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	RageUI.Checkbox(
+		_U("main_vehicles_current_engine"),
+		_U("main_vehicles_current_engine_desc"),
+		GetIsVehicleEngineRunning(pedVehicle),
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_engine"] },
+		function() end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			SetVehicleEngineOn(pedVehicle, true, true, true)
+			ESX.ShowNotification(_U("notif_engine_enabled"))
+		end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			SetVehicleEngineOn(pedVehicle, false, true, true)
+			ESX.ShowNotification(_U("notif_engine_disabled"))
+		end
+	)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_plate"),
 		_U("main_vehicles_current_plate_desc"),
@@ -65,8 +85,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_vehicles_plate"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -91,8 +109,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		function(_h, Active, _s, Index)
 			_var.vehicle.paintColorsArrayIndexMain = Index
 			if Active then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					return
 				end
@@ -115,8 +131,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		function(_h, Active, _s, Index)
 			_var.vehicle.paintColorsArrayIndexSecondary = Index
 			if Active then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					return
 				end
@@ -139,8 +153,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		function(_h, _a, Selected, Index)
 			_var.vehicle.doorArrayIndex = Index
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -210,8 +222,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		function(_h, _a, Selected, Index)
 			_var.vehicle.boostArrayIndex = Index
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
