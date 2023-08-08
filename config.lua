@@ -27,6 +27,16 @@ Config.Keys = { -- [table] → The the menu keys
 	},
 }
 
+Config.others = {
+	fullPerfProperties = { -- [table] → Full perf properties table
+		modEngine = 3,
+		modBrakes = 2,
+		modTransmission = 2,
+		modSuspension = 3,
+		modArmor = true,
+	}
+}
+
 Config.Groups = {
 	admin = {
 		Priority = 99,
@@ -71,6 +81,7 @@ Config.Groups = {
 			["submenu_vehicles_flip"] = true, -- can flip his vehicle
 			["submenu_vehicles_engine"] = true, -- can turn on/off the engine of his vehicle
 			["submenu_vehicles_freeze"] = true, -- can freeze his vehicle
+			["submenu_vehicles_fullperf"] = true, -- can use fullperf on his vehicle
 			["submenu_vehicles_plate"] = true, -- can change plate of his vehicle
 			["submenu_vehicles_opendoor"] = true, -- can open doors of his vehicle
 			["submenu_vehicles_color_main"] = true, -- can change the primary color of his vehicle
@@ -133,6 +144,7 @@ Config.Groups = {
 			["submenu_vehicles_flip"] = false, -- can flip his vehicle
 			["submenu_vehicles_engine"] = false, -- can turn on/off the engine of his vehicle
 			["submenu_vehicles_freeze"] = false, -- can freeze his vehicle
+			["submenu_vehicles_fullperf"] = false, -- can use fullperf on his vehicle
 			["submenu_vehicles_plate"] = false, -- can change plate of his vehicle
 			["submenu_vehicles_opendoor"] = false, -- can open doors of his vehicle
 			["submenu_vehicles_color_main"] = false, -- can change the primary color of his vehicle

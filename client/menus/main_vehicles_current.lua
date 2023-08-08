@@ -122,6 +122,22 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_fullperf"),
+		_U("main_vehicles_current_fullperf_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_vehicles_fullperf"],
+		function(_h, _a, Selected)
+			if Selected then
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					ESX.ShowNotification(_U("self_not_in_vehicle"))
+					return
+				end
+				ESX.Game.SetVehicleProperties(pedVehicle, Config.others.fullPerfProperties)
+				ESX.ShowNotification(_U("notif_fullperf_vehicle_success"))
+			end
+		end
+	)
 	RageUI.List(
 		_U("main_vehicles_current_color_main"),
 		_var.vehicle.paintColorsArray,
