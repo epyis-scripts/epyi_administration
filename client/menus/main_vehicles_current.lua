@@ -4,6 +4,13 @@
 function main_vehicles_current_showContentThisFrame(playerGroup)
 	local ped = PlayerPedId()
 	local pedVehicle = GetVehiclePedIsIn(ped, false)
+	local liveryCount = GetVehicleLiveryCount(pedVehicle)
+	local liveryList = {}
+	for i = 0, liveryCount do
+		local livery = GetLiveryName(pedVehicle, i)
+		livery = GetLabelText(livery) ~= "NULL" and GetLabelText(livery) or "Livery #" .. i
+		table.insert(liveryList, livery)
+	end
 
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_repair"),
@@ -55,6 +62,43 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_fullperf"),
+		_U("main_vehicles_current_fullperf_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_vehicles_fullperf"],
+		function(_h, _a, Selected)
+			if Selected then
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					ESX.ShowNotification(_U("self_not_in_vehicle"))
+					return
+				end
+				ESX.Game.SetVehicleProperties(pedVehicle, Config.others.fullPerfProperties)
+				ESX.ShowNotification(_U("notif_fullperf_vehicle_success"))
+			end
+		end
+	)
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_plate"),
+		_U("main_vehicles_current_plate_desc"),
+		{ RightLabel = "→" },
+		Config.Groups[playerGroup].Access["submenu_vehicles_plate"],
+		function(_h, _a, Selected)
+			if Selected then
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					ESX.ShowNotification(_U("self_not_in_vehicle"))
+					return
+				end
+				local plate = textEntry(_U("textentry_change_vehicle_plate"), "", 8)
+				if plate == nil or plate == "" then
+					ESX.ShowNotification(_U("textentry_string_invalid"))
+					return
+				end
+				SetVehicleNumberPlateText(pedVehicle, plate)
+				ESX.ShowNotification(_U("notif_plate_changed_success", plate))
+			end
+		end
+	)
 	RageUI.Checkbox(
 		_U("main_vehicles_current_engine"),
 		_U("main_vehicles_current_engine_desc"),
@@ -99,43 +143,6 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 			FreezeEntityPosition(pedVehicle, false)
 			ESX.ShowNotification(_U("notif_freeze_vehicle_disabled"))
-		end
-	)
-	RageUI.ButtonWithStyle(
-		_U("main_vehicles_current_plate"),
-		_U("main_vehicles_current_plate_desc"),
-		{ RightLabel = "→" },
-		Config.Groups[playerGroup].Access["submenu_vehicles_plate"],
-		function(_h, _a, Selected)
-			if Selected then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				local plate = textEntry(_U("textentry_change_vehicle_plate"), "", 8)
-				if plate == nil or plate == "" then
-					ESX.ShowNotification(_U("textentry_string_invalid"))
-					return
-				end
-				SetVehicleNumberPlateText(pedVehicle, plate)
-				ESX.ShowNotification(_U("notif_plate_changed_success", plate))
-			end
-		end
-	)
-	RageUI.ButtonWithStyle(
-		_U("main_vehicles_current_fullperf"),
-		_U("main_vehicles_current_fullperf_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_fullperf"],
-		function(_h, _a, Selected)
-			if Selected then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				ESX.Game.SetVehicleProperties(pedVehicle, Config.others.fullPerfProperties)
-				ESX.ShowNotification(_U("notif_fullperf_vehicle_success"))
-			end
 		end
 	)
 	RageUI.List(
@@ -204,6 +211,27 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 		end
 	)
+	if liveryCount > 0 then
+		RageUI.List(
+			_U("main_vehicles_current_livery"),
+			liveryList,
+			_var.menu.liveryArrayIndex,
+			_U("main_vehicles_current_livery_desc"),
+			{},
+			Config.Groups[playerGroup].Access["submenu_vehicles_livery"],
+			function(_h, _a, Selected, Index)
+				_var.menu.liveryArrayIndex = Index
+				if Selected then
+					if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+						ESX.ShowNotification(_U("self_not_in_vehicle"))
+						return
+					end
+					SetVehicleLivery(pedVehicle, _var.menu.liveryArrayIndex)
+					ESX.ShowNotification(_U("notif_livery_success", liveryList[_var.menu.liveryArrayIndex]))
+				end
+			end
+		)
+	end
 	RageUI.List(
 		_U("main_vehicles_current_open_door"),
 		_var.vehicle.doorArray,

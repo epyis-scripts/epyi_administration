@@ -150,6 +150,8 @@ Locales["en"] = {
 	["main_vehicles_current_color_main_desc"] = "Allows you to change the main color of your vehicle",
 	["main_vehicles_current_color_secondary"] = "Secondary color",
 	["main_vehicles_current_color_secondary_desc"] = "Allows you to change the secondary color of your vehicle",
+	["main_vehicles_current_livery"] = "Set livery",
+	["main_vehicles_current_livery_desc"] = "Allow you to change the livery of the vehicle",
 	["main_vehicles_current_boost"] = "Vehicle boost",
 	["main_vehicles_current_boost_desc"] = "Allows you to multiply the torque of the vehicle's engine",
 
@@ -250,6 +252,7 @@ Locales["en"] = {
 	["notif_repair_vehicle_success"] = "Your vehicle has been repaired ~g~successfully!",
 	["notif_clean_vehicle_success"] = "Your vehicle has been cleaned ~g~successfully!",
 	["notif_flip_vehicle_success"] = "Your vehicle has been flipped ~g~successfully!",
+	["notif_livery_success"] = "The livery of the vehicle has been ~g~successfully ~s~changed to %s",
 	["notif_engine_enabled"] = "The engine has been ~g~turned on",
 	["notif_engine_disabled"] = "The engine has been ~r~turned off",
 	["notif_freeze_vehicle_enabled"] = "The vehicle has been ~g~frozed",

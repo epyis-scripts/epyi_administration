@@ -86,6 +86,7 @@ Config.Groups = {
 			["submenu_vehicles_opendoor"] = true, -- can open doors of his vehicle
 			["submenu_vehicles_color_main"] = true, -- can change the primary color of his vehicle
 			["submenu_vehicles_color_secondary"] = true, -- can change the secondary color of his vehicle
+			["submenu_vehicles_livery"] = true, -- change the vehicle livery
 			["submenu_vehicles_boost"] = true, -- can use the torque multiplier on his vehicle
 
 			-- Submenu → Reports
@@ -149,6 +150,7 @@ Config.Groups = {
 			["submenu_vehicles_opendoor"] = false, -- can open doors of his vehicle
 			["submenu_vehicles_color_main"] = false, -- can change the primary color of his vehicle
 			["submenu_vehicles_color_secondary"] = false, -- can change the secondary color of his vehicle
+			["submenu_vehicles_livery"] = false, -- change the vehicle livery
 			["submenu_vehicles_boost"] = false, -- can use the torque multiplier on his vehicle
 
 			-- Submenu → Reports

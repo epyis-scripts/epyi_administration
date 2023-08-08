@@ -150,6 +150,8 @@ Locales["fr"] = {
 	["main_vehicles_current_color_main_desc"] = "Permet de changer la couleur principale de votre véhicule",
 	["main_vehicles_current_color_secondary"] = "Couleur secondaire",
 	["main_vehicles_current_color_secondary_desc"] = "Permet de changer la couleur secondaire de votre véhicule",
+	["main_vehicles_current_livery"] = "Définir le livery",
+	["main_vehicles_current_livery_desc"] = "Permet de changer le livery de votre véhicule",
 	["main_vehicles_current_boost"] = "Multiplicateur de couple",
 	["main_vehicles_current_boost_desc"] = "Permet de multiplier les couples du moteur de votre véhicule",
 
@@ -250,6 +252,7 @@ Locales["fr"] = {
 	["notif_repair_vehicle_success"] = "Votre véhicule a été réparé ~g~avec succès!",
 	["notif_clean_vehicle_success"] = "Votre véhicule a été nettoyé ~g~avec succès!",
 	["notif_flip_vehicle_success"] = "Votre véhicule a été retourné ~g~avec succès!",
+	["notif_livery_success"] = "Le livery du véhicule à ~g~bien été ~s~changé en %s",
 	["notif_engine_enabled"] = "Le moteur a été ~g~allumé",
 	["notif_engine_disabled"] = "Le moteur a été ~r~éteint",
 	["notif_freeze_vehicle_enabled"] = "Le véhicule a été ~g~gelé",
