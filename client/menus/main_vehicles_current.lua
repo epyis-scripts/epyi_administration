@@ -4,19 +4,12 @@
 function main_vehicles_current_showContentThisFrame(playerGroup)
 	local ped = PlayerPedId()
 	local pedVehicle = GetVehiclePedIsIn(ped, false)
-	local liveryCount = GetVehicleLiveryCount(pedVehicle)
-	local liveryList = {}
-	for i = 0, liveryCount do
-		local livery = GetLiveryName(pedVehicle, i)
-		livery = GetLabelText(livery) ~= "NULL" and GetLabelText(livery) or "Livery #" .. i
-		table.insert(liveryList, livery)
-	end
 
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_repair"),
 		_U("main_vehicles_current_repair_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_repair"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_repair"],
 		function(_h, _a, Selected)
 			if Selected then
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
@@ -34,7 +27,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_U("main_vehicles_current_clean"),
 		_U("main_vehicles_current_clean_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_clean"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_clean"],
 		function(_h, _a, Selected)
 			if Selected then
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
@@ -50,7 +43,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_U("main_vehicles_current_flip"),
 		_U("main_vehicles_current_flip_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_flip"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_flip"],
 		function(_h, _a, Selected)
 			if Selected then
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
@@ -62,48 +55,11 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			end
 		end
 	)
-	RageUI.ButtonWithStyle(
-		_U("main_vehicles_current_fullperf"),
-		_U("main_vehicles_current_fullperf_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_fullperf"],
-		function(_h, _a, Selected)
-			if Selected then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				ESX.Game.SetVehicleProperties(pedVehicle, Config.others.fullPerfProperties)
-				ESX.ShowNotification(_U("notif_fullperf_vehicle_success"))
-			end
-		end
-	)
-	RageUI.ButtonWithStyle(
-		_U("main_vehicles_current_plate"),
-		_U("main_vehicles_current_plate_desc"),
-		{ RightLabel = "→" },
-		Config.Groups[playerGroup].Access["submenu_vehicles_plate"],
-		function(_h, _a, Selected)
-			if Selected then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				local plate = textEntry(_U("textentry_change_vehicle_plate"), "", 8)
-				if plate == nil or plate == "" then
-					ESX.ShowNotification(_U("textentry_string_invalid"))
-					return
-				end
-				SetVehicleNumberPlateText(pedVehicle, plate)
-				ESX.ShowNotification(_U("notif_plate_changed_success", plate))
-			end
-		end
-	)
 	RageUI.Checkbox(
 		_U("main_vehicles_current_engine"),
 		_U("main_vehicles_current_engine_desc"),
 		GetIsVehicleEngineRunning(pedVehicle),
-		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_engine"] },
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_current_engine"] },
 		function() end,
 		function()
 			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
@@ -126,7 +82,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_U("main_vehicles_current_freeze"),
 		_U("main_vehicles_current_freeze_desc"),
 		IsEntityPositionFrozen(pedVehicle),
-		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_freeze"] },
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_current_freeze"] },
 		function() end,
 		function()
 			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
@@ -146,99 +102,12 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.List(
-		_U("main_vehicles_current_color_main"),
-		_var.vehicle.paintColorsArray,
-		_var.vehicle.paintColorsArrayIndexMain,
-		_U("main_vehicles_current_color_main_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_color_main"],
-		function(_h, Active, _s, Index)
-			_var.vehicle.paintColorsArrayIndexMain = Index
-			if Active then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					return
-				end
-				local _, colorSecondary = GetVehicleColours(pedVehicle)
-				SetVehicleColours(
-					pedVehicle,
-					_var.vehicle.paintColors[_var.vehicle.paintColorsArrayIndexMain][2],
-					colorSecondary
-				)
-			end
-			if not Active then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					return
-				end
-				local colorPrimary, _ = GetVehicleColours(pedVehicle)
-				for key, color in pairs(_var.vehicle.paintColors) do
-					if color[2] == colorPrimary then
-						_var.vehicle.paintColorsArrayIndexMain = key
-					end
-				end
-			end
-		end
-	)
-	RageUI.List(
-		_U("main_vehicles_current_color_secondary"),
-		_var.vehicle.paintColorsArray,
-		_var.vehicle.paintColorsArrayIndexSecondary,
-		_U("main_vehicles_current_color_secondary_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_color_secondary"],
-		function(_h, Active, _s, Index)
-			_var.vehicle.paintColorsArrayIndexSecondary = Index
-			if Active then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					return
-				end
-				local colorPrimary, _ = GetVehicleColours(pedVehicle)
-				SetVehicleColours(
-					pedVehicle,
-					colorPrimary,
-					_var.vehicle.paintColors[_var.vehicle.paintColorsArrayIndexSecondary][2]
-				)
-			end
-			if not Active then
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					return
-				end
-				local _, colorSecondary = GetVehicleColours(pedVehicle)
-				for key, color in pairs(_var.vehicle.paintColors) do
-					if color[2] == colorSecondary then
-						_var.vehicle.paintColorsArrayIndexSecondary = key
-					end
-				end
-			end
-		end
-	)
-	if liveryCount > 0 then
-		RageUI.List(
-			_U("main_vehicles_current_livery"),
-			liveryList,
-			_var.menu.liveryArrayIndex,
-			_U("main_vehicles_current_livery_desc"),
-			{},
-			Config.Groups[playerGroup].Access["submenu_vehicles_livery"],
-			function(_h, _a, Selected, Index)
-				_var.menu.liveryArrayIndex = Index
-				if Selected then
-					if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-						ESX.ShowNotification(_U("self_not_in_vehicle"))
-						return
-					end
-					SetVehicleLivery(pedVehicle, _var.menu.liveryArrayIndex)
-					ESX.ShowNotification(_U("notif_livery_success", liveryList[_var.menu.liveryArrayIndex]))
-				end
-			end
-		)
-	end
-	RageUI.List(
 		_U("main_vehicles_current_open_door"),
 		_var.vehicle.doorArray,
 		_var.vehicle.doorArrayIndex,
 		_U("main_vehicles_current_open_door_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_opendoor"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_opendoor"],
 		function(_h, _a, Selected, Index)
 			_var.vehicle.doorArrayIndex = Index
 			if Selected then
@@ -307,7 +176,7 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_var.vehicle.boostArrayIndex,
 		_U("main_vehicles_current_boost_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_boost"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_boost"],
 		function(_h, _a, Selected, Index)
 			_var.vehicle.boostArrayIndex = Index
 			if Selected then
@@ -321,5 +190,17 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 				)
 			end
 		end
+	)
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_custom"),
+		_U("main_vehicles_current_custom_desc"),
+		{ RightLabel = "→" },
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_color_main"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_color_secondary"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_fullperf"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_livery"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_plate"],
+		function(_h, _a, _s) end,
+		_var.menus.admin.objects.mainVehiclesCurrentCustom
 	)
 end

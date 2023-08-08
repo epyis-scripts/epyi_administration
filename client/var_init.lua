@@ -43,6 +43,7 @@ _var.menus.admin = {
 		mainPlayersInteract = nil,
 		mainVehicles = nil,
 		mainVehiclesCurrent = nil,
+		mainVehiclesCurrentCustom = nil,
 		mainVehiclesFavorites = nil,
 		mainVehiclesSpawn = nil,
 		mainReports = nil,

@@ -8,6 +8,7 @@ Locales["en"] = {
 	["main_players_interact_subtitle"] = "Management of ~r~the player",
 	["main_vehicles_subtitle"] = "Management of ~r~vehicles",
 	["main_vehicles_current_subtitle"] = "Management of the ~r~current vehicle",
+	["main_vehicles_current_custom_subtitle"] = "Custom of the ~r~current vehicle",
 	["main_vehicles_favorites_subtitle"] = "Management of your ~r~favorites vehicles",
 	["main_vehicles_spawn_subtitle"] = "Spawn a ~r~vehicle",
 	["main_reports_subtitle"] = "Management of ~r~reports",
@@ -154,6 +155,8 @@ Locales["en"] = {
 	["main_vehicles_current_livery_desc"] = "Allow you to change the livery of the vehicle",
 	["main_vehicles_current_boost"] = "Vehicle boost",
 	["main_vehicles_current_boost_desc"] = "Allows you to multiply the torque of the vehicle's engine",
+	["main_vehicles_current_custom"] = "Customize the vehicle",
+	["main_vehicles_current_custom_desc"] = "Allows you to fully customize your vehicle",
 
 	-- Elements → Menu menu / vehicles / vehicles_favorites
 	["main_vehicles_favorites_add"] = "Add current vehicle to favorites",

@@ -8,6 +8,7 @@ Locales["fr"] = {
 	["main_players_interact_subtitle"] = "Gestion ~r~du joueur",
 	["main_vehicles_subtitle"] = "Gestion des ~r~véhicules",
 	["main_vehicles_current_subtitle"] = "Gestion du ~r~véhicule actuel",
+	["main_vehicles_current_custom_subtitle"] = "Customisation du ~r~véhicule actuel",
 	["main_vehicles_favorites_subtitle"] = "Gestion de mes ~r~véhicules favoris",
 	["main_vehicles_spawn_subtitle"] = "Faire apparaître ~r~un véhicule",
 	["main_reports_subtitle"] = "Gestion des ~r~reports",
@@ -154,6 +155,8 @@ Locales["fr"] = {
 	["main_vehicles_current_livery_desc"] = "Permet de changer le livery de votre véhicule",
 	["main_vehicles_current_boost"] = "Multiplicateur de couple",
 	["main_vehicles_current_boost_desc"] = "Permet de multiplier les couples du moteur de votre véhicule",
+	["main_vehicles_current_custom"] = "Customiser le vehicle",
+	["main_vehicles_current_custom_desc"] = "Permet de customiser votre véhicule",
 
 	-- Elements → Menu menu / vehicles / vehicles_favorites
 	["main_vehicles_favorites_add"] = "Ajouter le véhicule aux favories",
