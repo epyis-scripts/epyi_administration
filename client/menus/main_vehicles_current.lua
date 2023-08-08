@@ -41,6 +41,24 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_flip"),
+		_U("main_vehicles_current_flip_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_vehicles_flip"],
+		function(_h, _a, Selected)
+			if Selected then
+				local ped = PlayerPedId()
+				local pedVehicle = GetVehiclePedIsIn(ped, false)
+				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					ESX.ShowNotification(_U("self_not_in_vehicle"))
+					return
+				end
+				SetVehicleOnGroundProperly(pedVehicle)
+				ESX.ShowNotification(_U("notif_flip_vehicle_success"))
+			end
+		end
+	)
+	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_plate"),
 		_U("main_vehicles_current_plate_desc"),
 		{ RightLabel = "→" },
