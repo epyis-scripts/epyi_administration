@@ -128,56 +128,55 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					return
 				end
 				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 0, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 0, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 1, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 1, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 2, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 2, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 3, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 3, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 4, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 4, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 5, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 5, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
 					for i = 0, 5 do
-						SetVehicleDoorOpen(pedVehicle, i, false, false)
-					end
-				end
-			end
-		end
-	)
-	RageUI.List(
-		_U("main_vehicles_current_close_door"),
-		_var.vehicle.doorArray,
-		_var.vehicle.doorArrayIndex,
-		_U("main_vehicles_current_close_door_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_closedoor"],
-		function(_h, _a, Selected, Index)
-			_var.vehicle.doorArrayIndex = Index
-			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
-					SetVehicleDoorShut(pedVehicle, 0, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
-					SetVehicleDoorShut(pedVehicle, 1, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
-					SetVehicleDoorShut(pedVehicle, 2, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
-					SetVehicleDoorShut(pedVehicle, 3, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
-					SetVehicleDoorShut(pedVehicle, 4, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
-					SetVehicleDoorShut(pedVehicle, 5, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
-					for i = 0, 5 do
-						SetVehicleDoorShut(pedVehicle, i, false, false)
+						if not doorState then
+							SetVehicleDoorShut(pedVehicle, i, false, false)
+						else
+							SetVehicleDoorOpen(pedVehicle, i, false, false)
+						end
 					end
 				end
 			end
