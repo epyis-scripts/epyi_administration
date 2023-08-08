@@ -78,6 +78,29 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			ESX.ShowNotification(_U("notif_engine_disabled"))
 		end
 	)
+	RageUI.Checkbox(
+		_U("main_vehicles_current_freeze"),
+		_U("main_vehicles_current_freeze_desc"),
+		IsEntityPositionFrozen(pedVehicle),
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_freeze"] },
+		function() end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			FreezeEntityPosition(pedVehicle, true)
+			ESX.ShowNotification(_U("notif_freeze_vehicle_enabled"))
+		end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			FreezeEntityPosition(pedVehicle, false)
+			ESX.ShowNotification(_U("notif_freeze_vehicle_disabled"))
+		end
+	)
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_plate"),
 		_U("main_vehicles_current_plate_desc"),
