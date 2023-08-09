@@ -87,8 +87,9 @@ Config.Groups = {
 			["submenu_vehicles_current_custom_plate"] = true, -- can change plate of his vehicle
 			["submenu_vehicles_current_custom_color_main"] = true, -- can change the primary color of his vehicle
 			["submenu_vehicles_current_custom_color_secondary"] = true, -- can change the secondary color of his vehicle
-			["submenu_vehicles_current_custom_livery"] = true, -- change the vehicle livery
-			["submenu_vehicles_current_custom_mods"] = true, -- can change the vehicle mods and mods variant
+			["submenu_vehicles_current_custom_livery"] = true, -- change his vehicle's livery
+			["submenu_vehicles_current_custom_mods"] = true, -- can change his vehicle's mods and mods variant
+			["submenu_vehicles_current_fuel"] = true, -- can refuel his vehicle
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true, -- can access report and manage them
@@ -152,8 +153,9 @@ Config.Groups = {
 			["submenu_vehicles_current_custom_plate"] = false, -- can change plate of his vehicle
 			["submenu_vehicles_current_custom_color_main"] = false, -- can change the primary color of his vehicle
 			["submenu_vehicles_current_custom_color_secondary"] = false, -- can change the secondary color of his vehicle
-			["submenu_vehicles_current_custom_livery"] = false, -- change the vehicle livery
-			["submenu_vehicles_current_custom_mods"] = false, -- can change the vehicle mods and mods variant
+			["submenu_vehicles_current_custom_livery"] = false, -- change his vehicle's livery
+			["submenu_vehicles_current_custom_mods"] = false, -- can change his vehicle's mods and mods variant
+			["submenu_vehicles_current_fuel"] = false, -- can refuel his vehicle
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = false, -- can access report and manage them
