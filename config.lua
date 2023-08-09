@@ -34,7 +34,7 @@ Config.others = {
 		modTransmission = 2,
 		modSuspension = 3,
 		modArmor = true,
-	}
+	},
 }
 
 Config.Groups = {

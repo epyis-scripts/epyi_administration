@@ -174,7 +174,12 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 					end
 					SetVehicleDoorOpen(pedVehicle, 5, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
-					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1
+						and GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1
+						and GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1
+						and GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1
+						and GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1
+						and GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
 					for i = 0, 5 do
 						if not doorState then
 							SetVehicleDoorShut(pedVehicle, i, false, false)
