@@ -88,6 +88,7 @@ Config.Groups = {
 			["submenu_vehicles_current_custom_color_main"] = true, -- can change the primary color of his vehicle
 			["submenu_vehicles_current_custom_color_secondary"] = true, -- can change the secondary color of his vehicle
 			["submenu_vehicles_current_custom_livery"] = true, -- change the vehicle livery
+			["submenu_vehicles_current_custom_mods"] = true, -- can change the vehicle mods and mods variant
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true, -- can access report and manage them
@@ -152,6 +153,7 @@ Config.Groups = {
 			["submenu_vehicles_current_custom_color_main"] = false, -- can change the primary color of his vehicle
 			["submenu_vehicles_current_custom_color_secondary"] = false, -- can change the secondary color of his vehicle
 			["submenu_vehicles_current_custom_livery"] = false, -- change the vehicle livery
+			["submenu_vehicles_current_custom_mods"] = false, -- can change the vehicle mods and mods variant
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = false, -- can access report and manage them

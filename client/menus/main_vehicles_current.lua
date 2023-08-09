@@ -199,7 +199,8 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_color_secondary"]
 			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_fullperf"]
 			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_livery"]
-			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_plate"],
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_plate"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_mods"],
 		function(_h, _a, _s) end,
 		_var.menus.admin.objects.mainVehiclesCurrentCustom
 	)
