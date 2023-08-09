@@ -27,6 +27,16 @@ Config.Keys = { -- [table] → The the menu keys
 	},
 }
 
+Config.others = {
+	fullPerfProperties = { -- [table] → Full perf properties table
+		modEngine = 3,
+		modBrakes = 2,
+		modTransmission = 2,
+		modSuspension = 3,
+		modArmor = true,
+	}
+}
+
 Config.Groups = {
 	admin = {
 		Priority = 99,
@@ -66,14 +76,20 @@ Config.Groups = {
 			["submenu_vehicles_current_access"] = true, -- can access current vehicle management menu
 			["submenu_vehicles_favorites_access"] = true, -- can access favorites vehicles management menu
 			["submenu_vehicles_spawn_access"] = true, -- can access vehicle spawning menu
-			["submenu_vehicles_repair"] = true, -- can repair his vehicle
-			["submenu_vehicles_clean"] = true, -- can clean his vehicle
-			["submenu_vehicles_plate"] = true, -- can change plate of his vehicle
-			["submenu_vehicles_opendoor"] = true, -- can open doors of his vehicle
-			["submenu_vehicles_closedoor"] = true, -- can close doors of his vehicle
-			["submenu_vehicles_color_main"] = true, -- can change the primary color of his vehicle
-			["submenu_vehicles_color_secondary"] = true, -- can change the secondary color of his vehicle
-			["submenu_vehicles_boost"] = true, -- can use the torque multiplier on his vehicle
+			["submenu_vehicles_current_repair"] = true, -- can repair his vehicle
+			["submenu_vehicles_current_clean"] = true, -- can clean his vehicle
+			["submenu_vehicles_current_flip"] = true, -- can flip his vehicle
+			["submenu_vehicles_current_engine"] = true, -- can turn on/off the engine of his vehicle
+			["submenu_vehicles_current_freeze"] = true, -- can freeze his vehicle
+			["submenu_vehicles_current_opendoor"] = true, -- can open doors of his vehicle
+			["submenu_vehicles_current_boost"] = true, -- can use the torque multiplier on his vehicle
+			["submenu_vehicles_current_custom_fullperf"] = true, -- can use fullperf on his vehicle
+			["submenu_vehicles_current_custom_plate"] = true, -- can change plate of his vehicle
+			["submenu_vehicles_current_custom_color_main"] = true, -- can change the primary color of his vehicle
+			["submenu_vehicles_current_custom_color_secondary"] = true, -- can change the secondary color of his vehicle
+			["submenu_vehicles_current_custom_livery"] = true, -- change his vehicle's livery
+			["submenu_vehicles_current_custom_mods"] = true, -- can change his vehicle's mods and mods variant
+			["submenu_vehicles_current_fuel"] = true, -- can refuel his vehicle
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = true, -- can access report and manage them
@@ -126,14 +142,20 @@ Config.Groups = {
 			["submenu_vehicles_current_access"] = false, -- can access current vehicle management menu
 			["submenu_vehicles_favorites_access"] = false, -- can access favorites vehicles management menu
 			["submenu_vehicles_spawn_access"] = false, -- can access vehicle spawning menu
-			["submenu_vehicles_repair"] = false, -- can repair his vehicle
-			["submenu_vehicles_clean"] = false, -- can clean his vehicle
-			["submenu_vehicles_plate"] = false, -- can change plate of his vehicle
-			["submenu_vehicles_opendoor"] = false, -- can open doors of his vehicle
-			["submenu_vehicles_closedoor"] = false, -- can close doors of his vehicle
-			["submenu_vehicles_color_main"] = false, -- can change the primary color of his vehicle
-			["submenu_vehicles_color_secondary"] = false, -- can change the secondary color of his vehicle
-			["submenu_vehicles_boost"] = false, -- can use the torque multiplier on his vehicle
+			["submenu_vehicles_current_repair"] = false, -- can repair his vehicle
+			["submenu_vehicles_current_clean"] = false, -- can clean his vehicle
+			["submenu_vehicles_current_flip"] = false, -- can flip his vehicle
+			["submenu_vehicles_current_engine"] = false, -- can turn on/off the engine of his vehicle
+			["submenu_vehicles_current_freeze"] = false, -- can freeze his vehicle
+			["submenu_vehicles_current_opendoor"] = false, -- can open doors of his vehicle
+			["submenu_vehicles_current_boost"] = false, -- can use the torque multiplier on his vehicle
+			["submenu_vehicles_current_custom_fullperf"] = false, -- can use fullperf on his vehicle
+			["submenu_vehicles_current_custom_plate"] = false, -- can change plate of his vehicle
+			["submenu_vehicles_current_custom_color_main"] = false, -- can change the primary color of his vehicle
+			["submenu_vehicles_current_custom_color_secondary"] = false, -- can change the secondary color of his vehicle
+			["submenu_vehicles_current_custom_livery"] = false, -- change his vehicle's livery
+			["submenu_vehicles_current_custom_mods"] = false, -- can change his vehicle's mods and mods variant
+			["submenu_vehicles_current_fuel"] = false, -- can refuel his vehicle
 
 			-- Submenu → Reports
 			["submenu_reports_access"] = false, -- can access report and manage them

@@ -2,15 +2,16 @@
 ---@param playerGroup string
 ---@return void
 function main_vehicles_current_showContentThisFrame(playerGroup)
+	local ped = PlayerPedId()
+	local pedVehicle = GetVehiclePedIsIn(ped, false)
+
 	RageUI.ButtonWithStyle(
 		_U("main_vehicles_current_repair"),
 		_U("main_vehicles_current_repair_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_repair"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_repair"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -26,11 +27,9 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_U("main_vehicles_current_clean"),
 		_U("main_vehicles_current_clean_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_clean"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_clean"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -41,74 +40,81 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		end
 	)
 	RageUI.ButtonWithStyle(
-		_U("main_vehicles_current_plate"),
-		_U("main_vehicles_current_plate_desc"),
-		{ RightLabel = "→" },
-		Config.Groups[playerGroup].Access["submenu_vehicles_plate"],
+		_U("main_vehicles_current_flip"),
+		_U("main_vehicles_current_flip_desc"),
+		{},
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_flip"],
 		function(_h, _a, Selected)
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
 				end
-				local plate = textEntry(_U("textentry_change_vehicle_plate"), "", 8)
-				if plate == nil or plate == "" then
-					ESX.ShowNotification(_U("textentry_string_invalid"))
-					return
-				end
-				SetVehicleNumberPlateText(pedVehicle, plate)
-				ESX.ShowNotification(_U("notif_plate_changed_success", plate))
+				SetVehicleOnGroundProperly(pedVehicle)
+				ESX.ShowNotification(_U("notif_flip_vehicle_success"))
 			end
 		end
 	)
-	RageUI.List(
-		_U("main_vehicles_current_color_main"),
-		_var.vehicle.paintColorsArray,
-		_var.vehicle.paintColorsArrayIndexMain,
-		_U("main_vehicles_current_color_main_desc"),
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_fuel"),
+		_U("main_vehicles_current_fuel_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_color_main"],
-		function(_h, Active, _s, Index)
-			_var.vehicle.paintColorsArrayIndexMain = Index
-			if Active then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_fuel"],
+		function(_h, _a, Selected)
+			if Selected then
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
 				end
-				local _, colorSecondary = GetVehicleColours(pedVehicle)
-				SetVehicleColours(
-					pedVehicle,
-					_var.vehicle.paintColors[_var.vehicle.paintColorsArrayIndexMain][2],
-					colorSecondary
-				)
+				SetVehicleFuelLevel(pedVehicle, 100.0)
+				ESX.ShowNotification(_U("notif_fuel_vehicle_success"))
 			end
 		end
 	)
-	RageUI.List(
-		_U("main_vehicles_current_color_secondary"),
-		_var.vehicle.paintColorsArray,
-		_var.vehicle.paintColorsArrayIndexSecondary,
-		_U("main_vehicles_current_color_secondary_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_color_secondary"],
-		function(_h, Active, _s, Index)
-			_var.vehicle.paintColorsArrayIndexSecondary = Index
-			if Active then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					return
-				end
-				local colorPrimary, _ = GetVehicleColours(pedVehicle)
-				SetVehicleColours(
-					pedVehicle,
-					colorPrimary,
-					_var.vehicle.paintColors[_var.vehicle.paintColorsArrayIndexSecondary][2]
-				)
+	RageUI.Checkbox(
+		_U("main_vehicles_current_engine"),
+		_U("main_vehicles_current_engine_desc"),
+		GetIsVehicleEngineRunning(pedVehicle),
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_current_engine"] },
+		function() end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
 			end
+			SetVehicleEngineOn(pedVehicle, true, true, true)
+			ESX.ShowNotification(_U("notif_engine_enabled"))
+		end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			SetVehicleEngineOn(pedVehicle, false, true, true)
+			ESX.ShowNotification(_U("notif_engine_disabled"))
+		end
+	)
+	RageUI.Checkbox(
+		_U("main_vehicles_current_freeze"),
+		_U("main_vehicles_current_freeze_desc"),
+		IsEntityPositionFrozen(pedVehicle),
+		{ Enabled = Config.Groups[playerGroup].Access["submenu_vehicles_current_freeze"] },
+		function() end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			FreezeEntityPosition(pedVehicle, true)
+			ESX.ShowNotification(_U("notif_freeze_vehicle_enabled"))
+		end,
+		function()
+			if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
+				ESX.ShowNotification(_U("self_not_in_vehicle"))
+				return
+			end
+			FreezeEntityPosition(pedVehicle, false)
+			ESX.ShowNotification(_U("notif_freeze_vehicle_disabled"))
 		end
 	)
 	RageUI.List(
@@ -117,67 +123,64 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_var.vehicle.doorArrayIndex,
 		_U("main_vehicles_current_open_door_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_opendoor"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_opendoor"],
 		function(_h, _a, Selected, Index)
 			_var.vehicle.doorArrayIndex = Index
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
 				end
 				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 0, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 0, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 1, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 1, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 2, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 2, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 3, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 3, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 4, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 4, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
+					if not doorState then
+						SetVehicleDoorShut(pedVehicle, 5, false, false)
+						return
+					end
 					SetVehicleDoorOpen(pedVehicle, 5, false, false)
 				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
+					local doorState = GetVehicleDoorAngleRatio(pedVehicle, 0) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 1) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 2) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 3) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 4) < 0.1 and GetVehicleDoorAngleRatio(pedVehicle, 5) < 0.1
 					for i = 0, 5 do
-						SetVehicleDoorOpen(pedVehicle, i, false, false)
-					end
-				end
-			end
-		end
-	)
-	RageUI.List(
-		_U("main_vehicles_current_close_door"),
-		_var.vehicle.doorArray,
-		_var.vehicle.doorArrayIndex,
-		_U("main_vehicles_current_close_door_desc"),
-		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_closedoor"],
-		function(_h, _a, Selected, Index)
-			_var.vehicle.doorArrayIndex = Index
-			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
-				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
-					ESX.ShowNotification(_U("self_not_in_vehicle"))
-					return
-				end
-				if _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontleft") then
-					SetVehicleDoorShut(pedVehicle, 0, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_frontright") then
-					SetVehicleDoorShut(pedVehicle, 1, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backleft") then
-					SetVehicleDoorShut(pedVehicle, 2, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_backright") then
-					SetVehicleDoorShut(pedVehicle, 3, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_hood") then
-					SetVehicleDoorShut(pedVehicle, 4, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_trunk") then
-					SetVehicleDoorShut(pedVehicle, 5, false, false)
-				elseif _var.vehicle.doorArray[_var.vehicle.doorArrayIndex] == _("door_all") then
-					for i = 0, 5 do
-						SetVehicleDoorShut(pedVehicle, i, false, false)
+						if not doorState then
+							SetVehicleDoorShut(pedVehicle, i, false, false)
+						else
+							SetVehicleDoorOpen(pedVehicle, i, false, false)
+						end
 					end
 				end
 			end
@@ -189,12 +192,10 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 		_var.vehicle.boostArrayIndex,
 		_U("main_vehicles_current_boost_desc"),
 		{},
-		Config.Groups[playerGroup].Access["submenu_vehicles_boost"],
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_boost"],
 		function(_h, _a, Selected, Index)
 			_var.vehicle.boostArrayIndex = Index
 			if Selected then
-				local ped = PlayerPedId()
-				local pedVehicle = GetVehiclePedIsIn(ped, false)
 				if not pedVehicle or GetPedInVehicleSeat(pedVehicle, -1) ~= ped then
 					ESX.ShowNotification(_U("self_not_in_vehicle"))
 					return
@@ -205,5 +206,18 @@ function main_vehicles_current_showContentThisFrame(playerGroup)
 				)
 			end
 		end
+	)
+	RageUI.ButtonWithStyle(
+		_U("main_vehicles_current_custom"),
+		_U("main_vehicles_current_custom_desc"),
+		{ RightLabel = "→" },
+		Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_color_main"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_color_secondary"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_fullperf"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_livery"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_plate"]
+			or Config.Groups[playerGroup].Access["submenu_vehicles_current_custom_mods"],
+		function(_h, _a, _s) end,
+		_var.menus.admin.objects.mainVehiclesCurrentCustom
 	)
 end

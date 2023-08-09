@@ -43,6 +43,7 @@ _var.menus.admin = {
 		mainPlayersInteract = nil,
 		mainVehicles = nil,
 		mainVehiclesCurrent = nil,
+		mainVehiclesCurrentCustom = nil,
 		mainVehiclesFavorites = nil,
 		mainVehiclesSpawn = nil,
 		mainReports = nil,
@@ -60,6 +61,9 @@ _var.menu.accountsActionsArray = {
 	_("main_players_interact_money_action_remove"),
 	_("main_players_interact_money_action_set"),
 }
+_var.menu.liveryArrayIndex = 1
+_var.menu.modArrayIndex = 1
+_var.menu.modVariantArrayIndex = 1
 _var.menu.blackoutCheckbox = false
 _var.menu.timeArrayIndex = 1
 _var.menu.timeArray = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23 }
@@ -299,6 +303,40 @@ _var.vehicle.paintColors = {
 	{ "Olive Darb", 152 },
 	{ "Dark Earth", 153 },
 	{ "Desert Tan", 154 },
+}
+_var.vehicle.mods = {
+	[1] = "Spoiler",
+	[2] = "Front bumper",
+	[3] = "Rear bumper",
+	[4] = "Side skirt",
+	[5] = "Exhaust",
+	[6] = "Frame",
+	[7] = "Grille",
+	[8] = "Hood",
+	[9] = "Fender",
+	[10] = "Right fender",
+	[11] = "Roof",
+	[12] = "Engine",
+	[13] = "Brakes",
+	[14] = "Transmission",
+	[15] = "Horns",
+	[16] = "Suspension",
+	[17] = "Armor",
+	[18] = "Turbo",
+	[19] = "Xenon",
+	[20] = "Front wheels",
+	[21] = "Back wheels",
+	[22] = "Plate holders",
+	[23] = "Trim design",
+	[24] = "Ornaments",
+	[25] = "Dial design",
+	[26] = "Steering wheel",
+	[27] = "Shift lever",
+	[28] = "Plaques",
+	[29] = "Hydraulics",
+	[30] = "Boost",
+	[31] = "Window tint",
+	[32] = "Plate",
 }
 _var.vehicle.paintColorsArray = {}
 for _, color in pairs(_var.vehicle.paintColors) do

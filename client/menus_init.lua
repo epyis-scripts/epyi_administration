@@ -91,6 +91,15 @@ function openMenu()
 		_var.menus.admin.bannerTexture,
 		_var.menus.admin.bannerTexture
 	)
+	_var.menus.admin.objects.mainVehiclesCurrentCustom = RageUI.CreateSubMenu(
+		_var.menus.admin.objects.mainVehiclesCurrent,
+		_U("menu_title"),
+		_U("main_vehicles_current_custom_subtitle"),
+		Config.MenuStyle.Margins.left,
+		Config.MenuStyle.Margins.top,
+		_var.menus.admin.bannerTexture,
+		_var.menus.admin.bannerTexture
+	)
 	_var.menus.admin.objects.mainVehiclesFavorites = RageUI.CreateSubMenu(
 		_var.menus.admin.objects.mainVehicles,
 		_U("menu_title"),
@@ -241,6 +250,15 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_current_showContentThisFrame(_var.client.staffGroup)
+				end
+			)
+			RageUI.IsVisible(
+				_var.menus.admin.objects.mainVehiclesCurrentCustom,
+				true,
+				Config.MenuStyle.BannerStyle.UseGlareEffect,
+				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
+				function()
+					main_vehicles_current_custom_showContentThisFrame(_var.client.staffGroup)
 				end
 			)
 			RageUI.IsVisible(
