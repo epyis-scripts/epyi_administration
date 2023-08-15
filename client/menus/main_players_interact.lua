@@ -31,7 +31,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 	RageUI.Separator(
 		_U(
 			"main_players_interact_ooc_name",
-			GetPlayerName(GetPlayerFromServerId(player.source)) .. " ~s~[" .. group .. "~s~]"
+			player.ooc_name .. " ~s~[" .. group .. "~s~]"
 		)
 	)
 	RageUI.Separator(_U("main_players_interact_rp_name", player.name))
