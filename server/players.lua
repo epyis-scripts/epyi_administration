@@ -29,19 +29,21 @@ ESX.RegisterServerCallback("epyi_administration:getPlayers", function(source, cb
 	cb(players)
 end)
 
-RegisterNetEvent("epyi_administration:setCoords")
-AddEventHandler("epyi_administration:setCoords", function(target, coords)
+ESX.RegisterServerCallback("epyi_administration:setCoords", function(source, cb, target, coords)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	if not Config.Groups[xPlayer.getGroup()] then
 		xPlayer.kick(_U("insuficient_permissions"))
+		cb(false)
 		return
 	end
 	local xTarget = ESX.GetPlayerFromId(target)
 	if not xTarget or not coords then
 		xPlayer.showNotification(_U("notif_error"))
+		cb(false)
 		return
 	end
 	xTarget.setCoords(coords)
+	cb(true)
 end)
 
 RegisterNetEvent("epyi_administration:addPlayerMoney")

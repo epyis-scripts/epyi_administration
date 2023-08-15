@@ -217,8 +217,17 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				TriggerServerEvent("epyi_administration:setCoords", GetPlayerServerId(PlayerId()), player.coords)
-				ESX.ShowNotification(_U("notif_goto_success", player.name))
+				Citizen.CreateThread(function()
+					_var.menus.admin.cooldowns.items = true
+					ESX.TriggerServerCallback("epyi_administration:setCoords", function(result)
+						if not result then
+							_var.menus.admin.cooldowns.items = false
+							return
+						end
+						ESX.ShowNotification(_U("notif_goto_success", player.name))
+						_var.menus.admin.cooldowns.items = false
+					end, GetPlayerServerId(PlayerId()), player.coords)
+				end)
 			end
 		end
 	)
@@ -229,8 +238,17 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				TriggerServerEvent("epyi_administration:setCoords", player.source, GetEntityCoords(PlayerPedId()))
-				ESX.ShowNotification(_U("notif_bring_success", player.name))
+				Citizen.CreateThread(function()
+					_var.menus.admin.cooldowns.items = true
+					ESX.TriggerServerCallback("epyi_administration:setCoords", function(result)
+						if not result then
+							_var.menus.admin.cooldowns.items = false
+							return
+						end
+						ESX.ShowNotification(_U("notif_bring_success", player.name))
+						_var.menus.admin.cooldowns.items = false
+					end, player.source, GetEntityCoords(PlayerPedId()))
+				end)
 			end
 		end
 	)
