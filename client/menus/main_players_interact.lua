@@ -28,12 +28,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 	if Config.Groups[player.group] ~= nil then
 		group = Config.Groups[player.group].Color .. Config.Groups[player.group].Label
 	end
-	RageUI.Separator(
-		_U(
-			"main_players_interact_ooc_name",
-			player.ooc_name .. " ~s~[" .. group .. "~s~]"
-		)
-	)
+	RageUI.Separator(_U("main_players_interact_ooc_name", player.ooc_name .. " ~s~[" .. group .. "~s~]"))
 	RageUI.Separator(_U("main_players_interact_rp_name", player.name))
 	RageUI.List(
 		_U("main_players_interact_money_bank", playerAccounts["bank"]),
