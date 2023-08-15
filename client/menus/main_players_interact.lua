@@ -217,10 +217,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed = player.ped
-				local userPedCoords = GetEntityCoords(userPed)
-				local staffPed = PlayerPedId()
-				SetEntityCoords(staffPed, userPedCoords, false)
+				TriggerServerEvent("epyi_administration:setCoords", GetPlayerServerId(PlayerId()), player.coords)
 				ESX.ShowNotification(_U("notif_goto_success", player.name))
 			end
 		end
@@ -232,10 +229,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed = player.ped
-				local staffPed = PlayerPedId()
-				local staffPedCoords = GetEntityCoords(staffPed)
-				SetEntityCoords(userPed, staffPedCoords, false)
+				TriggerServerEvent("epyi_administration:setCoords", player.source, GetEntityCoords(PlayerPedId()))
 				ESX.ShowNotification(_U("notif_bring_success", player.name))
 			end
 		end
