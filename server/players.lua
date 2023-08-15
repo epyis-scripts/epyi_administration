@@ -16,6 +16,7 @@ ESX.RegisterServerCallback("epyi_administration:getPlayers", function(source, cb
 		players[xTarget.identifier] = {
 			identifier = xTarget.identifier,
 			source = xTarget.source,
+			ped = GetPlayerPed(xTarget.source),
 			name = xTarget.getName(),
 			ooc_name = GetPlayerName(xTarget.source),
 			group = xTarget.getGroup(),

@@ -217,7 +217,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_goto"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
+				local userPed = player.ped
 				local userPedCoords = GetEntityCoords(userPed)
 				local staffPed = PlayerPedId()
 				SetEntityCoords(staffPed, userPedCoords, false)
@@ -232,7 +232,7 @@ function main_players_interact_showContentThisFrame(playerGroup)
 		Config.Groups[playerGroup].Access["submenu_players_interact_bring"] and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed = GetPlayerPed(GetPlayerFromServerId(player.source))
+				local userPed = player.ped
 				local staffPed = PlayerPedId()
 				local staffPedCoords = GetEntityCoords(staffPed)
 				SetEntityCoords(userPed, staffPedCoords, false)
