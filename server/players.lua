@@ -2,7 +2,7 @@
 ---@param identifier string
 ---@return table
 ESX.RegisterServerCallback("epyi_administration:getPlayers", function(source, cb, identifier)
-	xPlayer = ESX.GetPlayerFromIdentifier(identifier)
+	local xPlayer = ESX.GetPlayerFromIdentifier(identifier)
 	if
 		not Config.Groups[xPlayer.getGroup()] or not Config.Groups[xPlayer.getGroup()].Access["submenu_players_access"]
 	then
@@ -12,17 +12,17 @@ ESX.RegisterServerCallback("epyi_administration:getPlayers", function(source, cb
 	end
 	local players = {}
 	local xPlayers = ESX.GetExtendedPlayers()
-	for _k, xPlayer in pairs(xPlayers) do
-		players[xPlayer.identifier] = {
-			identifier = xPlayer.identifier,
-			source = xPlayer.source,
-			name = xPlayer.getName(),
-			ooc_name = GetPlayerName(xPlayer.source),
-			group = xPlayer.getGroup(),
-			job = xPlayer.getJob(),
-			accounts = xPlayer.getAccounts(),
-			coords = xPlayer.getCoords(),
-			inventory = xPlayer.getInventory(),
+	for _k, xTarget in pairs(xPlayers) do
+		players[xTarget.identifier] = {
+			identifier = xTarget.identifier,
+			source = xTarget.source,
+			name = xTarget.getName(),
+			ooc_name = GetPlayerName(xTarget.source),
+			group = xTarget.getGroup(),
+			job = xTarget.getJob(),
+			accounts = xTarget.getAccounts(),
+			coords = xTarget.getCoords(),
+			inventory = xTarget.getInventory(),
 		}
 	end
 	cb(players)
