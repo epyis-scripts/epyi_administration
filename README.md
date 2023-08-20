@@ -25,3 +25,4 @@
 
     This program Is free software: you can redistribute it And/Or modify it under the terms Of the MIT License.
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/epyis-scripts/epyi_administration/blob/main/LICENSE)
+<a href="//www.dmca.com/Protection/Status.aspx?ID=1e612973-8e06-4dde-b850-ae2a3ed70a49" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120l.png?ID=1e612973-8e06-4dde-b850-ae2a3ed70a49"  alt="DMCA.com Protection Status" /></a>
