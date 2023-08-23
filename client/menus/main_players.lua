@@ -28,8 +28,8 @@ function main_players_showContentThisFrame(playerGroup)
 			group = Config.Groups[player.group].Color .. Config.Groups[player.group].Label
 		end
 		RageUI.ButtonWithStyle(
-			player.name .. " - " .. player.ooc_name .. " ~s~[" .. group .. "~s~]",
-			_U("main_players_desc", player.ooc_name .. " ~s~[" .. group .. "~s~]"),
+			player.name .. " - " .. player.ooc_name .. " ~s~[" .. group .. "~s~] - ID: " .. player.source,
+			_U("main_players_desc", player.ooc_name .. " ~s~[" .. group .. "~s~] - ID: " .. player.source),
 			{ RightLabel = "→" },
 			Config.Groups[playerGroup].Access["submenu_players_interact"]
 				and (
