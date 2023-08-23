@@ -295,6 +295,7 @@ Locales["en"] = {
 	["notif_kick_target"] = "You were kicked by staff\nReason: %s",
 	["notif_ban_success"] = "You successfully banned ~r~%s ~s~ from the server!",
 	["notif_ban_target"] = "You are banned from this server\nReason: %s\nDuration: %s days\nExpires on: %s",
+	["notif_not_in_staff_mode"] = "Your staff mode isn't enabled",
 
 	-- Defferals
 	["deffer_ban_checker"] = "We are checking your ban status",

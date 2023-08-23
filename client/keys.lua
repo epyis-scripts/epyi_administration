@@ -16,6 +16,10 @@ Keys.Register(Config.Keys.NoClip.use, "-useAdminNoClip", _("keys_menu_noclip"), 
 			ESX.ShowNotification(_U("insuficient_permissions"))
 			return
 		end
+		if not _var.client.isStaffModeActivated then
+			ESX.ShowNotification(_U("notif_not_in_staff_mode"))
+			return
+		end
 		if _threads.noclip.isActivated then
 			_threads.noclip.disable()
 			ESX.ShowNotification(_U("notif_noclip_disabled_self"))
