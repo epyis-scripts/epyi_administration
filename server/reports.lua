@@ -23,10 +23,15 @@ end, false)
 function addReport(xPlayer, reason)
 	local report = {
 		user = {
+			identifier = xPlayer.identifier,
 			source = xPlayer.source,
 			name = xPlayer.getName(),
-			identifier = xPlayer.identifier,
+			ooc_name = GetPlayerName(xPlayer.source),
 			group = xPlayer.getGroup(),
+			job = xPlayer.getJob(),
+			accounts = xPlayer.getAccounts(),
+			coords = xPlayer.getCoords(),
+			inventory = xPlayer.getInventory(),
 			reason = reason,
 		},
 		staff = {
