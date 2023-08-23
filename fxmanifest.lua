@@ -39,6 +39,9 @@ client_scripts({
 	"client/misc.lua",
 	"client/threads.lua",
 	"client/menus/*.lua",
+
+	"client/modules.lua",
+	"modules/**/cl_*",
 })
 
 server_scripts({
@@ -52,6 +55,9 @@ server_scripts({
 	"server/ban.lua",
 	"server/reports.lua",
 	"server/weather_time.lua",
+
+	"server/modules.lua",
+	"modules/**/sv_*",
 })
 
 dependencies({
