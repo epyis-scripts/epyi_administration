@@ -57,6 +57,7 @@ server_scripts({
 dependencies({
 	"es_extended",
 	"oxmysql",
+	"esx_skin",
 	"esx_status",
 	"esx_datastore",
 })
