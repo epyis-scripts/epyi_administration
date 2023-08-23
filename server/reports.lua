@@ -1,6 +1,12 @@
+local reportCooldowns = reportCooldowns or {}
+
 --report command
 --command to create a report
 ESX.RegisterCommand("report", "user", function(xPlayer, args, showError)
+	if reportCooldowns[xPlayer.identifier] then
+		xPlayer.showNotification(_U("notif_cannot_perform_cooldown"))
+		return
+	end
 	local reason = ""
 	for _, arg in pairs(args) do
 		if reason == "" then
@@ -14,6 +20,10 @@ ESX.RegisterCommand("report", "user", function(xPlayer, args, showError)
 	end
 	addReport(xPlayer, reason)
 	xPlayer.showNotification(_U("command_report_success", reason))
+	reportCooldowns[xPlayer.identifier] = true
+	Citizen.SetTimeout(5000, function()
+		reportCooldowns[xPlayer.identifier] = false
+	end)
 end, false)
 
 ---addReport

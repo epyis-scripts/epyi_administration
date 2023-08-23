@@ -297,6 +297,7 @@ Locales["fr"] = {
 	["notif_ban_success"] = "Vous avez bien banni ~r~%s ~s~du serveur!",
 	["notif_ban_target"] = "Vous êtes banni de ce serveur\nRaison: %s\nDurée: %s jours\nExpire le: %s",
 	["notif_not_in_staff_mode"] = "Votre mode staff n'est pas activé",
+	["notif_cannot_perform_cooldown"] = "Cooldown : Vous ne pouvez pas faire cela trop rapidement",
 
 	-- Defferals
 	["deffer_ban_checker"] = "Nous vérifions si vous êtes banni",
