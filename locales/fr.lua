@@ -104,6 +104,7 @@ Locales["fr"] = {
 	-- Elements → Menu menu / players / interact
 	["main_players_interact_ooc_name"] = "Son pseudo: ~r~%s",
 	["main_players_interact_rp_name"] = "Son nom rp: ~r~%s",
+	["main_players_interact_id"] = "Son id: ~r~%s",
 	["main_players_interact_money_action_add"] = "Ajouter",
 	["main_players_interact_money_action_remove"] = "Retirer",
 	["main_players_interact_money_action_set"] = "Définir",

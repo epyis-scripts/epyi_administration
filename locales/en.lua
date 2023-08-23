@@ -104,6 +104,7 @@ Locales["en"] = {
 	-- Elements → Menu menu / players / interact
 	["main_players_interact_ooc_name"] = "His non-roleplay name: ~r~%s",
 	["main_players_interact_rp_name"] = "His roleplay name: ~r~%s",
+	["main_players_interact_id"] = "His server id: ~r~%s",
 	["main_players_interact_money_action_add"] = "Add",
 	["main_players_interact_money_action_remove"] = "Remove",
 	["main_players_interact_money_action_set"] = "Set",
