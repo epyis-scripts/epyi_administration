@@ -91,31 +91,30 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 			function(_h, _a, Selected)
 				if Selected then
 					_var.menus.admin.cooldowns.items = true
-					Citizen.SetTimeout(2000, function()
-						_var.menus.admin.cooldowns.items = false
-					end)
 					_var.client.playerData = ESX.GetPlayerData()
-					_var.reports.list[_var.reports.selectedReport].staff.taken = true
-					_var.reports.list[_var.reports.selectedReport].staff.takerIdentifier =
-						_var.client.playerData.identifier
-					_var.reports.list[_var.reports.selectedReport].staff.takerSource = GetPlayerServerId(PlayerId())
-					_var.reports.list[_var.reports.selectedReport].staff.takerGroup = playerGroup
+					local editedReport = _var.reports.list[_var.reports.selectedReport]
+					editedReport.staff.taken = true
+					editedReport.staff.takerIdentifier = _var.client.playerData.identifier
+					editedReport.staff.takerSource = GetPlayerServerId(PlayerId())
+					editedReport.staff.takerGroup = playerGroup
 					ESX.TriggerServerCallback(
 						"epyi_administration:setReport",
 						function(result)
 							if result then
 								ESX.ShowNotification((_U("notif_report_status_take", _var.reports.selectedReport)))
+								ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
+									_var.reports.list = reports
+									_var.menus.admin.cooldowns.items = false
+								end, _var.client.playerData.identifier)
 							else
 								ESX.ShowNotification(_U("notif_report_editing_error"))
+								_var.menus.admin.cooldowns.items = false
 							end
 						end,
 						_var.client.playerData.identifier,
 						_var.reports.selectedReport,
-						_var.reports.list[_var.reports.selectedReport]
+						editedReport
 					)
-					ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
-						_var.reports.list = reports
-					end, _var.client.playerData.identifier)
 				end
 			end
 		)
@@ -130,30 +129,30 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 			function(_h, _a, Selected)
 				if Selected then
 					_var.menus.admin.cooldowns.items = true
-					Citizen.SetTimeout(2000, function()
-						_var.menus.admin.cooldowns.items = false
-					end)
 					_var.client.playerData = ESX.GetPlayerData()
-					_var.reports.list[_var.reports.selectedReport].staff.taken = false
-					_var.reports.list[_var.reports.selectedReport].staff.takerIdentifier = nil
-					_var.reports.list[_var.reports.selectedReport].staff.takerSource = nil
-					_var.reports.list[_var.reports.selectedReport].staff.takerGroup = nil
+					local editedReport = _var.reports.list[_var.reports.selectedReport]
+					editedReport.staff.taken = false
+					editedReport.staff.takerIdentifier = nil
+					editedReport.staff.takerSource = nil
+					editedReport.staff.takerGroup = nil
 					ESX.TriggerServerCallback(
 						"epyi_administration:setReport",
 						function(result)
 							if result then
 								ESX.ShowNotification((_U("notif_report_status_leave", _var.reports.selectedReport)))
+								ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
+									_var.reports.list = reports
+									_var.menus.admin.cooldowns.items = false
+								end, _var.client.playerData.identifier)
 							else
 								ESX.ShowNotification(_U("notif_report_editing_error"))
+								_var.menus.admin.cooldowns.items = false
 							end
 						end,
 						_var.client.playerData.identifier,
 						_var.reports.selectedReport,
-						_var.reports.list[_var.reports.selectedReport]
+						editedReport
 					)
-					ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
-						_var.reports.list = reports
-					end, _var.client.playerData.identifier)
 				end
 			end
 		)
@@ -162,15 +161,20 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		_U("main_reports_edit_goto"),
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 		{},
-		true,
+		not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed =
-					GetPlayerPed(GetPlayerFromServerId(_var.reports.list[_var.reports.selectedReport].user.source))
-				local userPedCoords = GetEntityCoords(userPed)
-				local staffPed = PlayerPedId()
-				SetEntityCoords(staffPed, userPedCoords, false)
-				ESX.ShowNotification(_U("notif_goto_success", _var.reports.list[_var.reports.selectedReport].user.name))
+				Citizen.CreateThread(function()
+					_var.menus.admin.cooldowns.items = true
+					ESX.TriggerServerCallback("epyi_administration:setCoords", function(result)
+						if not result then
+							_var.menus.admin.cooldowns.items = false
+							return
+						end
+						ESX.ShowNotification(_U("notif_goto_success", _var.reports.list[_var.reports.selectedReport].user.name))
+						_var.menus.admin.cooldowns.items = false
+					end, GetPlayerServerId(PlayerId()), _var.reports.list[_var.reports.selectedReport].user.coords)
+				end)
 			end
 		end
 	)
@@ -178,17 +182,20 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		_U("main_reports_edit_bring"),
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 		{},
-		true,
+		not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				local userPed =
-					GetPlayerPed(GetPlayerFromServerId(_var.reports.list[_var.reports.selectedReport].user.source))
-				local staffPed = PlayerPedId()
-				local staffPedCoords = GetEntityCoords(staffPed)
-				SetEntityCoords(userPed, staffPedCoords, false)
-				ESX.ShowNotification(
-					_U("notif_bring_success", _var.reports.list[_var.reports.selectedReport].user.name)
-				)
+				Citizen.CreateThread(function()
+					_var.menus.admin.cooldowns.items = true
+					ESX.TriggerServerCallback("epyi_administration:setCoords", function(result)
+						if not result then
+							_var.menus.admin.cooldowns.items = false
+							return
+						end
+						ESX.ShowNotification(_U("notif_bring_success", _var.reports.list[_var.reports.selectedReport].user.name))
+						_var.menus.admin.cooldowns.items = false
+					end, _var.reports.list[_var.reports.selectedReport].user.source, GetEntityCoords(PlayerPedId()))
+				end)
 			end
 		end
 	)
@@ -197,7 +204,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		_U("main_reports_report_desc", _var.reports.list[_var.reports.selectedReport].user.reason),
 		{},
 		Config.Groups[playerGroup].Access["submenu_players_interact"]
-			and (Config.Groups[playerGroup].Access["submenu_players_interact_highergroup"] and true or targetisLower),
+			and (Config.Groups[playerGroup].Access["submenu_players_interact_highergroup"] and true or targetisLower) and not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
 				local canSkip = false
@@ -212,7 +219,7 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 					canSkip = true
 				end, _var.client.playerData.identifier)
 				while not canSkip do
-					Citizen.Wait(10)
+					Citizen.Wait(1)
 				end
 			end
 		end,
@@ -222,24 +229,32 @@ function main_reports_edit_showContentThisFrame(playerGroup)
 		_U("main_reports_edit_delete"),
 		_U("main_reports_edit_delete_desc"),
 		{ Color = { BackgroundColor = { 150, 50, 50, 20 } } },
-		true,
+		not _var.menus.admin.cooldowns.items,
 		function(_h, _a, Selected)
 			if Selected then
-				_var.reports.list[_var.reports.selectedReport] = nil
+				local canSkip = false
 				_var.client.playerData = ESX.GetPlayerData()
 				ESX.TriggerServerCallback(
 					"epyi_administration:setReport",
 					function(result)
 						if result then
 							ESX.ShowNotification((_U("notif_report_delete_success", _var.reports.selectedReport)))
+							ESX.TriggerServerCallback("epyi_administration:getReports", function(reports)
+								_var.reports.list = reports
+								canSkip = true
+							end, _var.client.playerData.identifier)
 						else
 							ESX.ShowNotification(_U("notif_report_editing_error"))
+							canSkip = true
 						end
 					end,
 					_var.client.playerData.identifier,
 					_var.reports.selectedReport,
-					_var.reports.list[_var.reports.selectedReport]
+					nil
 				)
+				while not canSkip do
+					Citizen.Wait(1)
+				end
 			end
 		end,
 		_var.menus.admin.objects.mainReports
