@@ -155,6 +155,10 @@ function openMenu()
 		_var.menus.admin.bannerTexture
 	)
 
+	for _k, menu in pairs(modules.menus) do
+		menu.createMenu()
+	end
+
 	for _k, rageObject in pairs(_var.menus.admin.objects) do
 		-- Set the offset
 		rageObject:SetStyleSize(Config.MenuStyle.BannerStyle.widthOffset)
@@ -196,6 +200,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -205,6 +214,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_personnal_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/personnal/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -214,6 +228,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_personnal_appearance_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/personnal/appearance/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -223,6 +242,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_players_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/players/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -232,6 +256,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_players_interact_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/players/interact/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -241,6 +270,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/vehicles/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -250,6 +284,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_current_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/vehicles/current/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -259,6 +298,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_current_custom_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/vehicles/current/custom/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -268,6 +312,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_favorites_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/vehicles/favorites/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -277,6 +326,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_vehicles_spawn_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/vehicles/spawn/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -286,6 +340,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_reports_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/reports/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -295,6 +354,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_reports_edit_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/reports/edit/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -304,6 +368,11 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_players_interact_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/reports/edit/advanced/" then
+							injector.inject()
+						end
+					end
 				end
 			)
 			RageUI.IsVisible(
@@ -313,8 +382,18 @@ function openMenu()
 				Config.MenuStyle.BannerStyle.UseInstructionalButtons,
 				function()
 					main_server_showContentThisFrame(_var.client.staffGroup)
+					for _k, injector in pairs(modules.injectors) do
+						if injector.path == "main/server/" then
+							injector.inject()
+						end
+					end
 				end
 			)
+			for _k, menu in pairs(modules.menus) do
+				RageUI.IsVisible(RMenu:Get(menu.type, menu.name), function()
+					menu.tickContent()
+				end)
+			end
 			for _k, rageObject in pairs(_var.menus.admin.objects) do
 				if _var.menus.admin.cooldowns.items then
 					rageObject.Controls.Back.Enabled = false
